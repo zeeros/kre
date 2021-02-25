@@ -1,0 +1,274 @@
+#+title: Knowledge Representation and Engineering - Exercises
+* DONE Introduction and Concepts
+
+- Exercise 1 :: What is =data=? What is =information=? What is =knowledge=?
+  - Data :: A raw value without context, it simply exists in its form (either usable or not)
+  - Information :: Data + Meaning, it can change the perception of the receiver about something
+    - Meanings :: The =five C's of Davenport & Prusak= describe what can give meaning to data
+      - Contextualization :: Purpose of data
+      - Categorization :: Classified or generalization to concepts
+      - Calculation :: Mathematical or statistical analysis
+      - Correction :: Removal of erros
+      - Condensation :: Removal of unnecessary elements
+  - Knowledge :: Information + "something", generalized to increase applicability. What is "something"?
+    - The =four C's of Davenport & Prusak= describe what "something" can be
+      - Comparison :: Similarity to other contexts
+      - Consequence :: Implication in decision taking
+      - Connection :: Relationship with other information
+      - Conversation :: Feedback of people
+    - Tobin :: "something" = application
+- Exercises 2 :: Identify the underlined sentences of the following paragraphs as =data=, =information= or =knowledge=.
+- Exercise 3 :: Identify =know-what= and =know-how= knowledge
+
+About the following exercises
+- Exercises 2 and 3 are grouped together for convenience
+- The paragraphs are already splitted into separate sentences for the same reason
+- We adopt these conventions: _this is data_ ~this is its meaning~
+  + Knowledge :: extracted from the sentence above
+  + Know-what :: if the extracted knowledge can be interpreted as a fact
+  + Know-how :: if the extracted knowledge can be interpreted as a rule
+
+** DONE 2a and 3a
+
+ 1) This course of _Knowledge Representation and Engineering_ ~course name~ is composed of _three_ ~number of~ chapters:  _Introduction  and  Concepts_ ~chapter name~, _Knowledge  Representation_ ~chapter name~, and _Knowledge Engineering_ ~chapter name~.
+    + Knowledge :: Knowledge Representation and Engineering is a course
+    + Knowledge :: Knowledge Representation and Engineering is composed by three chapters
+    + Knowledge :: Introduction and Concepts is a chapter of Knowledge Representation and Engineering
+    + Knowledge :: Knowledge Representation Knowledge Representation and Engineering
+    + Knowledge :: Knowledge Engineering chapter Knowledge Representation and Engineering
+    + Know-what :: it's a fact
+ 2) It’s a _six_-credit ~number of~ course with _two_ ~number of~ week hours for theory and _two_ ~number of~ week hours for problems and practice.
+    + Knowledge :: Knowledge Representation and Endineering is a six-credit course
+    + Knowledge :: Knowledge Representation and Endineering has two week hours for theory
+    + Knowledge :: Knowledge Representation and Endineering has two week hours for problems and practice
+    + Know-what :: it's a fact
+ 3) Like all the other subjects in the master, _half_ ~amount~ of the practical hours will be off class.
+    + Knowledge :: Knowledge Representation and Endineering is a subject of the master
+    + Knowledge :: All the subjects in the master have half of the practical hours off class
+    + Know-how :: it's a fact
+ 4) As the rest of subjects, KRE will be continuously evaluated.
+    + Knowledge :: All the subjects in the master are continouosly evaluated
+    + Know-what :: it's a fact
+ 5) Continuous evaluation in KRE will consist of _two_ ~amount of~ theoretical-practical tests, and _two_ ~amount of~ practical work deliveries.
+    + Knowledge :: The continuous evaluation of Knowledge Representation and Endineering consists of two theoretical-practical tests, and two practical work deliveries
+    + Know-what :: it's a fact
+ 6) The final mark will be calculated as _30%_ ~amount~ of the results of each one of the theoretical tests and _20%_ ~amount~ of each practical work.
+    + Knowledge :: The final mark of Knowledge Representation and Endineering is 30% of the results of each one of the theoretical tests and 20% amount of each practical work
+    + Know-how :: it's a rule
+ 7) For second evaluation, there will be a single exam.
+    + Knowledge :: The second evaluation of Knowledge Representation and Endineering is a single exam
+    + Know-what :: it's a fact
+
+** DONE 2b and 3b
+
+ 1) Computer _hardware_ ~part~ equals the collection of _physical_ ~type of~ elements that comprise a computer system.
+    + Knowledge :: computer hardware is the collection of physical elements that comprise a computer system
+    + Know-what :: it's a fact
+ 2) Computer hardware refers to the _physical_ ~type of~ parts or components of a computer such as _monitor_ ~part name~, _keyboard_ ~part name~, _hard drive disk_ ~component name~, _mouse_ ~part name~, _printers_ ~part name~, _graphic cards_ ~component~, _sound cards_ ~component name~, memory ~component name~, motherboard ~component name~ and chips ~component name~, etc. all of which are _physical_ ~type of~ objects that you can actually touch.
+    + Knowledge :: computer hardware is a collection of physical elements that are parts/components of a computer system
+    + Knowledge :: monitor, hard drive disk, mouse, printers, graphic cards, sound cards, memory, motherboard, chips are part of computer hardware
+    + Know-what :: it's a fact
+ 3) In contrast, _software_ ~part~ is untouchable.
+    + Knowledge :: software is untouchable
+    + Know-what :: it's a fact
+ 4) Software exists as _ideas_ ~part of~, _application_ ~part of~, _concepts_ ~part of~, and _symbols_ ~part of~, but it has no substance.
+    + Knowledge :: software made of ideas, application, concepts and symbols
+    + Knowledge :: software has no substance
+    + Know-what :: it's a fact
+ 5) A combination of _hardware_ ~part~ and _software_ ~part~ forms a usable computing system.
+    + Knowledge :: a usable computing system is made by hardware and software
+    + Know-what :: it's a fact
+
+** DONE 2c and 3c
+
+ 1) Primary care is the health care given by a _health care provider_ ~role~.
+    + Knowledge :: primary care is health care
+    + Knowlegde :: health care provider provides primary care
+    + Know-what :: it's a fact
+ 2) Typically this provider acts as the principal point of consultation for _patients_ ~role~ within a health care system and coordinates other _specialists_ ~role~ that the patient may need.
+    + Knowledge :: health care provider is the principal consultant for patients
+    + Knowledge :: health care provider coordinates other specialists
+    + Know-what :: it's a fact
+ 3) Such a professional can be a _primary care physician_ ~role~, such as a _general practitioner_ ~role~ or _family physician_ ~role~, or depending on the locality, health system organization, and patient's discretion, they may see a _pharmacist_ ~role~, a _physician assistant_ ~role~, a _nurse practitioner_ ~role~, a _nurse_ (such as in the _United Kingdom_ ~location)~, a _clinical officer_ ~role~ (such as in _parts of Africa_ ~location~), or an Ayurvedic or other _traditional medicine professional_ ~role~ (such as in _parts of Asia_ ~location~).
+    + Knowledge :: primary care physician can be a health care provider
+    + Knowledge :: general practitioner is a primary care physician
+    + Knowledge :: family physician is a primary care physician
+    + Knowledge :: pharmacist can be a health care provider
+    + Knowledge :: physician assistant can be a health care provider
+    + Knowledge :: nurse practitioner can be a health care provider
+    + Knowledge :: nurse can be a health care provider in United Kingdom
+    + Knowledge :: clinical officer can be a health care provider in parts of Africa
+    + Knowledge :: traditional medicine professional can be a health care provider in parts of Asia
+    + Know-how :: it's a rule, defining the process used to choose a primary care physician
+ 4) A _patient-centered_ ~type of~ primary care stores all the information about one patient in the different episodes of care (eoc).
+    + Knowledge :: patient-centered primary care stores all the information about one patient in the different episodes of care (eoc)
+    + Know-what :: it's a fact
+ 5) A _patient_ ~role~ has a _name_, _sex_ (M/W), _race_, and a _date of birth_ ~attributes of a patient~.
+    + Knowledge :: name, sex, race and date of birth are attributes of a patient
+    + Know-what :: it's a fact
+ 6) An eoc contains the _date when episode was created_ ~attribute of an eoc~, and a _sequence of encounters_ ~attribute of an eoc~ between the health care professional and the patient.
+    + Knowledge :: date of creation and sequence of encounters with patient are attributes of a eoc
+    + Know-what :: it's a fact
+ 7) Each encounter has a _date_ a _reference to the health care provider_ and a _set of treatments_ ~attributes of an encounter~.
+    + Knowledge :: date, reference to health care provider, set of treatments are attributes of an encounter
+    + Know-what :: it's a fact
+ 8) A treatment is composed of a set of findings ~part of treatment~ which are _textual_ ~type of~ descriptions of the patient signs and symptoms (for example, _fever_, _high blood pressure_, _breast pain_, ...).
+    + Knowledge :: treatment has a set of findings
+    + Knowledge :: set of findings collects textual descriptions of signs and symptoms
+    + Knowledge :: fever, high blood pressure, breast pain are symptoms
+    + Know-what :: its' a fact
+ 9) A treatment can have attached a _disease or set of diseases_ ~attribute of a treatment~ that the patient is treated of, and a set of _medical actions_ ~attribute of a treatment~ that can be of the sort: _pharmacological_, _test order_, _visit_ (to provider such as a specialist), or _recommendation_.
+    + Knowledge :: treatment may have a set of diseases that the patient is treated of
+    + Knowledge :: treatment may have a set of medical actions
+    + Knowledge :: medical action can be pharmacological, test order, visit (to a specialist), or recommendation.
+    + Know-what :: it's a fact
+
+** DONE 2d and 3d
+
+ 1) A chair is a raised surface used to sit on, commonly for use by _one_ ~number of~ person.
+    + Knowledge :: chair is a raised surface used to sit on
+    + Knowledge :: chair is commonly used by one person at a time
+    + Know-what :: it's a fact
+ 2) Chairs are most often supported by _four_ ~number of~ legs and have a back; however, a chair can have _three_ ~number of~ legs or could have a different shape.
+    + Knowledge :: chair is often supported by four legs and have a back
+    + Knowledge :: chair can vary in shape and number of legs
+    + Know-what :: it's a fact
+ 3) A chair without a back or arm rests is a _stool_ ~type of chair~, or when raised up, a _bar stool_ ~type of chair~.
+    + Knowledge :: stool is a chair without a back
+    + Knowledge :: bar stool is a raised up stool
+    + Know-what :: it's a fact
+ 4) A chair with arms is an _armchair_ ~type of chair~ and with folding action and inclining footrest, a recliner.
+    + Knowledge :: amrchair is a chair with arms, folding action, inclining footrest, recliner
+    + Know-what :: it's a fact
+ 5) A permanently fixed chair in a train or theater is a _seat_ ~type of chair~ or, in an airplane, _airline seat_ ~type of chair~; when riding, it is a _saddle_ ~type of chair~ and _bicycle saddle_ ~type of chair~, and for an automobile, a _car seat_ ~type of chair~ or _infant car seat_ ~type of chair~.
+    + Knowledge :: seat is a permanently fixed chair
+    + Knowledge :: airline seat is a seat in an airplane
+    + Knowledge :: saddle is a seat used to ride
+    + Knowledge :: bicycle saddle is a saddle for a bike
+    + Knowledge :: car seat is a seat in a car
+    + Knowledge :: infant car sear is a seat in a car
+    + Knowledge-what :: it's a fact, describing specific nomenclature for different scenarios
+    + Knowledge-how :: it's a rule, describing the underlying logic naming logic for some of the scenarios
+ 6) With wheels it is a _wheelchair_ ~type of chair~ and when hung from above, a _swing_ ~type of chair~.
+    + Knowledge :: wheelchair is a chair with wheels
+    + Knowledge :: swing is a hung chair
+    + Know-what :: it's a fact
+
+** DONE 2e and 3e
+
+1) The Nobel Prizes are _annual_ ~frequency~ _international_ ~scope~ awards bestowed by _Scandinavian committees_ ~awarder~ in recognition of _cultural and scientific advances_ ~type of achievement~.
+   + Knowledge :: nobel prizes are annual
+   + Knowledge :: nobel prizes are international
+   + Knowledge :: nobel prizes are awarded by Scandinavian commitees
+   + Knowledge :: nobel prizes are awarded for cultural and scientific advances
+   + Know-what :: it's a fact
+2) The will of the _Swedish_ ~nationality~ _chemist_ ~qualification~ _Alfred Nobel_ ~name~, the _inventor of dynamite_ ~achievement~, established the prizes in _1895_ ~year~.
+   + Knowledge :: Alfred Nobel is swedish
+   + Knowledge :: Alfred Nobel is a chemist
+   + Knowledge :: Alfred Nobel is the inventor of dynamite
+   + Knowledge :: Alfred Nobel established the nobel prizes in 1895
+   + Know-what :: it's a fact
+3) The _2_ ~number of~ prizes in _Physics_, _Chemistry_, _Physiology or Medicine_, _Literature_, and _Peace_ were first awarded in _1901_.
+   + Knowledge :: Physics, Chemistry, Physiology or Medicine, Literature, and Peace are nobel prizes
+   + Knowledge :: Physics had 2 nobel prizes in 1901
+   + Know-fact :: it's a fact
+4) The Peace Prize is awarded in _Oslo, Norway_ ~location~, while the other prizes are awarded in _Stockholm, Sweden_ ~location~.
+   + Knowledge :: Peace prize is awarded in Oslo, Norway
+   + Knowledge :: Physics, Chemistry, Physiology or Medicine, Literature are awarded in Stockholm, Sweden
+   + Know-what :: it's a fact
+5) Each Nobel Prize is regarded as the _most prestigious_ ~level of recognition of~ award  in its field.
+   + Knowledge :: nobel prizes are the most prestigious award in their field
+   + Know-what :: it's a fact
+6) In 1968, _Sveriges Riksbank_ ~name~ instituted an award that is often associated with the Nobel prizes, the _Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel_ ~name of the prize~.
+   + Knowledge :: Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel is an award associated with the Nobel prizes
+   + Knowledge :: Sveriges Riksbank instituted the Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel
+   + Know-what :: it's a fact
+7) The first such prize was awarded in _1969_ ~date of awarding~.
+   + Knowledge :: Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel was awarded for the first time in 1969
+   + Know-what :: it's a fact
+8) Although it is _not an official Nobel Prize_ ~relationship with Nobel prize~,its _announcements and _presentations_ ~events shared with Nobel prizes~ are made along with the other prizes.
+   + Knowledge :: Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel is not an official nobel prize
+   + Knowledge :: Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel shares announcements and presentations with nobel prizes
+   + Know-what :: it's a fact
+9) _The Royal Swedish Academy of Sciences_ ~awarder name~ awards the _Nobel Prize in Physics_, the _Nobel Prize in Chemistry_, and the _Nobel Memorial Prize in Economic Sciences_ ~names of prizes~
+   + Knowledge :: The Royal Swedish Academy of Sciences awards Nobel Prize in Physics, the Nobel Prize in Chemistry, and the Nobel Memorial Prize in Economic Sciences
+   + Know-what :: it's a fact
+10) _The Nobel Assembly at Karolinska Institutet_ ~awarder name~ awards the _Nobel Prize in Physiology or Medicine_ ~name of prize~.
+    + Knowledge :: The Nobel Assembly at Karolinska Institutet awards the Nobel Prize in Physiology or Medicine.
+    + Know-what :: it's a fact
+11) _The Swedish Academy_ ~awarder name~ grants the _Nobel Prize in Literature_ ~name of prize~
+    + Knowledge :: The Swedish Academy grants the Nobel Prize in Literature
+12) The _Nobel Peace Prize_ ~name of prize~ is not awarded by a Swedish organization but by the _Norwegian Nobel Committee_ ~awarder~.
+    + Knowledge :: The Nobel Peace Prize is awarded by the Norwegian Nobel Committee
+    + Know-what :: it's a fact
+13) Each recipient, or laureate, receives a _gold medal_, a _diploma_, and a _sum of money_ ~prizes of the award~ which depends on the Nobel Foundation's income that year.
+    + Knowledge :: the awarded of the nobel prize receives a gold medal, a diploma and a sum of money depending on the Nobel Foundation's income that year
+    + Know-what :: it's a fact
+14) In _2011_ ~year~, each prize was worth _€1.15 million_ ~prize value~.
+    + Knowledge :: the value of each noble prize was €1.15 million in 2011
+    + Know-what :: it's a fact
+
+The whole text starting from sentence 9 and ending in sentence 12 may be also seen as a =Know-how= knowledge describing a rule deciciding who should be the awarder for a specific prize.
+
+** DONE 2f and 3f
+ 1) A _stock market_ ~type of market~ is a _public market_ ~type of market~ for the trading of company stock (shares) and derivatives at an agreed price.
+    + Knowledge :: stock market is a public market
+    + Knowledge :: company stock (shares) and derivatives are traded in a stock market
+    + Know-what :: it's a fact
+ 2) A _share_ ~type of unit~ is a unit of account for various financial instruments including stocks, and investments.
+    + Knowledge :: a share is a unit of account used for financial instruments and investments
+    + Knowledge :: a stock is a financial instrument
+    + Know-what :: it's a fact
+ 3) On the other hand, a _derivative_ ~type of financial instrument~ is a financial instrument that has a value, based on the expected future price movements of the asset to which it is linked.
+    + Knowledge :: a derivative is a financial instrument
+    + Knowledge :: the value of a derivative is based on the expected future price movements of the asset to which it is linked
+    + Know-what :: it's a fact
+
+The whole text starting from sentence 2 and ending in sentence 3 may be also seen as a =Know-how= knowledge describing a rule to distinguish stock and derivatives.
+
+** DONE 2g and 3g
+
+ 1) Engines can be classified into _internal_ ~type of combustion~ and _external_ ~type of combustion~ _combustion_ ~type of engine~ engines.
+    + Knowledge :: combustion can be internal or external
+    + Knowledge :: combustion engines can be classified on their type of combustion
+    + Know-what :: it's a fact
+ 2) _Internal combustion engines_ (_ICE_) ~type of engine~ are engines in which the combustion of a fuel (substance) occurs with an oxidizer (substance) in a combustion chamber.
+    + Knowledge :: in ICE the combustion of fuel (substance) occurs with an oxidizer (substance) in a combustion chamber.
+    + Know-what :: it's a fact
+ 3) On the contrary, in _external combustion engines_ (_ECE_) ~type of engine~, such as _steam engines_ or _Stirling engines_ ~types of engines~, the energy is delivered to a working fluid (substance) different of a combustion product.
+    + Knowledge :: in ECE the energy is delivered to a working fluid (substance) different of a combustion product
+    + Knowledge :: steam engines are ECE
+    + Knowledge :: Stirling engines are ECE
+    + Know-what :: it's a fact
+ 4) Working fluids can be _air_, _hot water_, or _pressurized water_ ~types of working fluids~.
+    + Knowledge :: air, hot water and pressurized water can be working fluids
+
+The whole text starting from sentence 1 and ending in sentence 4 may be also seen as a =Know-how= knowledge describing a rule to distinguish between different kind of engines.
+
+** DONE 2h and 3h
+1) _Chronic disease_ ~name of~ treatment divides each disease in stages.
+   + Knowledge :: chronic diseas treatment divides each disease in stages
+   + Know-what :: it's a fact
+2) Patients that have _one_ ~number of~ _chronic disease_ ~type of~ are classified in _one_ ~number of~ of these stages.
+   + Knowledge :: a patient having a chronic diseases is classified in a disease's stage
+   + Know-what :: it's a fact
+3) _General_ ~type of~ practitioners base their decisions in the current stage of the patient and the time this patient has been in that stage.
+   + Knowledge :: a practitioner needs current stage and its duration to make a decision on a patient
+   + Know-what :: it's a fact
+4) In general, a patient that is in a _mild-moderate dangerous_ ~type of~ stage (_MDS_) ~type of~ is asked to modify his/her lifestyle (_diet, salt intake reduction, moderate exercise_) ~types of~, if the patient has been in a MDS for a significant period, he/she is prescribed with _one_ ~number of~ drug to _minimal_ ~amount of~ dosage, while the patient is not improving the dosage is increased with fix increments.
+   + Knowledge :: if patient is in MDS stage then ask to change lifestyle
+   + Knowledge :: if patient is in MDS stage for a long time then prescribe minimal dose of a drug
+   + Knowledge :: if patient is in MDS stage for a long time and he doesn't improve then increase dosage by fix increments
+   + Know-how :: it's a rule, or better a procedure describing a sequence of steps dealing with multiple scenarios
+5) If a _maximal_ ~amount of~ dosage is reached, then a second drug to _minimal_ ~amount of~ dosage is prescribed
+   + Knowledge :: if dosage is maximal then prescribe second drug at minimal dosage
+   + Know-how :: part of the previous procedure
+6) Patients can reach treatments with _4_ ~number of~ drugs
+   + Knowledge :: if dosage is maximal then prescribe second drug at minimal dosage
+   + Know-how :: can be seen as a part of the previous procedure
+   + Know-what :: or as a general fact
+7) Patients that arrive in _highly dangerous_ ~type of~ stage (_HDS_) ~type of~ are directly prescribed with _one_ ~number of~ drug and recommended lifestyle changes.
+   - Know-what :: it's a rule
+* TODO Knowledge Representation
+* TODO Knowledge Engineering
+* TODO Knowledge Representation in the Web
