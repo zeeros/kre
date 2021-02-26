@@ -1,0 +1,459 @@
+% Created 2021-02-26 vie 09:23
+% Intended LaTeX compiler: pdflatex
+\documentclass[a4paper,10pt,twoside,twocolumn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{minted}
+\date{\today}
+\title{Knowledge Representation and Engineering - Exercises}
+\hypersetup{
+ pdfauthor={},
+ pdftitle={Knowledge Representation and Engineering - Exercises},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 27.1 (Org mode 9.3)},
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Introduction and Concepts}
+\label{sec:orgc4bf679}
+
+\begin{description}
+\item[{Exercise 1}] What is \texttt{data}? What is \texttt{information}? What is \texttt{knowledge}?
+\begin{description}
+\item[{Data}] A raw value without context, it simply exists in its form (either usable or not)
+\item[{Information}] Data + Meaning, it can change the perception of the receiver about something
+\begin{description}
+\item[{Meanings}] The \texttt{five C's of Davenport \& Prusak} describe what can give meaning to data
+\begin{description}
+\item[{Contextualization}] Purpose of data
+\item[{Categorization}] Classified or generalization to concepts
+\item[{Calculation}] Mathematical or statistical analysis
+\item[{Correction}] Removal of erros
+\item[{Condensation}] Removal of unnecessary elements
+\end{description}
+\end{description}
+\item[{Knowledge}] Information + ``something'', generalized to increase applicability. What is ``something''?
+\begin{itemize}
+\item The \texttt{four C's of Davenport \& Prusak} describe what ``something'' can be
+\begin{description}
+\item[{Comparison}] Similarity to other contexts
+\item[{Consequence}] Implication in decision taking
+\item[{Connection}] Relationship with other information
+\item[{Conversation}] Feedback of people
+\end{description}
+\item[{Tobin}] ``something'' = application
+\end{itemize}
+\end{description}
+\item[{Exercises 2}] Identify the underlined sentences of the following paragraphs as \texttt{data}, \texttt{information} or \texttt{knowledge}.
+\item[{Exercise 3}] Identify \texttt{know-what} and \texttt{know-how} knowledge
+\end{description}
+
+About the following exercises
+\begin{itemize}
+\item Exercises 2 and 3 are grouped together for convenience
+\item The paragraphs are already splitted into separate sentences for the same reason
+\item We adopt these conventions: \uline{this is data} \texttt{this is its meaning}
+\begin{description}
+\item[{Knowledge}] extracted from the sentence above
+\item[{Know-what}] if the extracted knowledge can be interpreted as a fact
+\item[{Know-how}] if the extracted knowledge can be interpreted as a rule
+\end{description}
+\end{itemize}
+
+\subsection{2a and 3a}
+\label{sec:org7528db7}
+
+\begin{enumerate}
+\item This course of \uline{Knowledge Representation and Engineering} \texttt{course name} is composed of \uline{three} \texttt{number of} chapters:  \uline{Introduction  and  Concepts} \texttt{chapter name}, \uline{Knowledge  Representation} \texttt{chapter name}, and \uline{Knowledge Engineering} \texttt{chapter name}.
+\begin{description}
+\item[{Knowledge}] Knowledge Representation and Engineering is a course
+\item[{Knowledge}] Knowledge Representation and Engineering is composed by three chapters
+\item[{Knowledge}] Introduction and Concepts is a chapter of Knowledge Representation and Engineering
+\item[{Knowledge}] Knowledge Representation Knowledge Representation and Engineering
+\item[{Knowledge}] Knowledge Engineering chapter Knowledge Representation and Engineering
+\item[{Know-what}] it's a fact
+\end{description}
+\item It’s a \uline{six}-credit \texttt{number of} course with \uline{two} \texttt{number of} week hours for theory and \uline{two} \texttt{number of} week hours for problems and practice.
+\begin{description}
+\item[{Knowledge}] Knowledge Representation and Endineering is a six-credit course
+\item[{Knowledge}] Knowledge Representation and Endineering has two week hours for theory
+\item[{Knowledge}] Knowledge Representation and Endineering has two week hours for problems and practice
+\item[{Know-what}] it's a fact
+\end{description}
+\item Like all the other subjects in the master, \uline{half} \texttt{amount} of the practical hours will be off class.
+\begin{description}
+\item[{Knowledge}] Knowledge Representation and Endineering is a subject of the master
+\item[{Knowledge}] All the subjects in the master have half of the practical hours off class
+\item[{Know-how}] it's a fact
+\end{description}
+\item As the rest of subjects, KRE will be continuously evaluated.
+\begin{description}
+\item[{Knowledge}] All the subjects in the master are continouosly evaluated
+\item[{Know-what}] it's a fact
+\end{description}
+\item Continuous evaluation in KRE will consist of \uline{two} \texttt{amount of} theoretical-practical tests, and \uline{two} \texttt{amount of} practical work deliveries.
+\begin{description}
+\item[{Knowledge}] The continuous evaluation of Knowledge Representation and Endineering consists of two theoretical-practical tests, and two practical work deliveries
+\item[{Know-what}] it's a fact
+\end{description}
+\item The final mark will be calculated as \uline{30\%} \texttt{amount} of the results of each one of the theoretical tests and \uline{20\%} \texttt{amount} of each practical work.
+\begin{description}
+\item[{Knowledge}] The final mark of Knowledge Representation and Endineering is 30\% of the results of each one of the theoretical tests and 20\% amount of each practical work
+\item[{Know-how}] it's a rule
+\end{description}
+\item For second evaluation, there will be a single exam.
+\begin{description}
+\item[{Knowledge}] The second evaluation of Knowledge Representation and Endineering is a single exam
+\item[{Know-what}] it's a fact
+\end{description}
+\end{enumerate}
+
+\subsection{2b and 3b}
+\label{sec:org61e6af4}
+
+\begin{enumerate}
+\item Computer \uline{hardware} \texttt{part} equals the collection of \uline{physical} \texttt{type of} elements that comprise a computer system.
+\begin{description}
+\item[{Knowledge}] computer hardware is the collection of physical elements that comprise a computer system
+\item[{Know-what}] it's a fact
+\end{description}
+\item Computer hardware refers to the \uline{physical} \texttt{type of} parts or components of a computer such as \uline{monitor} \texttt{part name}, \uline{keyboard} \texttt{part name}, \uline{hard drive disk} \texttt{component name}, \uline{mouse} \texttt{part name}, \uline{printers} \texttt{part name}, \uline{graphic cards} \texttt{component}, \uline{sound cards} \texttt{component name}, memory \texttt{component name}, motherboard \texttt{component name} and chips \texttt{component name}, etc. all of which are \uline{physical} \texttt{type of} objects that you can actually touch.
+\begin{description}
+\item[{Knowledge}] computer hardware is a collection of physical elements that are parts/components of a computer system
+\item[{Knowledge}] monitor, hard drive disk, mouse, printers, graphic cards, sound cards, memory, motherboard, chips are part of computer hardware
+\item[{Know-what}] it's a fact
+\end{description}
+\item In contrast, \uline{software} \texttt{part} is untouchable.
+\begin{description}
+\item[{Knowledge}] software is untouchable
+\item[{Know-what}] it's a fact
+\end{description}
+\item Software exists as \uline{ideas} \texttt{part of}, \uline{application} \texttt{part of}, \uline{concepts} \texttt{part of}, and \uline{symbols} \texttt{part of}, but it has no substance.
+\begin{description}
+\item[{Knowledge}] software made of ideas, application, concepts and symbols
+\item[{Knowledge}] software has no substance
+\item[{Know-what}] it's a fact
+\end{description}
+\item A combination of \uline{hardware} \texttt{part} and \uline{software} \texttt{part} forms a usable computing system.
+\begin{description}
+\item[{Knowledge}] a usable computing system is made by hardware and software
+\item[{Know-what}] it's a fact
+\end{description}
+\end{enumerate}
+
+\subsection{2c and 3c}
+\label{sec:orgbc51fda}
+
+\begin{enumerate}
+\item Primary care is the health care given by a \uline{health care provider} \texttt{role}.
+\begin{description}
+\item[{Knowledge}] primary care is health care
+\item[{Knowlegde}] health care provider provides primary care
+\item[{Know-what}] it's a fact
+\end{description}
+\item Typically this provider acts as the principal point of consultation for \uline{patients} \texttt{role} within a health care system and coordinates other \uline{specialists} \texttt{role} that the patient may need.
+\begin{description}
+\item[{Knowledge}] health care provider is the principal consultant for patients
+\item[{Knowledge}] health care provider coordinates other specialists
+\item[{Know-what}] it's a fact
+\end{description}
+\item Such a professional can be a \uline{primary care physician} \texttt{role}, such as a \uline{general practitioner} \texttt{role} or \uline{family physician} \texttt{role}, or depending on the locality, health system organization, and patient's discretion, they may see a \uline{pharmacist} \texttt{role}, a \uline{physician assistant} \texttt{role}, a \uline{nurse practitioner} \texttt{role}, a \uline{nurse} (such as in the \uline{United Kingdom} \texttt{location)}, a \uline{clinical officer} \texttt{role} (such as in \uline{parts of Africa} \texttt{location}), or an Ayurvedic or other \uline{traditional medicine professional} \texttt{role} (such as in \uline{parts of Asia} \texttt{location}).
+\begin{description}
+\item[{Knowledge}] primary care physician can be a health care provider
+\item[{Knowledge}] general practitioner is a primary care physician
+\item[{Knowledge}] family physician is a primary care physician
+\item[{Knowledge}] pharmacist can be a health care provider
+\item[{Knowledge}] physician assistant can be a health care provider
+\item[{Knowledge}] nurse practitioner can be a health care provider
+\item[{Knowledge}] nurse can be a health care provider in United Kingdom
+\item[{Knowledge}] clinical officer can be a health care provider in parts of Africa
+\item[{Knowledge}] traditional medicine professional can be a health care provider in parts of Asia
+\item[{Know-how}] it's a rule, defining the process used to choose a primary care physician
+\end{description}
+\item A \uline{patient-centered} \texttt{type of} primary care stores all the information about one patient in the different episodes of care (eoc).
+\begin{description}
+\item[{Knowledge}] patient-centered primary care stores all the information about one patient in the different episodes of care (eoc)
+\item[{Know-what}] it's a fact
+\end{description}
+\item A \uline{patient} \texttt{role} has a \uline{name}, \uline{sex} (M/W), \uline{race}, and a \uline{date of birth} \texttt{attributes of a patient}.
+\begin{description}
+\item[{Knowledge}] name, sex, race and date of birth are attributes of a patient
+\item[{Know-what}] it's a fact
+\end{description}
+\item An eoc contains the \uline{date when episode was created} \texttt{attribute of an eoc}, and a \uline{sequence of encounters} \texttt{attribute of an eoc} between the health care professional and the patient.
+\begin{description}
+\item[{Knowledge}] date of creation and sequence of encounters with patient are attributes of a eoc
+\item[{Know-what}] it's a fact
+\end{description}
+\item Each encounter has a \uline{date} a \uline{reference to the health care provider} and a \uline{set of treatments} \texttt{attributes of an encounter}.
+\begin{description}
+\item[{Knowledge}] date, reference to health care provider, set of treatments are attributes of an encounter
+\item[{Know-what}] it's a fact
+\end{description}
+\item A treatment is composed of a set of findings \texttt{part of treatment} which are \uline{textual} \texttt{type of} descriptions of the patient signs and symptoms (for example, \uline{fever}, \uline{high blood pressure}, \uline{breast pain}, \ldots{}).
+\begin{description}
+\item[{Knowledge}] treatment has a set of findings
+\item[{Knowledge}] set of findings collects textual descriptions of signs and symptoms
+\item[{Knowledge}] fever, high blood pressure, breast pain are symptoms
+\item[{Know-what}] its' a fact
+\end{description}
+\item A treatment can have attached a \uline{disease or set of diseases} \texttt{attribute of a treatment} that the patient is treated of, and a set of \uline{medical actions} \texttt{attribute of a treatment} that can be of the sort: \uline{pharmacological}, \uline{test order}, \uline{visit} (to provider such as a specialist), or \uline{recommendation}.
+\begin{description}
+\item[{Knowledge}] treatment may have a set of diseases that the patient is treated of
+\item[{Knowledge}] treatment may have a set of medical actions
+\item[{Knowledge}] medical action can be pharmacological, test order, visit (to a specialist), or recommendation.
+\item[{Know-what}] it's a fact
+\end{description}
+\end{enumerate}
+
+\subsection{2d and 3d}
+\label{sec:org307b2b9}
+
+\begin{enumerate}
+\item A chair is a raised surface used to sit on, commonly for use by \uline{one} \texttt{number of} person.
+\begin{description}
+\item[{Knowledge}] chair is a raised surface used to sit on
+\item[{Knowledge}] chair is commonly used by one person at a time
+\item[{Know-what}] it's a fact
+\end{description}
+\item Chairs are most often supported by \uline{four} \texttt{number of} legs and have a back; however, a chair can have \uline{three} \texttt{number of} legs or could have a different shape.
+\begin{description}
+\item[{Knowledge}] chair is often supported by four legs and have a back
+\item[{Knowledge}] chair can vary in shape and number of legs
+\item[{Know-what}] it's a fact
+\end{description}
+\item A chair without a back or arm rests is a \uline{stool} \texttt{type of chair}, or when raised up, a \uline{bar stool} \texttt{type of chair}.
+\begin{description}
+\item[{Knowledge}] stool is a chair without a back
+\item[{Knowledge}] bar stool is a raised up stool
+\item[{Know-what}] it's a fact
+\end{description}
+\item A chair with arms is an \uline{armchair} \texttt{type of chair} and with folding action and inclining footrest, a recliner.
+\begin{description}
+\item[{Knowledge}] amrchair is a chair with arms, folding action, inclining footrest, recliner
+\item[{Know-what}] it's a fact
+\end{description}
+\item A permanently fixed chair in a train or theater is a \uline{seat} \texttt{type of chair} or, in an airplane, \uline{airline seat} \texttt{type of chair}; when riding, it is a \uline{saddle} \texttt{type of chair} and \uline{bicycle saddle} \texttt{type of chair}, and for an automobile, a \uline{car seat} \texttt{type of chair} or \uline{infant car seat} \texttt{type of chair}.
+\begin{description}
+\item[{Knowledge}] seat is a permanently fixed chair
+\item[{Knowledge}] airline seat is a seat in an airplane
+\item[{Knowledge}] saddle is a seat used to ride
+\item[{Knowledge}] bicycle saddle is a saddle for a bike
+\item[{Knowledge}] car seat is a seat in a car
+\item[{Knowledge}] infant car sear is a seat in a car
+\item[{Knowledge-what}] it's a fact, describing specific nomenclature for different scenarios
+\item[{Knowledge-how}] it's a rule, describing the underlying logic naming logic for some of the scenarios
+\end{description}
+\item With wheels it is a \uline{wheelchair} \texttt{type of chair} and when hung from above, a \uline{swing} \texttt{type of chair}.
+\begin{description}
+\item[{Knowledge}] wheelchair is a chair with wheels
+\item[{Knowledge}] swing is a hung chair
+\item[{Know-what}] it's a fact
+\end{description}
+\end{enumerate}
+
+\subsection{2e and 3e}
+\label{sec:org28bc229}
+
+\begin{enumerate}
+\item The Nobel Prizes are \uline{annual} \texttt{frequency} \uline{international} \texttt{scope} awards bestowed by \uline{Scandinavian committees} \texttt{awarder} in recognition of \uline{cultural and scientific advances} \texttt{type of achievement}.
+\begin{description}
+\item[{Knowledge}] nobel prizes are annual
+\item[{Knowledge}] nobel prizes are international
+\item[{Knowledge}] nobel prizes are awarded by Scandinavian commitees
+\item[{Knowledge}] nobel prizes are awarded for cultural and scientific advances
+\item[{Know-what}] it's a fact
+\end{description}
+\item The will of the \uline{Swedish} \texttt{nationality} \uline{chemist} \texttt{qualification} \uline{Alfred Nobel} \texttt{name}, the \uline{inventor of dynamite} \texttt{achievement}, established the prizes in \uline{1895} \texttt{year}.
+\begin{description}
+\item[{Knowledge}] Alfred Nobel is swedish
+\item[{Knowledge}] Alfred Nobel is a chemist
+\item[{Knowledge}] Alfred Nobel is the inventor of dynamite
+\item[{Knowledge}] Alfred Nobel established the nobel prizes in 1895
+\item[{Know-what}] it's a fact
+\end{description}
+\item The \uline{2} \texttt{number of} prizes in \uline{Physics}, \uline{Chemistry}, \uline{Physiology or Medicine}, \uline{Literature}, and \uline{Peace} were first awarded in \uline{1901}.
+\begin{description}
+\item[{Knowledge}] Physics, Chemistry, Physiology or Medicine, Literature, and Peace are nobel prizes
+\item[{Knowledge}] Physics had 2 nobel prizes in 1901
+\item[{Know-fact}] it's a fact
+\end{description}
+\item The Peace Prize is awarded in \uline{Oslo, Norway} \texttt{location}, while the other prizes are awarded in \uline{Stockholm, Sweden} \texttt{location}.
+\begin{description}
+\item[{Knowledge}] Peace prize is awarded in Oslo, Norway
+\item[{Knowledge}] Physics, Chemistry, Physiology or Medicine, Literature are awarded in Stockholm, Sweden
+\item[{Know-what}] it's a fact
+\end{description}
+\item Each Nobel Prize is regarded as the \uline{most prestigious} \texttt{level of recognition of} award  in its field.
+\begin{description}
+\item[{Knowledge}] nobel prizes are the most prestigious award in their field
+\item[{Know-what}] it's a fact
+\end{description}
+\item In 1968, \uline{Sveriges Riksbank} \texttt{name} instituted an award that is often associated with the Nobel prizes, the \uline{Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel} \texttt{name of the prize}.
+\begin{description}
+\item[{Knowledge}] Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel is an award associated with the Nobel prizes
+\item[{Knowledge}] Sveriges Riksbank instituted the Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel
+\item[{Know-what}] it's a fact
+\end{description}
+\item The first such prize was awarded in \uline{1969} \texttt{date of awarding}.
+\begin{description}
+\item[{Knowledge}] Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel was awarded for the first time in 1969
+\item[{Know-what}] it's a fact
+\end{description}
+\item Although it is \uline{not an official Nobel Prize} \texttt{relationship with Nobel prize},its \uline{announcements and \_presentations} \texttt{events shared with Nobel prizes} are made along with the other prizes.
+\begin{description}
+\item[{Knowledge}] Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel is not an official nobel prize
+\item[{Knowledge}] Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel shares announcements and presentations with nobel prizes
+\item[{Know-what}] it's a fact
+\end{description}
+\item \uline{The Royal Swedish Academy of Sciences} \texttt{awarder name} awards the \uline{Nobel Prize in Physics}, the \uline{Nobel Prize in Chemistry}, and the \uline{Nobel Memorial Prize in Economic Sciences} \texttt{names of prizes}
+\begin{description}
+\item[{Knowledge}] The Royal Swedish Academy of Sciences awards Nobel Prize in Physics, the Nobel Prize in Chemistry, and the Nobel Memorial Prize in Economic Sciences
+\item[{Know-what}] it's a fact
+\end{description}
+\item \uline{The Nobel Assembly at Karolinska Institutet} \texttt{awarder name} awards the \uline{Nobel Prize in Physiology or Medicine} \texttt{name of prize}.
+\begin{description}
+\item[{Knowledge}] The Nobel Assembly at Karolinska Institutet awards the Nobel Prize in Physiology or Medicine.
+\item[{Know-what}] it's a fact
+\end{description}
+\item \uline{The Swedish Academy} \texttt{awarder name} grants the \uline{Nobel Prize in Literature} \texttt{name of prize}
+\begin{description}
+\item[{Knowledge}] The Swedish Academy grants the Nobel Prize in Literature
+\end{description}
+\item The \uline{Nobel Peace Prize} \texttt{name of prize} is not awarded by a Swedish organization but by the \uline{Norwegian Nobel Committee} \texttt{awarder}.
+\begin{description}
+\item[{Knowledge}] The Nobel Peace Prize is awarded by the Norwegian Nobel Committee
+\item[{Know-what}] it's a fact
+\end{description}
+\item Each recipient, or laureate, receives a \uline{gold medal}, a \uline{diploma}, and a \uline{sum of money} \texttt{prizes of the award} which depends on the Nobel Foundation's income that year.
+\begin{description}
+\item[{Knowledge}] the awarded of the nobel prize receives a gold medal, a diploma and a sum of money depending on the Nobel Foundation's income that year
+\item[{Know-what}] it's a fact
+\end{description}
+\item In \uline{2011} \texttt{year}, each prize was worth \uline{€1.15 million} \texttt{prize value}.
+\begin{description}
+\item[{Knowledge}] the value of each noble prize was €1.15 million in 2011
+\item[{Know-what}] it's a fact
+\end{description}
+\end{enumerate}
+
+The whole text starting from sentence 9 and ending in sentence 12 may be also seen as a \texttt{Know-how} knowledge describing a rule deciciding who should be the awarder for a specific prize.
+
+\subsection{2f and 3f}
+\label{sec:org836c9b4}
+\begin{enumerate}
+\item A \uline{stock market} \texttt{type of market} is a \uline{public market} \texttt{type of market} for the trading of company stock (shares) and derivatives at an agreed price.
+\begin{description}
+\item[{Knowledge}] stock market is a public market
+\item[{Knowledge}] company stock (shares) and derivatives are traded in a stock market
+\item[{Know-what}] it's a fact
+\end{description}
+\item A \uline{share} \texttt{type of unit} is a unit of account for various financial instruments including stocks, and investments.
+\begin{description}
+\item[{Knowledge}] a share is a unit of account used for financial instruments and investments
+\item[{Knowledge}] a stock is a financial instrument
+\item[{Know-what}] it's a fact
+\end{description}
+\item On the other hand, a \uline{derivative} \texttt{type of financial instrument} is a financial instrument that has a value, based on the expected future price movements of the asset to which it is linked.
+\begin{description}
+\item[{Knowledge}] a derivative is a financial instrument
+\item[{Knowledge}] the value of a derivative is based on the expected future price movements of the asset to which it is linked
+\item[{Know-what}] it's a fact
+\end{description}
+\end{enumerate}
+
+The whole text starting from sentence 2 and ending in sentence 3 may be also seen as a \texttt{Know-how} knowledge describing a rule to distinguish stock and derivatives.
+
+\subsection{2g and 3g}
+\label{sec:org35537ed}
+
+\begin{enumerate}
+\item Engines can be classified into \uline{internal} \texttt{type of combustion} and \uline{external} \texttt{type of combustion} \uline{combustion} \texttt{type of engine} engines.
+\begin{description}
+\item[{Knowledge}] combustion can be internal or external
+\item[{Knowledge}] combustion engines can be classified on their type of combustion
+\item[{Know-what}] it's a fact
+\end{description}
+\item \uline{Internal combustion engines} ( \uline{ICE} ) \texttt{type of engine} are engines in which the combustion of a fuel (substance) occurs with an oxidizer (substance) in a combustion chamber.
+\begin{description}
+\item[{Knowledge}] in ICE the combustion of fuel (substance) occurs with an oxidizer (substance) in a combustion chamber.
+\item[{Know-what}] it's a fact
+\end{description}
+\item On the contrary, in \uline{external combustion engines} ( \uline{ECE} ) \texttt{type of engine}, such as \uline{steam engines} or \uline{Stirling engines} \texttt{types of engines}, the energy is delivered to a working fluid (substance) different of a combustion product.
+\begin{description}
+\item[{Knowledge}] in ECE the energy is delivered to a working fluid (substance) different of a combustion product
+\item[{Knowledge}] steam engines are ECE
+\item[{Knowledge}] Stirling engines are ECE
+\item[{Know-what}] it's a fact
+\end{description}
+\item Working fluids can be \uline{air}, \uline{hot water}, or \uline{pressurized water} \texttt{types of working fluids}.
+\begin{description}
+\item[{Knowledge}] air, hot water and pressurized water can be working fluids
+\end{description}
+\end{enumerate}
+
+The whole text starting from sentence 1 and ending in sentence 4 may be also seen as a \texttt{Know-how} knowledge describing a rule to distinguish between different kind of engines.
+
+\subsection{2h and 3h}
+\label{sec:orgbe33df2}
+\begin{enumerate}
+\item \uline{Chronic disease} \texttt{name of} treatment divides each disease in stages.
+\begin{description}
+\item[{Knowledge}] chronic diseas treatment divides each disease in stages
+\item[{Know-what}] it's a fact
+\end{description}
+\item Patients that have \uline{one} \texttt{number of} \uline{chronic disease} \texttt{type of} are classified in \uline{one} \texttt{number of} of these stages.
+\begin{description}
+\item[{Knowledge}] a patient having a chronic diseases is classified in a disease's stage
+\item[{Know-what}] it's a fact
+\end{description}
+\item \uline{General} \texttt{type of} practitioners base their decisions in the current stage of the patient and the time this patient has been in that stage.
+\begin{description}
+\item[{Knowledge}] a practitioner needs current stage and its duration to make a decision on a patient
+\item[{Know-what}] it's a fact
+\end{description}
+\item In general, a patient that is in a \uline{mild-moderate dangerous} \texttt{type of} stage (\textsubscript{MDS}\_) \texttt{type of} is asked to modify his/her lifestyle (\textsubscript{diet}, salt intake reduction, moderate exercise\_) \texttt{types of}, if the patient has been in a MDS for a significant period, he/she is prescribed with \uline{one} \texttt{number of} drug to \uline{minimal} \texttt{amount of} dosage, while the patient is not improving the dosage is increased with fix increments.
+\begin{description}
+\item[{Knowledge}] if patient is in MDS stage then ask to change lifestyle
+\item[{Knowledge}] if patient is in MDS stage for a long time then prescribe minimal dose of a drug
+\item[{Knowledge}] if patient is in MDS stage for a long time and he doesn't improve then increase dosage by fix increments
+\item[{Know-how}] it's a rule, or better a procedure describing a sequence of steps dealing with multiple scenarios
+\end{description}
+\item If a \uline{maximal} \texttt{amount of} dosage is reached, then a second drug to \uline{minimal} \texttt{amount of} dosage is prescribed
+\begin{description}
+\item[{Knowledge}] if dosage is maximal then prescribe second drug at minimal dosage
+\item[{Know-how}] part of the previous procedure
+\end{description}
+\item Patients can reach treatments with \uline{4} \texttt{number of} drugs
+\begin{description}
+\item[{Knowledge}] if dosage is maximal then prescribe second drug at minimal dosage
+\item[{Know-how}] can be seen as a part of the previous procedure
+\item[{Know-what}] or as a general fact
+\end{description}
+\item Patients that arrive in \uline{highly dangerous} \texttt{type of} stage (\textsubscript{HDS}\_) \texttt{type of} are directly prescribed with \uline{one} \texttt{number of} drug and recommended lifestyle changes.
+\begin{description}
+\item[{Know-what}] it's a rule
+\end{description}
+\end{enumerate}
+\section{{\bfseries\sffamily TODO} Knowledge Representation}
+\label{sec:org8eb6977}
+\section{{\bfseries\sffamily TODO} Knowledge Engineering}
+\label{sec:org2dd12f9}
+\section{{\bfseries\sffamily TODO} Knowledge Representation in the Web}
+\label{sec:orgd43ec9a}
+\end{document}

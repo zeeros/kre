@@ -1,5 +1,7 @@
-#+title: Knowledge Representation and Engineering - Exercises
-* DONE Introduction and Concepts
+#+TITLE: Knowledge Representation and Engineering - Exercises
+#+AUTHOR:
+#+LATEX_CLASS_OPTIONS: [a4paper,10pt,twoside,twocolumn]
+* Introduction and Concepts
 
 - Exercise 1 :: What is =data=? What is =information=? What is =knowledge=?
   - Data :: A raw value without context, it simply exists in its form (either usable or not)
@@ -28,7 +30,7 @@ About the following exercises
   + Know-what :: if the extracted knowledge can be interpreted as a fact
   + Know-how :: if the extracted knowledge can be interpreted as a rule
 
-** DONE 2a and 3a
+** 2a and 3a
 
  1) This course of _Knowledge Representation and Engineering_ ~course name~ is composed of _three_ ~number of~ chapters:  _Introduction  and  Concepts_ ~chapter name~, _Knowledge  Representation_ ~chapter name~, and _Knowledge Engineering_ ~chapter name~.
     + Knowledge :: Knowledge Representation and Engineering is a course
@@ -59,7 +61,7 @@ About the following exercises
     + Knowledge :: The second evaluation of Knowledge Representation and Endineering is a single exam
     + Know-what :: it's a fact
 
-** DONE 2b and 3b
+** 2b and 3b
 
  1) Computer _hardware_ ~part~ equals the collection of _physical_ ~type of~ elements that comprise a computer system.
     + Knowledge :: computer hardware is the collection of physical elements that comprise a computer system
@@ -79,7 +81,7 @@ About the following exercises
     + Knowledge :: a usable computing system is made by hardware and software
     + Know-what :: it's a fact
 
-** DONE 2c and 3c
+** 2c and 3c
 
  1) Primary care is the health care given by a _health care provider_ ~role~.
     + Knowledge :: primary care is health care
@@ -123,7 +125,7 @@ About the following exercises
     + Knowledge :: medical action can be pharmacological, test order, visit (to a specialist), or recommendation.
     + Know-what :: it's a fact
 
-** DONE 2d and 3d
+** 2d and 3d
 
  1) A chair is a raised surface used to sit on, commonly for use by _one_ ~number of~ person.
     + Knowledge :: chair is a raised surface used to sit on
@@ -154,7 +156,7 @@ About the following exercises
     + Knowledge :: swing is a hung chair
     + Know-what :: it's a fact
 
-** DONE 2e and 3e
+** 2e and 3e
 
 1) The Nobel Prizes are _annual_ ~frequency~ _international_ ~scope~ awards bestowed by _Scandinavian committees_ ~awarder~ in recognition of _cultural and scientific advances_ ~type of achievement~.
    + Knowledge :: nobel prizes are annual
@@ -210,7 +212,7 @@ About the following exercises
 
 The whole text starting from sentence 9 and ending in sentence 12 may be also seen as a =Know-how= knowledge describing a rule deciciding who should be the awarder for a specific prize.
 
-** DONE 2f and 3f
+** 2f and 3f
  1) A _stock market_ ~type of market~ is a _public market_ ~type of market~ for the trading of company stock (shares) and derivatives at an agreed price.
     + Knowledge :: stock market is a public market
     + Knowledge :: company stock (shares) and derivatives are traded in a stock market
@@ -226,16 +228,16 @@ The whole text starting from sentence 9 and ending in sentence 12 may be also se
 
 The whole text starting from sentence 2 and ending in sentence 3 may be also seen as a =Know-how= knowledge describing a rule to distinguish stock and derivatives.
 
-** DONE 2g and 3g
+** 2g and 3g
 
  1) Engines can be classified into _internal_ ~type of combustion~ and _external_ ~type of combustion~ _combustion_ ~type of engine~ engines.
     + Knowledge :: combustion can be internal or external
     + Knowledge :: combustion engines can be classified on their type of combustion
     + Know-what :: it's a fact
- 2) _Internal combustion engines_ (_ICE_) ~type of engine~ are engines in which the combustion of a fuel (substance) occurs with an oxidizer (substance) in a combustion chamber.
+ 2) _Internal combustion engines_ ( _ICE_ ) ~type of engine~ are engines in which the combustion of a fuel (substance) occurs with an oxidizer (substance) in a combustion chamber.
     + Knowledge :: in ICE the combustion of fuel (substance) occurs with an oxidizer (substance) in a combustion chamber.
     + Know-what :: it's a fact
- 3) On the contrary, in _external combustion engines_ (_ECE_) ~type of engine~, such as _steam engines_ or _Stirling engines_ ~types of engines~, the energy is delivered to a working fluid (substance) different of a combustion product.
+ 3) On the contrary, in _external combustion engines_ ( _ECE_ ) ~type of engine~, such as _steam engines_ or _Stirling engines_ ~types of engines~, the energy is delivered to a working fluid (substance) different of a combustion product.
     + Knowledge :: in ECE the energy is delivered to a working fluid (substance) different of a combustion product
     + Knowledge :: steam engines are ECE
     + Knowledge :: Stirling engines are ECE
@@ -245,7 +247,7 @@ The whole text starting from sentence 2 and ending in sentence 3 may be also see
 
 The whole text starting from sentence 1 and ending in sentence 4 may be also seen as a =Know-how= knowledge describing a rule to distinguish between different kind of engines.
 
-** DONE 2h and 3h
+** 2h and 3h
 1) _Chronic disease_ ~name of~ treatment divides each disease in stages.
    + Knowledge :: chronic diseas treatment divides each disease in stages
    + Know-what :: it's a fact
