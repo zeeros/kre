@@ -188,7 +188,7 @@ About the following exercises
 7) The first such prize was awarded in _1969_ ~date of awarding~.
    + Knowledge :: Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel was awarded for the first time in 1969
    + Know-what :: it's a fact
-8) Although it is _not an official Nobel Prize_ ~relationship with Nobel prize~,its _announcements and _presentations_ ~events shared with Nobel prizes~ are made along with the other prizes.
+8) Although it is _not an official Nobel Prize_ ~relationship with Nobel prize~,its _announcements and presentations_ ~events shared with Nobel prizes~ are made along with the other prizes.
    + Knowledge :: Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel is not an official nobel prize
    + Knowledge :: Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel shares announcements and presentations with nobel prizes
    + Know-what :: it's a fact
@@ -257,7 +257,7 @@ The whole text starting from sentence 1 and ending in sentence 4 may be also see
 3) _General_ ~type of~ practitioners base their decisions in the current stage of the patient and the time this patient has been in that stage.
    + Knowledge :: a practitioner needs current stage and its duration to make a decision on a patient
    + Know-what :: it's a fact
-4) In general, a patient that is in a _mild-moderate dangerous_ ~type of~ stage (_MDS_) ~type of~ is asked to modify his/her lifestyle (_diet, salt intake reduction, moderate exercise_) ~types of~, if the patient has been in a MDS for a significant period, he/she is prescribed with _one_ ~number of~ drug to _minimal_ ~amount of~ dosage, while the patient is not improving the dosage is increased with fix increments.
+4) In general, a patient that is in a _mild-moderate dangerous_ ~type of~ stage ( _MDS_ ) ~type of~ is asked to modify his/her lifestyle ( _diet, salt intake reduction, moderate exercise_ ) ~types of~, if the patient has been in a MDS for a significant period, he/she is prescribed with _one_ ~number of~ drug to _minimal_ ~amount of~ dosage, while the patient is not improving the dosage is increased with fix increments.
    + Knowledge :: if patient is in MDS stage then ask to change lifestyle
    + Knowledge :: if patient is in MDS stage for a long time then prescribe minimal dose of a drug
    + Knowledge :: if patient is in MDS stage for a long time and he doesn't improve then increase dosage by fix increments
@@ -269,7 +269,7 @@ The whole text starting from sentence 1 and ending in sentence 4 may be also see
    + Knowledge :: if dosage is maximal then prescribe second drug at minimal dosage
    + Know-how :: can be seen as a part of the previous procedure
    + Know-what :: or as a general fact
-7) Patients that arrive in _highly dangerous_ ~type of~ stage (_HDS_) ~type of~ are directly prescribed with _one_ ~number of~ drug and recommended lifestyle changes.
+7) Patients that arrive in _highly dangerous_ ~type of~ stage ( _HDS_ ) ~type of~ are directly prescribed with _one_ ~number of~ drug and recommended lifestyle changes.
    - Know-what :: it's a rule
 * TODO Knowledge Representation
 * TODO Knowledge Engineering

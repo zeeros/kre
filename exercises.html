@@ -1,0 +1,727 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-02-26 vie 11:55 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Knowledge Representation and Engineering - Exercises</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Knowledge Representation and Engineering - Exercises</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org96e2c24">1. Introduction and Concepts</a>
+<ul>
+<li><a href="#orge935ea5">1.1. 2a and 3a</a></li>
+<li><a href="#orgfc5f6a8">1.2. 2b and 3b</a></li>
+<li><a href="#org19b5ecd">1.3. 2c and 3c</a></li>
+<li><a href="#org7647b4d">1.4. 2d and 3d</a></li>
+<li><a href="#org3c41cc8">1.5. 2e and 3e</a></li>
+<li><a href="#orgd5106e5">1.6. 2f and 3f</a></li>
+<li><a href="#org212ecaa">1.7. 2g and 3g</a></li>
+<li><a href="#org9dfa5d8">1.8. 2h and 3h</a></li>
+</ul>
+</li>
+<li><a href="#org34bed79">2. <span class="todo TODO">TODO</span> Knowledge Representation</a></li>
+<li><a href="#org2609371">3. <span class="todo TODO">TODO</span> Knowledge Engineering</a></li>
+<li><a href="#orgbc5c9b7">4. <span class="todo TODO">TODO</span> Knowledge Representation in the Web</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org96e2c24" class="outline-2">
+<h2 id="org96e2c24"><span class="section-number-2">1</span> Introduction and Concepts</h2>
+<div class="outline-text-2" id="text-1">
+<dl class="org-dl">
+<dt>Exercise 1</dt><dd>What is <code>data</code>? What is <code>information</code>? What is <code>knowledge</code>?
+<dl class="org-dl">
+<dt>Data</dt><dd>A raw value without context, it simply exists in its form (either usable or not)</dd>
+<dt>Information</dt><dd>Data + Meaning, it can change the perception of the receiver about something
+<dl class="org-dl">
+<dt>Meanings</dt><dd>The <code>five C's of Davenport &amp; Prusak</code> describe what can give meaning to data
+<dl class="org-dl">
+<dt>Contextualization</dt><dd>Purpose of data</dd>
+<dt>Categorization</dt><dd>Classified or generalization to concepts</dd>
+<dt>Calculation</dt><dd>Mathematical or statistical analysis</dd>
+<dt>Correction</dt><dd>Removal of erros</dd>
+<dt>Condensation</dt><dd>Removal of unnecessary elements</dd>
+</dl></dd>
+</dl></dd>
+<dt>Knowledge</dt><dd>Information + &ldquo;something&rdquo;, generalized to increase applicability. What is &ldquo;something&rdquo;?
+<ul class="org-ul">
+<li>The <code>four C's of Davenport &amp; Prusak</code> describe what &ldquo;something&rdquo; can be
+<dl class="org-dl">
+<dt>Comparison</dt><dd>Similarity to other contexts</dd>
+<dt>Consequence</dt><dd>Implication in decision taking</dd>
+<dt>Connection</dt><dd>Relationship with other information</dd>
+<dt>Conversation</dt><dd>Feedback of people</dd>
+</dl></li>
+<li id="Tobin">&ldquo;something&rdquo; = application</li>
+</ul></dd>
+</dl></dd>
+<dt>Exercises 2</dt><dd>Identify the underlined sentences of the following paragraphs as <code>data</code>, <code>information</code> or <code>knowledge</code>.</dd>
+<dt>Exercise 3</dt><dd>Identify <code>know-what</code> and <code>know-how</code> knowledge</dd>
+</dl>
+
+<p>
+About the following exercises
+</p>
+<ul class="org-ul">
+<li>Exercises 2 and 3 are grouped together for convenience</li>
+<li>The paragraphs are already splitted into separate sentences for the same reason</li>
+<li>We adopt these conventions: <span class="underline">this is data</span> <code>this is its meaning</code>
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>extracted from the sentence above</dd>
+<dt>Know-what</dt><dd>if the extracted knowledge can be interpreted as a fact</dd>
+<dt>Know-how</dt><dd>if the extracted knowledge can be interpreted as a rule</dd>
+</dl></li>
+</ul>
+</div>
+
+<div id="outline-container-orge935ea5" class="outline-3">
+<h3 id="orge935ea5"><span class="section-number-3">1.1</span> 2a and 3a</h3>
+<div class="outline-text-3" id="text-1-1">
+<ol class="org-ol">
+<li>This course of <span class="underline">Knowledge Representation and Engineering</span> <code>course name</code> is composed of <span class="underline">three</span> <code>number of</code> chapters:  <span class="underline">Introduction  and  Concepts</span> <code>chapter name</code>, <span class="underline">Knowledge  Representation</span> <code>chapter name</code>, and <span class="underline">Knowledge Engineering</span> <code>chapter name</code>.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>Knowledge Representation and Engineering is a course</dd>
+<dt>Knowledge</dt><dd>Knowledge Representation and Engineering is composed by three chapters</dd>
+<dt>Knowledge</dt><dd>Introduction and Concepts is a chapter of Knowledge Representation and Engineering</dd>
+<dt>Knowledge</dt><dd>Knowledge Representation Knowledge Representation and Engineering</dd>
+<dt>Knowledge</dt><dd>Knowledge Engineering chapter Knowledge Representation and Engineering</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li>It’s a <span class="underline">six</span>-credit <code>number of</code> course with <span class="underline">two</span> <code>number of</code> week hours for theory and <span class="underline">two</span> <code>number of</code> week hours for problems and practice.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>Knowledge Representation and Endineering is a six-credit course</dd>
+<dt>Knowledge</dt><dd>Knowledge Representation and Endineering has two week hours for theory</dd>
+<dt>Knowledge</dt><dd>Knowledge Representation and Endineering has two week hours for problems and practice</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li>Like all the other subjects in the master, <span class="underline">half</span> <code>amount</code> of the practical hours will be off class.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>Knowledge Representation and Endineering is a subject of the master</dd>
+<dt>Knowledge</dt><dd>All the subjects in the master have half of the practical hours off class</dd>
+<dt>Know-how</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li>As the rest of subjects, KRE will be continuously evaluated.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>All the subjects in the master are continouosly evaluated</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li>Continuous evaluation in KRE will consist of <span class="underline">two</span> <code>amount of</code> theoretical-practical tests, and <span class="underline">two</span> <code>amount of</code> practical work deliveries.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>The continuous evaluation of Knowledge Representation and Endineering consists of two theoretical-practical tests, and two practical work deliveries</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li>The final mark will be calculated as <span class="underline">30%</span> <code>amount</code> of the results of each one of the theoretical tests and <span class="underline">20%</span> <code>amount</code> of each practical work.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>The final mark of Knowledge Representation and Endineering is 30% of the results of each one of the theoretical tests and 20% amount of each practical work</dd>
+<dt>Know-how</dt><dd>it&rsquo;s a rule</dd>
+</dl></li>
+<li>For second evaluation, there will be a single exam.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>The second evaluation of Knowledge Representation and Endineering is a single exam</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgfc5f6a8" class="outline-3">
+<h3 id="orgfc5f6a8"><span class="section-number-3">1.2</span> 2b and 3b</h3>
+<div class="outline-text-3" id="text-1-2">
+<ol class="org-ol">
+<li>Computer <span class="underline">hardware</span> <code>part</code> equals the collection of <span class="underline">physical</span> <code>type of</code> elements that comprise a computer system.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>computer hardware is the collection of physical elements that comprise a computer system</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li>Computer hardware refers to the <span class="underline">physical</span> <code>type of</code> parts or components of a computer such as <span class="underline">monitor</span> <code>part name</code>, <span class="underline">keyboard</span> <code>part name</code>, <span class="underline">hard drive disk</span> <code>component name</code>, <span class="underline">mouse</span> <code>part name</code>, <span class="underline">printers</span> <code>part name</code>, <span class="underline">graphic cards</span> <code>component</code>, <span class="underline">sound cards</span> <code>component name</code>, memory <code>component name</code>, motherboard <code>component name</code> and chips <code>component name</code>, etc. all of which are <span class="underline">physical</span> <code>type of</code> objects that you can actually touch.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>computer hardware is a collection of physical elements that are parts/components of a computer system</dd>
+<dt>Knowledge</dt><dd>monitor, hard drive disk, mouse, printers, graphic cards, sound cards, memory, motherboard, chips are part of computer hardware</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li>In contrast, <span class="underline">software</span> <code>part</code> is untouchable.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>software is untouchable</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li>Software exists as <span class="underline">ideas</span> <code>part of</code>, <span class="underline">application</span> <code>part of</code>, <span class="underline">concepts</span> <code>part of</code>, and <span class="underline">symbols</span> <code>part of</code>, but it has no substance.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>software made of ideas, application, concepts and symbols</dd>
+<dt>Knowledge</dt><dd>software has no substance</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li>A combination of <span class="underline">hardware</span> <code>part</code> and <span class="underline">software</span> <code>part</code> forms a usable computing system.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>a usable computing system is made by hardware and software</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org19b5ecd" class="outline-3">
+<h3 id="org19b5ecd"><span class="section-number-3">1.3</span> 2c and 3c</h3>
+<div class="outline-text-3" id="text-1-3">
+<ol class="org-ol">
+<li>Primary care is the health care given by a <span class="underline">health care provider</span> <code>role</code>.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>primary care is health care</dd>
+<dt>Knowlegde</dt><dd>health care provider provides primary care</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li>Typically this provider acts as the principal point of consultation for <span class="underline">patients</span> <code>role</code> within a health care system and coordinates other <span class="underline">specialists</span> <code>role</code> that the patient may need.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>health care provider is the principal consultant for patients</dd>
+<dt>Knowledge</dt><dd>health care provider coordinates other specialists</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li>Such a professional can be a <span class="underline">primary care physician</span> <code>role</code>, such as a <span class="underline">general practitioner</span> <code>role</code> or <span class="underline">family physician</span> <code>role</code>, or depending on the locality, health system organization, and patient&rsquo;s discretion, they may see a <span class="underline">pharmacist</span> <code>role</code>, a <span class="underline">physician assistant</span> <code>role</code>, a <span class="underline">nurse practitioner</span> <code>role</code>, a <span class="underline">nurse</span> (such as in the <span class="underline">United Kingdom</span> <code>location)</code>, a <span class="underline">clinical officer</span> <code>role</code> (such as in <span class="underline">parts of Africa</span> <code>location</code>), or an Ayurvedic or other <span class="underline">traditional medicine professional</span> <code>role</code> (such as in <span class="underline">parts of Asia</span> <code>location</code>).
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>primary care physician can be a health care provider</dd>
+<dt>Knowledge</dt><dd>general practitioner is a primary care physician</dd>
+<dt>Knowledge</dt><dd>family physician is a primary care physician</dd>
+<dt>Knowledge</dt><dd>pharmacist can be a health care provider</dd>
+<dt>Knowledge</dt><dd>physician assistant can be a health care provider</dd>
+<dt>Knowledge</dt><dd>nurse practitioner can be a health care provider</dd>
+<dt>Knowledge</dt><dd>nurse can be a health care provider in United Kingdom</dd>
+<dt>Knowledge</dt><dd>clinical officer can be a health care provider in parts of Africa</dd>
+<dt>Knowledge</dt><dd>traditional medicine professional can be a health care provider in parts of Asia</dd>
+<dt>Know-how</dt><dd>it&rsquo;s a rule, defining the process used to choose a primary care physician</dd>
+</dl></li>
+<li>A <span class="underline">patient-centered</span> <code>type of</code> primary care stores all the information about one patient in the different episodes of care (eoc).
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>patient-centered primary care stores all the information about one patient in the different episodes of care (eoc)</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li>A <span class="underline">patient</span> <code>role</code> has a <span class="underline">name</span>, <span class="underline">sex</span> (M/W), <span class="underline">race</span>, and a <span class="underline">date of birth</span> <code>attributes of a patient</code>.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>name, sex, race and date of birth are attributes of a patient</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li>An eoc contains the <span class="underline">date when episode was created</span> <code>attribute of an eoc</code>, and a <span class="underline">sequence of encounters</span> <code>attribute of an eoc</code> between the health care professional and the patient.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>date of creation and sequence of encounters with patient are attributes of a eoc</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li>Each encounter has a <span class="underline">date</span> a <span class="underline">reference to the health care provider</span> and a <span class="underline">set of treatments</span> <code>attributes of an encounter</code>.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>date, reference to health care provider, set of treatments are attributes of an encounter</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li>A treatment is composed of a set of findings <code>part of treatment</code> which are <span class="underline">textual</span> <code>type of</code> descriptions of the patient signs and symptoms (for example, <span class="underline">fever</span>, <span class="underline">high blood pressure</span>, <span class="underline">breast pain</span>, &#x2026;).
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>treatment has a set of findings</dd>
+<dt>Knowledge</dt><dd>set of findings collects textual descriptions of signs and symptoms</dd>
+<dt>Knowledge</dt><dd>fever, high blood pressure, breast pain are symptoms</dd>
+<dt>Know-what</dt><dd>its&rsquo; a fact</dd>
+</dl></li>
+<li>A treatment can have attached a <span class="underline">disease or set of diseases</span> <code>attribute of a treatment</code> that the patient is treated of, and a set of <span class="underline">medical actions</span> <code>attribute of a treatment</code> that can be of the sort: <span class="underline">pharmacological</span>, <span class="underline">test order</span>, <span class="underline">visit</span> (to provider such as a specialist), or <span class="underline">recommendation</span>.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>treatment may have a set of diseases that the patient is treated of</dd>
+<dt>Knowledge</dt><dd>treatment may have a set of medical actions</dd>
+<dt>Knowledge</dt><dd>medical action can be pharmacological, test order, visit (to a specialist), or recommendation.</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org7647b4d" class="outline-3">
+<h3 id="org7647b4d"><span class="section-number-3">1.4</span> 2d and 3d</h3>
+<div class="outline-text-3" id="text-1-4">
+<ol class="org-ol">
+<li>A chair is a raised surface used to sit on, commonly for use by <span class="underline">one</span> <code>number of</code> person.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>chair is a raised surface used to sit on</dd>
+<dt>Knowledge</dt><dd>chair is commonly used by one person at a time</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li>Chairs are most often supported by <span class="underline">four</span> <code>number of</code> legs and have a back; however, a chair can have <span class="underline">three</span> <code>number of</code> legs or could have a different shape.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>chair is often supported by four legs and have a back</dd>
+<dt>Knowledge</dt><dd>chair can vary in shape and number of legs</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li>A chair without a back or arm rests is a <span class="underline">stool</span> <code>type of chair</code>, or when raised up, a <span class="underline">bar stool</span> <code>type of chair</code>.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>stool is a chair without a back</dd>
+<dt>Knowledge</dt><dd>bar stool is a raised up stool</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li>A chair with arms is an <span class="underline">armchair</span> <code>type of chair</code> and with folding action and inclining footrest, a recliner.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>amrchair is a chair with arms, folding action, inclining footrest, recliner</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li>A permanently fixed chair in a train or theater is a <span class="underline">seat</span> <code>type of chair</code> or, in an airplane, <span class="underline">airline seat</span> <code>type of chair</code>; when riding, it is a <span class="underline">saddle</span> <code>type of chair</code> and <span class="underline">bicycle saddle</span> <code>type of chair</code>, and for an automobile, a <span class="underline">car seat</span> <code>type of chair</code> or <span class="underline">infant car seat</span> <code>type of chair</code>.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>seat is a permanently fixed chair</dd>
+<dt>Knowledge</dt><dd>airline seat is a seat in an airplane</dd>
+<dt>Knowledge</dt><dd>saddle is a seat used to ride</dd>
+<dt>Knowledge</dt><dd>bicycle saddle is a saddle for a bike</dd>
+<dt>Knowledge</dt><dd>car seat is a seat in a car</dd>
+<dt>Knowledge</dt><dd>infant car sear is a seat in a car</dd>
+<dt>Knowledge-what</dt><dd>it&rsquo;s a fact, describing specific nomenclature for different scenarios</dd>
+<dt>Knowledge-how</dt><dd>it&rsquo;s a rule, describing the underlying logic naming logic for some of the scenarios</dd>
+</dl></li>
+<li>With wheels it is a <span class="underline">wheelchair</span> <code>type of chair</code> and when hung from above, a <span class="underline">swing</span> <code>type of chair</code>.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>wheelchair is a chair with wheels</dd>
+<dt>Knowledge</dt><dd>swing is a hung chair</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org3c41cc8" class="outline-3">
+<h3 id="org3c41cc8"><span class="section-number-3">1.5</span> 2e and 3e</h3>
+<div class="outline-text-3" id="text-1-5">
+<ol class="org-ol">
+<li>The Nobel Prizes are <span class="underline">annual</span> <code>frequency</code> <span class="underline">international</span> <code>scope</code> awards bestowed by <span class="underline">Scandinavian committees</span> <code>awarder</code> in recognition of <span class="underline">cultural and scientific advances</span> <code>type of achievement</code>.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>nobel prizes are annual</dd>
+<dt>Knowledge</dt><dd>nobel prizes are international</dd>
+<dt>Knowledge</dt><dd>nobel prizes are awarded by Scandinavian commitees</dd>
+<dt>Knowledge</dt><dd>nobel prizes are awarded for cultural and scientific advances</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li>The will of the <span class="underline">Swedish</span> <code>nationality</code> <span class="underline">chemist</span> <code>qualification</code> <span class="underline">Alfred Nobel</span> <code>name</code>, the <span class="underline">inventor of dynamite</span> <code>achievement</code>, established the prizes in <span class="underline">1895</span> <code>year</code>.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>Alfred Nobel is swedish</dd>
+<dt>Knowledge</dt><dd>Alfred Nobel is a chemist</dd>
+<dt>Knowledge</dt><dd>Alfred Nobel is the inventor of dynamite</dd>
+<dt>Knowledge</dt><dd>Alfred Nobel established the nobel prizes in 1895</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li>The <span class="underline">2</span> <code>number of</code> prizes in <span class="underline">Physics</span>, <span class="underline">Chemistry</span>, <span class="underline">Physiology or Medicine</span>, <span class="underline">Literature</span>, and <span class="underline">Peace</span> were first awarded in <span class="underline">1901</span>.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>Physics, Chemistry, Physiology or Medicine, Literature, and Peace are nobel prizes</dd>
+<dt>Knowledge</dt><dd>Physics had 2 nobel prizes in 1901</dd>
+<dt>Know-fact</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li>The Peace Prize is awarded in <span class="underline">Oslo, Norway</span> <code>location</code>, while the other prizes are awarded in <span class="underline">Stockholm, Sweden</span> <code>location</code>.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>Peace prize is awarded in Oslo, Norway</dd>
+<dt>Knowledge</dt><dd>Physics, Chemistry, Physiology or Medicine, Literature are awarded in Stockholm, Sweden</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li>Each Nobel Prize is regarded as the <span class="underline">most prestigious</span> <code>level of recognition of</code> award  in its field.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>nobel prizes are the most prestigious award in their field</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li>In 1968, <span class="underline">Sveriges Riksbank</span> <code>name</code> instituted an award that is often associated with the Nobel prizes, the <span class="underline">Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel</span> <code>name of the prize</code>.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel is an award associated with the Nobel prizes</dd>
+<dt>Knowledge</dt><dd>Sveriges Riksbank instituted the Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li>The first such prize was awarded in <span class="underline">1969</span> <code>date of awarding</code>.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel was awarded for the first time in 1969</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li>Although it is <span class="underline">not an official Nobel Prize</span> <code>relationship with Nobel prize</code>,its <span class="underline">announcements and presentations</span> <code>events shared with Nobel prizes</code> are made along with the other prizes.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel is not an official nobel prize</dd>
+<dt>Knowledge</dt><dd>Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel shares announcements and presentations with nobel prizes</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li><span class="underline">The Royal Swedish Academy of Sciences</span> <code>awarder name</code> awards the <span class="underline">Nobel Prize in Physics</span>, the <span class="underline">Nobel Prize in Chemistry</span>, and the <span class="underline">Nobel Memorial Prize in Economic Sciences</span> <code>names of prizes</code>
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>The Royal Swedish Academy of Sciences awards Nobel Prize in Physics, the Nobel Prize in Chemistry, and the Nobel Memorial Prize in Economic Sciences</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li><span class="underline">The Nobel Assembly at Karolinska Institutet</span> <code>awarder name</code> awards the <span class="underline">Nobel Prize in Physiology or Medicine</span> <code>name of prize</code>.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>The Nobel Assembly at Karolinska Institutet awards the Nobel Prize in Physiology or Medicine.</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li><span class="underline">The Swedish Academy</span> <code>awarder name</code> grants the <span class="underline">Nobel Prize in Literature</span> <code>name of prize</code>
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>The Swedish Academy grants the Nobel Prize in Literature</dd>
+</dl></li>
+<li>The <span class="underline">Nobel Peace Prize</span> <code>name of prize</code> is not awarded by a Swedish organization but by the <span class="underline">Norwegian Nobel Committee</span> <code>awarder</code>.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>The Nobel Peace Prize is awarded by the Norwegian Nobel Committee</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li>Each recipient, or laureate, receives a <span class="underline">gold medal</span>, a <span class="underline">diploma</span>, and a <span class="underline">sum of money</span> <code>prizes of the award</code> which depends on the Nobel Foundation&rsquo;s income that year.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>the awarded of the nobel prize receives a gold medal, a diploma and a sum of money depending on the Nobel Foundation&rsquo;s income that year</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li>In <span class="underline">2011</span> <code>year</code>, each prize was worth <span class="underline">€1.15 million</span> <code>prize value</code>.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>the value of each noble prize was €1.15 million in 2011</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+</ol>
+
+<p>
+The whole text starting from sentence 9 and ending in sentence 12 may be also seen as a <code>Know-how</code> knowledge describing a rule deciciding who should be the awarder for a specific prize.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd5106e5" class="outline-3">
+<h3 id="orgd5106e5"><span class="section-number-3">1.6</span> 2f and 3f</h3>
+<div class="outline-text-3" id="text-1-6">
+<ol class="org-ol">
+<li>A <span class="underline">stock market</span> <code>type of market</code> is a <span class="underline">public market</span> <code>type of market</code> for the trading of company stock (shares) and derivatives at an agreed price.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>stock market is a public market</dd>
+<dt>Knowledge</dt><dd>company stock (shares) and derivatives are traded in a stock market</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li>A <span class="underline">share</span> <code>type of unit</code> is a unit of account for various financial instruments including stocks, and investments.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>a share is a unit of account used for financial instruments and investments</dd>
+<dt>Knowledge</dt><dd>a stock is a financial instrument</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li>On the other hand, a <span class="underline">derivative</span> <code>type of financial instrument</code> is a financial instrument that has a value, based on the expected future price movements of the asset to which it is linked.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>a derivative is a financial instrument</dd>
+<dt>Knowledge</dt><dd>the value of a derivative is based on the expected future price movements of the asset to which it is linked</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+</ol>
+
+<p>
+The whole text starting from sentence 2 and ending in sentence 3 may be also seen as a <code>Know-how</code> knowledge describing a rule to distinguish stock and derivatives.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org212ecaa" class="outline-3">
+<h3 id="org212ecaa"><span class="section-number-3">1.7</span> 2g and 3g</h3>
+<div class="outline-text-3" id="text-1-7">
+<ol class="org-ol">
+<li>Engines can be classified into <span class="underline">internal</span> <code>type of combustion</code> and <span class="underline">external</span> <code>type of combustion</code> <span class="underline">combustion</span> <code>type of engine</code> engines.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>combustion can be internal or external</dd>
+<dt>Knowledge</dt><dd>combustion engines can be classified on their type of combustion</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li><span class="underline">Internal combustion engines</span> ( <span class="underline">ICE</span> ) <code>type of engine</code> are engines in which the combustion of a fuel (substance) occurs with an oxidizer (substance) in a combustion chamber.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>in ICE the combustion of fuel (substance) occurs with an oxidizer (substance) in a combustion chamber.</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li>On the contrary, in <span class="underline">external combustion engines</span> ( <span class="underline">ECE</span> ) <code>type of engine</code>, such as <span class="underline">steam engines</span> or <span class="underline">Stirling engines</span> <code>types of engines</code>, the energy is delivered to a working fluid (substance) different of a combustion product.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>in ECE the energy is delivered to a working fluid (substance) different of a combustion product</dd>
+<dt>Knowledge</dt><dd>steam engines are ECE</dd>
+<dt>Knowledge</dt><dd>Stirling engines are ECE</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li>Working fluids can be <span class="underline">air</span>, <span class="underline">hot water</span>, or <span class="underline">pressurized water</span> <code>types of working fluids</code>.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>air, hot water and pressurized water can be working fluids</dd>
+</dl></li>
+</ol>
+
+<p>
+The whole text starting from sentence 1 and ending in sentence 4 may be also seen as a <code>Know-how</code> knowledge describing a rule to distinguish between different kind of engines.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9dfa5d8" class="outline-3">
+<h3 id="org9dfa5d8"><span class="section-number-3">1.8</span> 2h and 3h</h3>
+<div class="outline-text-3" id="text-1-8">
+<ol class="org-ol">
+<li><span class="underline">Chronic disease</span> <code>name of</code> treatment divides each disease in stages.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>chronic diseas treatment divides each disease in stages</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li>Patients that have <span class="underline">one</span> <code>number of</code> <span class="underline">chronic disease</span> <code>type of</code> are classified in <span class="underline">one</span> <code>number of</code> of these stages.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>a patient having a chronic diseases is classified in a disease&rsquo;s stage</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li><span class="underline">General</span> <code>type of</code> practitioners base their decisions in the current stage of the patient and the time this patient has been in that stage.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>a practitioner needs current stage and its duration to make a decision on a patient</dd>
+<dt>Know-what</dt><dd>it&rsquo;s a fact</dd>
+</dl></li>
+<li>In general, a patient that is in a <span class="underline">mild-moderate dangerous</span> <code>type of</code> stage ( <span class="underline">MDS</span> ) <code>type of</code> is asked to modify his/her lifestyle ( <span class="underline">diet, salt intake reduction, moderate exercise</span> ) <code>types of</code>, if the patient has been in a MDS for a significant period, he/she is prescribed with <span class="underline">one</span> <code>number of</code> drug to <span class="underline">minimal</span> <code>amount of</code> dosage, while the patient is not improving the dosage is increased with fix increments.
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>if patient is in MDS stage then ask to change lifestyle</dd>
+<dt>Knowledge</dt><dd>if patient is in MDS stage for a long time then prescribe minimal dose of a drug</dd>
+<dt>Knowledge</dt><dd>if patient is in MDS stage for a long time and he doesn&rsquo;t improve then increase dosage by fix increments</dd>
+<dt>Know-how</dt><dd>it&rsquo;s a rule, or better a procedure describing a sequence of steps dealing with multiple scenarios</dd>
+</dl></li>
+<li>If a <span class="underline">maximal</span> <code>amount of</code> dosage is reached, then a second drug to <span class="underline">minimal</span> <code>amount of</code> dosage is prescribed
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>if dosage is maximal then prescribe second drug at minimal dosage</dd>
+<dt>Know-how</dt><dd>part of the previous procedure</dd>
+</dl></li>
+<li>Patients can reach treatments with <span class="underline">4</span> <code>number of</code> drugs
+<dl class="org-dl">
+<dt>Knowledge</dt><dd>if dosage is maximal then prescribe second drug at minimal dosage</dd>
+<dt>Know-how</dt><dd>can be seen as a part of the previous procedure</dd>
+<dt>Know-what</dt><dd>or as a general fact</dd>
+</dl></li>
+<li>Patients that arrive in <span class="underline">highly dangerous</span> <code>type of</code> stage ( <span class="underline">HDS</span> ) <code>type of</code> are directly prescribed with <span class="underline">one</span> <code>number of</code> drug and recommended lifestyle changes.
+<dl class="org-dl">
+<dt>Know-what</dt><dd>it&rsquo;s a rule</dd>
+</dl></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org34bed79" class="outline-2">
+<h2 id="org34bed79"><span class="section-number-2">2</span> <span class="todo TODO">TODO</span> Knowledge Representation</h2>
+</div>
+<div id="outline-container-org2609371" class="outline-2">
+<h2 id="org2609371"><span class="section-number-2">3</span> <span class="todo TODO">TODO</span> Knowledge Engineering</h2>
+</div>
+<div id="outline-container-orgbc5c9b7" class="outline-2">
+<h2 id="orgbc5c9b7"><span class="section-number-2">4</span> <span class="todo TODO">TODO</span> Knowledge Representation in the Web</h2>
+</div>
+</div>
+</body>
+</html>
