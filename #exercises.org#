@@ -1,26 +1,26 @@
 #+TITLE: Knowledge Representation and Engineering - Exercises
 #+AUTHOR:
-#+LATEX_CLASS_OPTIONS: [a4paper,10pt,twoside,twocolumn]
+#+LATEX=CLASS=OPTIONS: [a4paper,10pt,twoside,twocolumn]
 * Introduction and Concepts
 
-- Exercise 1 :: What is *data*? What is *information*? What is *knowledge*?
+- Exercise 1 :: What is =data=? What is =information=? What is =knowledge=?
   - Data :: A raw value without context, it simply exists in its form (either usable or not)
   - Information :: Data + Meaning, it can change the perception of the receiver about something
-    - Meanings :: The *five C's of Davenport & Prusak* describe what can give meaning to data
+    - Meanings :: The =five C's of Davenport & Prusak= describe what can give meaning to data
       - Contextualization :: Purpose of data
       - Categorization :: Classified or generalization to concepts
       - Calculation :: Mathematical or statistical analysis
       - Correction :: Removal of erros
       - Condensation :: Removal of unnecessary elements
   - Knowledge :: Information + "something", generalized to increase applicability. What is "something"?
-    - The *four C's of Davenport & Prusak* describe what "something" can be
+    - The =four C's of Davenport & Prusak= describe what "something" can be
       - Comparison :: Similarity to other contexts
       - Consequence :: Implication in decision taking
       - Connection :: Relationship with other information
       - Conversation :: Feedback of people
-    - Tobin :: "something" * application
-- Exercises 2 :: Identify the underlined sentences of the following paragraphs as *data*, *information* or *knowledge*.
-- Exercise 3 :: Identify *know-what* and *know-how* knowledge
+    - Tobin :: "something" = application
+- Exercises 2 :: Identify the underlined sentences of the following paragraphs as =data=, =information= or =knowledge=.
+- Exercise 3 :: Identify =know-what= and =know-how= knowledge
 
 About the following exercises
 - Exercises 2 and 3 are grouped together for convenience
@@ -32,29 +32,29 @@ About the following exercises
 
 ** 2a and 3a
 
- 1) This course of =Knowledge Representation and Engineering= ~course name~ is composed of =three= ~number of~ chapters:  =Introduction  and  Concepts= ~chapter name~, =Knowledge  Representation= ~chapter name~, and =Knowledge Engineering= ~chapter name~.
+ 1) This course of _Knowledge Representation and Engineering_ ~course name~ is composed of _three_ ~number of~ chapters:  _Introduction  and  Concepts_ ~chapter name~, _Knowledge  Representation_ ~chapter name~, and _Knowledge Engineering_ ~chapter name~.
     + Knowledge :: Knowledge Representation and Engineering is a course
     + Knowledge :: Knowledge Representation and Engineering is composed by three chapters
     + Knowledge :: Introduction and Concepts is a chapter of Knowledge Representation and Engineering
     + Knowledge :: Knowledge Representation Knowledge Representation and Engineering
     + Knowledge :: Knowledge Engineering chapter Knowledge Representation and Engineering
     + Know-what :: it's a fact
- 2) It’s a =six=-credit ~number of~ course with =two= ~number of~ week hours for theory and =two= ~number of~ week hours for problems and practice.
+ 2) It’s a _six_-credit ~number of~ course with _two_ ~number of~ week hours for theory and _two_ ~number of~ week hours for problems and practice.
     + Knowledge :: Knowledge Representation and Endineering is a six-credit course
     + Knowledge :: Knowledge Representation and Endineering has two week hours for theory
     + Knowledge :: Knowledge Representation and Endineering has two week hours for problems and practice
     + Know-what :: it's a fact
- 3) Like all the other subjects in the master, =half= ~amount~ of the practical hours will be off class.
+ 3) Like all the other subjects in the master, _half_ ~amount~ of the practical hours will be off class.
     + Knowledge :: Knowledge Representation and Endineering is a subject of the master
     + Knowledge :: All the subjects in the master have half of the practical hours off class
     + Know-how :: it's a fact
  4) As the rest of subjects, KRE will be continuously evaluated.
     + Knowledge :: All the subjects in the master are continouosly evaluated
     + Know-what :: it's a fact
- 5) Continuous evaluation in KRE will consist of =two= ~amount of~ theoretical-practical tests, and =two= ~amount of~ practical work deliveries.
+ 5) Continuous evaluation in KRE will consist of _two_ ~amount of~ theoretical-practical tests, and _two_ ~amount of~ practical work deliveries.
     + Knowledge :: The continuous evaluation of Knowledge Representation and Endineering consists of two theoretical-practical tests, and two practical work deliveries
     + Know-what :: it's a fact
- 6) The final mark will be calculated as =30%= ~amount~ of the results of each one of the theoretical tests and =20%= ~amount~ of each practical work.
+ 6) The final mark will be calculated as _30%_ ~amount~ of the results of each one of the theoretical tests and _20%_ ~amount~ of each practical work.
     + Knowledge :: The final mark of Knowledge Representation and Endineering is 30% of the results of each one of the theoretical tests and 20% amount of each practical work
     + Know-how :: it's a rule
  7) For second evaluation, there will be a single exam.
@@ -63,10 +63,10 @@ About the following exercises
 
 ** 2b and 3b
 
- 1) Computer =hardware= ~part~ equals the collection of =physical= ~type of~ elements that comprise a computer system.
+ 1) Computer _hardware_ ~part~ equals the collection of _physical_ ~type of~ elements that comprise a computer system.
     + Knowledge :: computer hardware is the collection of physical elements that comprise a computer system
     + Know-what :: it's a fact
- 2) Computer hardware refers to the =physical= ~type of~ parts or components of a computer such as =monitor= ~part name~, =keyboard= ~part name~, =hard drive disk= ~component name~, =mouse= ~part name~, =printers= ~part name~, =graphic cards= ~component~, =sound cards= ~component name~, memory ~component name~, motherboard ~component name~ and chips ~component name~, etc. all of which are =physical= ~type of~ objects that you can actually touch.
+ 2) Computer hardware refers to the _physical_ ~type of~ parts or components of a computer such as _monitor_ ~part name~, _keyboard_ ~part name~, _hard drive disk_ ~component name~, _mouse_ ~part name~, _printers_ ~part name~, _graphic cards_ ~component~, _sound cards_ ~component name~, memory ~component name~, motherboard ~component name~ and chips ~component name~, etc. all of which are _physical_ ~type of~ objects that you can actually touch.
     + Knowledge :: computer hardware is a collection of physical elements that are parts/components of a computer system
     + Knowledge :: monitor, hard drive disk, mouse, printers, graphic cards, sound cards, memory, motherboard, chips are part of computer hardware
     + Know-what :: it's a fact
@@ -83,11 +83,11 @@ About the following exercises
 
 ** 2c and 3c
 
- 1) Primary care is the health care given by a =health care provider= ~role~.
+ 1) Primary care is the health care given by a _health care provider_ ~role~.
     + Knowledge :: primary care is health care
     + Knowlegde :: health care provider provides primary care
     + Know-what :: it's a fact
- 2) Typically this provider acts as the principal point of consultation for =patients= ~role~ within a health care system and coordinates other =specialists= ~role~ that the patient may need.
+ 2) Typically this provider acts as the principal point of consultation for _patients_ ~role~ within a health care system and coordinates other _specialists_ ~role~ that the patient may need.
     + Knowledge :: health care provider is the principal consultant for patients
     + Knowledge :: health care provider coordinates other specialists
     + Know-what :: it's a fact
@@ -127,11 +127,11 @@ About the following exercises
 
 ** 2d and 3d
 
- 1) A chair is a raised surface used to sit on, commonly for use by =one= ~number of~ person.
+ 1) A chair is a raised surface used to sit on, commonly for use by _one_ ~number of~ person.
     + Knowledge :: chair is a raised surface used to sit on
     + Knowledge :: chair is commonly used by one person at a time
     + Know-what :: it's a fact
- 2) Chairs are most often supported by =four= ~number of~ legs and have a back; however, a chair can have =three= ~number of~ legs or could have a different shape.
+ 2) Chairs are most often supported by _four_ ~number of~ legs and have a back; however, a chair can have _three_ ~number of~ legs or could have a different shape.
     + Knowledge :: chair is often supported by four legs and have a back
     + Knowledge :: chair can vary in shape and number of legs
     + Know-what :: it's a fact
@@ -158,13 +158,13 @@ About the following exercises
 
 ** 2e and 3e
 
-1) The Nobel Prizes are =annual= ~frequency~ =international= ~scope~ awards bestowed by =Scandinavian committees= ~awarder~ in recognition of =cultural and scientific advances= ~type of achievement~.
+1) The Nobel Prizes are _annual_ ~frequency~ _international_ ~scope~ awards bestowed by _Scandinavian committees_ ~awarder~ in recognition of _cultural and scientific advances_ ~type of achievement~.
    + Knowledge :: nobel prizes are annual
    + Knowledge :: nobel prizes are international
    + Knowledge :: nobel prizes are awarded by Scandinavian commitees
    + Knowledge :: nobel prizes are awarded for cultural and scientific advances
    + Know-what :: it's a fact
-2) The will of the =Swedish= ~nationality~ =chemist= ~qualification~ =Alfred Nobel= ~name~, the =inventor of dynamite= ~achievement~, established the prizes in =1895= ~year~.
+2) The will of the _Swedish_ ~nationality~ _chemist_ ~qualification~ _Alfred Nobel_ ~name~, the _inventor of dynamite_ ~achievement~, established the prizes in _1895_ ~year~.
    + Knowledge :: Alfred Nobel is swedish
    + Knowledge :: Alfred Nobel is a chemist
    + Knowledge :: Alfred Nobel is the inventor of dynamite
@@ -210,14 +210,14 @@ About the following exercises
     + Knowledge :: the value of each noble prize was €1.15 million in 2011
     + Know-what :: it's a fact
 
-The whole text starting from sentence 9 and ending in sentence 12 may be also seen as a *Know-how* knowledge describing a rule deciciding who should be the awarder for a specific prize.
+The whole text starting from sentence 9 and ending in sentence 12 may be also seen as a =Know-how= knowledge describing a rule deciciding who should be the awarder for a specific prize.
 
 ** 2f and 3f
- 1) A =stock market= ~type of market~ is a =public market= ~type of market~ for the trading of company stock (shares) and derivatives at an agreed price.
+ 1) A _stock market_ ~type of market~ is a _public market_ ~type of market~ for the trading of company stock (shares) and derivatives at an agreed price.
     + Knowledge :: stock market is a public market
     + Knowledge :: company stock (shares) and derivatives are traded in a stock market
     + Know-what :: it's a fact
- 2) A =share= ~type of unit~ is a unit of account for various financial instruments including stocks, and investments.
+ 2) A _share_ ~type of unit~ is a unit of account for various financial instruments including stocks, and investments.
     + Knowledge :: a share is a unit of account used for financial instruments and investments
     + Knowledge :: a stock is a financial instrument
     + Know-what :: it's a fact
@@ -226,15 +226,15 @@ The whole text starting from sentence 9 and ending in sentence 12 may be also se
     + Knowledge :: the value of a derivative is based on the expected future price movements of the asset to which it is linked
     + Know-what :: it's a fact
 
-The whole text starting from sentence 2 and ending in sentence 3 may be also seen as a *Know-how* knowledge describing a rule to distinguish stock and derivatives.
+The whole text starting from sentence 2 and ending in sentence 3 may be also seen as a =Know-how= knowledge describing a rule to distinguish stock and derivatives.
 
 ** 2g and 3g
 
- 1) Engines can be classified into =internal= ~type of combustion~ and =external= ~type of combustion~ =combustion= ~type of engine~ engines.
+ 1) Engines can be classified into _internal_ ~type of combustion~ and _external_ ~type of combustion~ _combustion_ ~type of engine~ engines.
     + Knowledge :: combustion can be internal or external
     + Knowledge :: combustion engines can be classified on their type of combustion
     + Know-what :: it's a fact
- 2) =Internal combustion engines= ( =ICE= ) ~type of engine~ are engines in which the combustion of a fuel (substance) occurs with an oxidizer (substance) in a combustion chamber.
+ 2) _Internal combustion engines_ ( _ICE_ ) ~type of engine~ are engines in which the combustion of a fuel (substance) occurs with an oxidizer (substance) in a combustion chamber.
     + Knowledge :: in ICE the combustion of fuel (substance) occurs with an oxidizer (substance) in a combustion chamber.
     + Know-what :: it's a fact
  3) On the contrary, in =external combustion engines= ( =ECE= ) ~type of engine~, such as =steam engines= or =Stirling engines= ~types of engines~, the energy is delivered to a working fluid (substance) different of a combustion product.
@@ -245,16 +245,16 @@ The whole text starting from sentence 2 and ending in sentence 3 may be also see
  4) Working fluids can be =air=, =hot water=, or =pressurized water= ~types of working fluids~.
     + Knowledge :: air, hot water and pressurized water can be working fluids
 
-The whole text starting from sentence 1 and ending in sentence 4 may be also seen as a *Know-how* knowledge describing a rule to distinguish between different kind of engines.
+The whole text starting from sentence 1 and ending in sentence 4 may be also seen as a =Know-how= knowledge describing a rule to distinguish between different kind of engines.
 
 ** 2h and 3h
-1) =Chronic disease= ~name of~ treatment divides each disease in stages.
+1) _Chronic disease_ ~name of~ treatment divides each disease in stages.
    + Knowledge :: chronic diseas treatment divides each disease in stages
    + Know-what :: it's a fact
-2) Patients that have =one= ~number of~ =chronic disease= ~type of~ are classified in =one= ~number of~ of these stages.
+2) Patients that have _one_ ~number of~ _chronic disease_ ~type of~ are classified in _one_ ~number of~ of these stages.
    + Knowledge :: a patient having a chronic diseases is classified in a disease's stage
    + Know-what :: it's a fact
-3) =General= ~type of~ practitioners base their decisions in the current stage of the patient and the time this patient has been in that stage.
+3) _General_ ~type of~ practitioners base their decisions in the current stage of the patient and the time this patient has been in that stage.
    + Knowledge :: a practitioner needs current stage and its duration to make a decision on a patient
    + Know-what :: it's a fact
 4) In general, a patient that is in a =mild-moderate dangerous= ~type of~ stage ( =MDS= ) ~type of~ is asked to modify his/her lifestyle ( =diet, salt intake reduction, moderate exercise= ) ~types of~, if the patient has been in a MDS for a significant period, he/she is prescribed with =one= ~number of~ drug to =minimal= ~amount of~ dosage, while the patient is not improving the dosage is increased with fix increments.
