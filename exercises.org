@@ -257,7 +257,7 @@ The whole text starting from sentence 1 and ending in sentence 4 may be also see
 3) ~General~ /type of/ practitioners base their decisions in the current stage of the patient and the time this patient has been in that stage.
    + Knowledge :: a practitioner needs current stage and its duration to make a decision on a patient
    + Know-what :: it's a fact
-4) In general, a patient that is in a ~mild-moderate dangerous~ /type of/ stage ( ~MDS~ ) /type of/ is asked to modify his~her lifestyle ( ~diet, salt intake reduction, moderate exercise~ ) /types of/, if the patient has been in a MDS for a significant period, he~she is prescribed with ~one~ /number of/ drug to ~minimal~ /amount of/ dosage, while the patient is not improving the dosage is increased with fix increments.
+4) In general, a patient that is in a ~mild-moderate dangerous~ /type of/ stage ( ~MDS~ ) /type of/ is asked to modify his-her lifestyle ( ~diet, salt intake reduction, moderate exercise~ ) /types of/, if the patient has been in a MDS for a significant period, he~she is prescribed with ~one~ /number of/ drug to ~minimal~ /amount of/ dosage, while the patient is not improving the dosage is increased with fix increments.
    + Knowledge :: if patient is in MDS stage then ask to change lifestyle
    + Knowledge :: if patient is in MDS stage for a long time then prescribe minimal dose of a drug
    + Knowledge :: if patient is in MDS stage for a long time and he doesn't improve then increase dosage by fix increments

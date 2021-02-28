@@ -1,22 +1,22 @@
 
 # Table of Contents
 
-1.  [Introduction and Concepts](#org7cc791c)
-    1.  [2a and 3a](#org94adc7b)
-    2.  [2b and 3b](#org949ba65)
-    3.  [2c and 3c](#org6abd4f0)
-    4.  [2d and 3d](#orgb87dfd5)
-    5.  [2e and 3e](#orgd267aa8)
-    6.  [2f and 3f](#org3f6edd0)
-    7.  [2g and 3g](#org139b31a)
-    8.  [2h and 3h](#org13a4c23)
-2.  [Knowledge Representation](#org51c7f00)
-3.  [Knowledge Engineering](#org0e80d51)
-4.  [Knowledge Representation in the Web](#org8c0dd3d)
+1.  [Introduction and Concepts](#orgffe1460)
+    1.  [2a and 3a](#org771041a)
+    2.  [2b and 3b](#orgb488b3c)
+    3.  [2c and 3c](#org980f854)
+    4.  [2d and 3d](#org2e7349c)
+    5.  [2e and 3e](#orga1269cf)
+    6.  [2f and 3f](#org933ee18)
+    7.  [2g and 3g](#org0eb52b0)
+    8.  [2h and 3h](#orge54ca35)
+2.  [Knowledge Representation](#org7b09381)
+3.  [Knowledge Engineering](#org16f0650)
+4.  [Knowledge Representation in the Web](#orge2f5a98)
 
 
 
-<a id="org7cc791c"></a>
+<a id="orgffe1460"></a>
 
 # Introduction and Concepts
 
@@ -49,7 +49,7 @@ About the following exercises
     -   **Know-how:** if the extracted knowledge can be interpreted as a rule
 
 
-<a id="org94adc7b"></a>
+<a id="org771041a"></a>
 
 ## 2a and 3a
 
@@ -83,7 +83,7 @@ About the following exercises
     -   **Know-what:** it&rsquo;s a fact
 
 
-<a id="org949ba65"></a>
+<a id="orgb488b3c"></a>
 
 ## 2b and 3b
 
@@ -106,7 +106,7 @@ About the following exercises
     -   **Know-what:** it&rsquo;s a fact
 
 
-<a id="org6abd4f0"></a>
+<a id="org980f854"></a>
 
 ## 2c and 3c
 
@@ -153,7 +153,7 @@ About the following exercises
     -   **Know-what:** it&rsquo;s a fact
 
 
-<a id="orgb87dfd5"></a>
+<a id="org2e7349c"></a>
 
 ## 2d and 3d
 
@@ -187,7 +187,7 @@ About the following exercises
     -   **Know-what:** it&rsquo;s a fact
 
 
-<a id="orgd267aa8"></a>
+<a id="orga1269cf"></a>
 
 ## 2e and 3e
 
@@ -246,7 +246,7 @@ About the following exercises
 The whole text starting from sentence 9 and ending in sentence 12 may be also seen as a **Know-how** knowledge describing a rule deciciding who should be the awarder for a specific prize.
 
 
-<a id="org3f6edd0"></a>
+<a id="org933ee18"></a>
 
 ## 2f and 3f
 
@@ -266,7 +266,7 @@ The whole text starting from sentence 9 and ending in sentence 12 may be also se
 The whole text starting from sentence 2 and ending in sentence 3 may be also seen as a **Know-how** knowledge describing a rule to distinguish stock and derivatives.
 
 
-<a id="org139b31a"></a>
+<a id="org0eb52b0"></a>
 
 ## 2g and 3g
 
@@ -288,7 +288,7 @@ The whole text starting from sentence 2 and ending in sentence 3 may be also see
 The whole text starting from sentence 1 and ending in sentence 4 may be also seen as a **Know-how** knowledge describing a rule to distinguish between different kind of engines.
 
 
-<a id="org13a4c23"></a>
+<a id="orge54ca35"></a>
 
 ## 2h and 3h
 
@@ -301,7 +301,7 @@ The whole text starting from sentence 1 and ending in sentence 4 may be also see
 3.  `General` *type of* practitioners base their decisions in the current stage of the patient and the time this patient has been in that stage.
     -   **Knowledge:** a practitioner needs current stage and its duration to make a decision on a patient
     -   **Know-what:** it&rsquo;s a fact
-4.  In general, a patient that is in a `mild-moderate dangerous` *type of* stage ( `MDS` ) *type of* is asked to modify his~her lifestyle ( `diet, salt intake reduction, moderate exercise` ) *types of*, if the patient has been in a MDS for a significant period, he~she is prescribed with `one` *number of* drug to `minimal` *amount of* dosage, while the patient is not improving the dosage is increased with fix increments.
+4.  In general, a patient that is in a `mild-moderate dangerous` *type of* stage ( `MDS` ) *type of* is asked to modify his-her lifestyle ( `diet, salt intake reduction, moderate exercise` ) *types of*, if the patient has been in a MDS for a significant period, he~she is prescribed with `one` *number of* drug to `minimal` *amount of* dosage, while the patient is not improving the dosage is increased with fix increments.
     -   **Knowledge:** if patient is in MDS stage then ask to change lifestyle
     -   **Knowledge:** if patient is in MDS stage for a long time then prescribe minimal dose of a drug
     -   **Knowledge:** if patient is in MDS stage for a long time and he doesn&rsquo;t improve then increase dosage by fix increments
@@ -317,16 +317,16 @@ The whole text starting from sentence 1 and ending in sentence 4 may be also see
     -   **Know-what:** it&rsquo;s a rule
 
 
-<a id="org51c7f00"></a>
+<a id="org7b09381"></a>
 
 # TODO Knowledge Representation
 
 
-<a id="org0e80d51"></a>
+<a id="org16f0650"></a>
 
 # TODO Knowledge Engineering
 
 
-<a id="org8c0dd3d"></a>
+<a id="orge2f5a98"></a>
 
 # TODO Knowledge Representation in the Web
