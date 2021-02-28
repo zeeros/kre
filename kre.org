@@ -79,14 +79,12 @@
   - Correction :: Removal of erros
   - Condensation :: Removal of unnecessary elements
 - Knowledge :: Information + "something", generalized to increase applicability. What is "something"?
-  - For Davenport and Prusak, the four C's describe it asyes
-
+  - For Davenport and Prusak, the four C's describe it as
     - Comparison :: Similarity to other contexts
     - Consequence :: Implication in decision taking
     - Connection :: Relationship with other information
     - Conversation :: Feedback of people
-  - For Tobin, "something" is an ayes
-pplication
+  - For Tobin, "something" is an application
 
 - Wisdom :: Knowledge + Intuition + Experience
 - Expertise :: Wisdom + Selection + Principles + Constrains + Learning
