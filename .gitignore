@@ -2,3 +2,5 @@
 ltximg
 /practicals
 *.tex
+*.key
+#*
