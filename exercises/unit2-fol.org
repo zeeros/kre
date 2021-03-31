@@ -1,1 +1,292 @@
-#+TITLE: Unit 2 - Knowledge Representation: First Order Logic
+#+TITLE: First Order Logic
+#+AUTHOR:
+
+* Exercise 4
+
+Provide expressions to represent the following facts in FOL
+
+** Men are not women
+$\forall x\ men(x) \supset \neg women(x)$
+** Surgeons are doctors
+$\forall x\ surgeon(x) \supset doctor(x)$
+** Adults can only be Men and Women
+$\forall x\ adult(x) \supset man(x) \vee woman(x)$
+** If a person marries another person, this one is also married to the first one
+$\forall x \forall y\ married(x,y) \supset married(y,x)$
+** Parents have children
+$\forall x \exists y\ parent(x) \supset haschild(x,y)$
+** Adults are defined as Men and Women who are older than 18
+$\forall x\ adult(x) \supset (man(x) \vee woman(x)) \wedge \neg minor(x)$
+** Marriage is only allowed between two Adults
+$\forall x \forall y\ married(x,y) \supset adult(x) \wedge adult(y)$
+** A person cannot be married to two or more different persons
+$\forall x \forall y \forall z\ married(x,y) \wedge married(y,z) \supset (z=x)$
+** Two persons can only get divorced if they are previously married
+$\forall x \forall y\ candivorce(x,y) \supset married(x,y)$
+** People can only be given birth by a Man and a Woman
+$\forall z \exists x \exists y\ haschild(x,z) \wedge haschild(y,z) \supset man(x) \wedge woman(y)$
+
+* Exercise 5
+
+Formalize the following sentences as FOL expressions, after identifying function symbols and predicate symbols.
+
+Given a domain, we can construct a FOL knowledge base following these steps
+- Named individuals :: $mike$, $mary$
+- No-named individuals :: $boy_1$, $tshirt_1$, $tshirt_2$
+- Types :: $Boy$, $Girl$, $TShirt$, $Person$, $Symbol$
+- Properties :: $Color$, $Symbol$, $Age$
+- Relationships :: $Younger(x,y)$, $Wears(x,y)$, $Youngest(x)$
+- Functions :: $countWearing(tshirt, color, symbol)$, $age(x)$
+
+** Mike is younger than the boy in the green T-shirt
+$Boy(boy_1)$, $TShirt(tshirt_1)$, $Wears(boy_1, tshirt_1)$, $Color(tshirt_1, green)$, $Younger(mike, boy_1)$
+** The five-year boy wore a T-shirt with a square symbol
+$Age(boy_1,5)$, $Symbol(tshirt_1, square)$
+** Mike’s T-shirt is yellow
+$TShirt(tshirt_{mike})$, $Wears(mike,tshirt_{mike})$, $Color(tshirt_{mike},yellow)$
+** Mary’s T-shirt does not bear a square symbol
+$Girl(mary)$, $TShirt(tshirt_{mary})$, $Wears(mary,tshirt_{mary})$, $\neg Symbol(tshirt_{mary}, square)$
+** Square symbols cannot appear in white T-shirts.
+$\forall x\ TShirt(x) \wedge Color(x, white) \supset \neg Symbol(x,square)$
+** The youngest person cannot wear a T-shirt
+$\forall x \forall t\ youngest(x) \wedge TShirt(t) \supset \neg Wears(x,t) \wedge youngest(x) = person(x) \wedge (\forall z\ person(x) \supset younger(x,z))$
+** There are three T-shirt symbols: squares, pictures, and circles
+$\forall t \forall s\ TShirt(t) \wedge Symbol(t,s) \supset Symbol(t, square) \vee Symbol(t, picture) \vee Symbol(t, circle)$
+** There is not a person wearing a T-shirt with a circle if there’s another person older than the first one wearing a square
+$\forall x \forall t_1\ (\exists y \exists t\ Wears(x,t) \wedge Symbol(t,square) \wedge age(y) > age(x)) \supset \neg(Wears(x,t_1) \wedge Symbol(t_1, circle))$
+** Everybody wearing a T-shirt is older than any other not wearing a T-shirt
+$\forall x \forall y \forall t_x \forall t_y\ Wears(x,t) \wedge TShirt(t_x) \wedge Wears(y,t_y) \wedge TShirt(t_y) \supset age(x) > age(y)$
+** The number of people wearing a T-shirt yellow, are bigger than the ones not wearing a T-shirt with a square
+$countWearing(true,yellow,any) > countWearing(any, any,\{picture, circle, none\})$
+
+* Exercise 6
+
+Given the following description “Tony, Mike, and John belong to the Alpine Club. Every member of the Alpine Club who is not a skier is a mountain climber. Mountain climbers do not like rain, and anyone who does no like snow is not a skier. Mike dislikes whatever Tony likes, and likes whatever Tony dislikes.”
+
+** Formalize this knowledge as FOL expressions
+
+1. Tony, Mike, and John belong to the Alpine Club
+  $in(tony,aclub)$, $in(mike,aclub)$, $in(john,aclub)$
+2. Every member of the Alpine Club who is not a skier is a mountain climber
+  $\forall x\ in(x,aclub) \wedge \neg skier(x) \supset climber(x)$
+3. Mountain climbers do not like rain, and anyone who does no like snow is not a skier
+  $\forall x\ climber(x) \supset \neg like(x,rain)$
+  $\forall x\ \neg like(x,snow) \supset \neg skier(x)$
+4. Mike dislikes whatever Tony likes, and likes whatever Tony dislikes
+  $\forall a\ like(tony,a) \supset \neg like(mike, a)$
+  $\forall a\ \neg like(tony,a) \supset like(mike, a)$
+
+** Find out whether Tony is a mountain climber or not. Is it possible?
+
+We don't have enough knowledge to state if Tony is a mountain climber or not.
+
+** What do you know about John?
+
+- $in(john,aclub)=true$
+- $\neg skier(john) \supset climber(john)$
+- $climber(john) \supset \neg like(john,rain)$
+- $\neg like(john,snow) \supset \neg skier(john)$
+
+** Prove that there is a member of the Alpine Club who is a mountain climber but not a skier
+
+1. Tony dislikes anything that Mike likes (and the other way around)
+2. Either Tony or Mike dislikes snow
+3. Either Tony or Mike is not a skier
+4. Either Tony or Mike is a mountain climber
+5. Either Tony or Mike is not a mountain climber (due to point 1)
+
+** Suppose that Mary, a new member of the Alpine Club, likes what Mike and John likes. What can you say about Mary
+
+The fact that Mary is a new member implies all the following
+- $in(mary,aclub)=true$
+- $\neg skier(mary) \supset climber(mary)$
+- $climber(mary) \supset \neg like(mary,rain)$
+- $\neg like(mary,snow) \supset \neg skier(mary)$
+Remeber that $\forall a\ like(tony,a) \supset \neg like(mike, a)$ and $\forall a\ \neg like(tony,a) \supset like(mike, a)$
+In natural language, the phrase =Likes what Mike and John likes= can be interpreted as
+- Conjunction :: $\forall a\ like(mike,a) \wedge like(john,a) \supset like(mary,a)$
+  - Equivalence :: $\forall a\ like(mary,a) \supset like(mike,a) \wedge like(john,a)$
+  - Partial :: $\exists a\ like(mary,a) \supset \neg(like(mike,a) \wedge like(john,a)) \supset \neg like(mike,a) \vee \neg like(john,a) \supset like(tony,a)$
+- Inclusive disjunction :: $\forall a\ like(mike,a) \vee like(john,a) \supset like(mary,a)$
+  - Equivalence :: $\forall a\ like(mary,a) \supset like(mike,a) \vee like(john,a)$
+  - Partial :: $\exists a\ like(mary,a) \supset \neg(like(mike,a) \vee like(john,a)) \supset \neg like(mike,a) \wedge \neg like(john,a) \supset like(tony,a)$
+
+* Exercise 7
+
+Given the relationship $Parent(x,y)$ representing the fact “$x$ is parent of $y$”, and $Male(x)$ representing “$x$ is male”, define in FOL the following family relationships
+
+** Son,  Daughter,  Brother,  Sister,  Sibling,  Ancestor,  Father,  Mother,  Grandfather, Grandmother, Uncle, Aunt, Cousin, and Nephew.
+
+- Son :: $Parent(x,y) \wedge Male(y) \supset Son(y,x)$
+- Daughter :: $Parent(x,y) \wedge \neg Male(y) \supset Daughter(y,x)$
+- Brother :: $Parent(x,y) \wedge Son(z,x) \supset Brother(z,y)$
+- Sister :: $Parent(x,y) \wedge Daughter(z,x) \supset Sister(z,y)$
+- Sibling :: $Brother(x,y) \vee Sister(x,y) \supset Sibling(x,y)$
+- Ancestor :: $Parent(x,y) \vee (Parent(x,z) \wedge Ancestor(z,y))) \supset Ancestor(x,y)$
+- Father :: $(Son(y,x) \vee Daughter(y,x)) \wedge Son(x,z) \supset Father(x,y)$
+- Mother :: $(Son(y,x) \vee Daughter(y,x)) \wedge Daughter(x,z) \supset Mother(x,y)$
+- Grandfather :: $Father(x,z) \wedge (Father(z,y) \vee Mother(z,y)) \supset Grandfather(x,y)$
+- Grandmother :: $Mother(x,z) \wedge (Father(z,y) \vee Mother(z,y)) \supset Grandmother(x,y)$
+- Uncle :: $Brother(x,z) \wedge (Father(z,y) \vee Mother(z,y)) \supset Uncle(x,y)$
+- Aunt :: $Sister(x,z) \wedge (Father(z,y) \vee Mother(z,y)) \supset Aunt(x,y)$
+- Cousin :: $(Son(x,t) \vee Daughter(x,t)) \wedge Sibling(t,z) \wedge (Father(z,y) \vee Mother(z,y)) \supset Cousin(x,y)$
+- Nephew :: $Sibling(y,t)\wedge (Father(t,x) \vee (Mother(t,x)) \supset Nephew(x,y)$
+
+** John has not children. Jon has not siblings.
+$\neg(\exists x\ Father(john,x))$, $\neg(\exists x\ Sibling(john,x))$
+** John’s parents are Mary (female) and Paul (male).
+$Mother(mary, john)$, $Father(paul, john)$
+** John’s sister has some children.
+$\exists x\ \exists y Sister(x, john) \wedge Mother(x,y)$
+** The mother of Mary is the aunt of Michael.
+$\exists x\ Mother(mary, x) \wedge Aunt(x, michael)$
+
+* Exercise 8
+
+Given the simplified set theory in which all the variables are considered sets, and using the predicates $Sub(x,y)=\text{"x is a subset of y"}$, $E(e,x)=\text{"e is an element of the set x"}$, and the functions $u(x,y)=\text{"the union of x and y"}$, $i(x,y)=\text{"the intersection of x and y"}$; provide FOL expressions to represent the following knowledge:
+
+** No set is an element of itself
+$\forall e \forall x\ E(e,x) \supset e \neq x$
+** A set $x$ is a subset of a set $y$ iff every element of $x$ is an element of $y$
+$\forall x \forall y \forall e\ E(E(e,x), y) \supset Sub(x,y)$
+** Something is an element of the union of two sets x and y iff it is an element of x or an element of y
+$\forall x \forall y \forall e\ E(e,x) \vee E(e,y) \supset E(e, u(x,y))$
+** Something is an element of the intersection of two sets x and y iff it is an element of x and an element of y
+$\forall x \forall y \forall e\ E(e,x) \wedge E(e,y) \supset E(e, i(x,y))$
+
+* Exercise 9
+
+Let $C(x)$ be the statement “x has a cat”, let $D(x)$ be the statement “x has a dog”, and let $F(x)$ be the statement “x has a ferret”. Express each of these statements in first-order logic using these relations. Let the domain be your classmates.
+
+** A classmate has a cat, a dog, and a ferret.
+$\exists x\ C(x) \wedge D(x) \wedge F(x)$
+** All your classmates have a cat, a dog, or a ferret.
+$\forall x\ C(x) \vee D(x) \vee F(x)$
+** At least one of your classmates has a cat and a ferret, but not a dog.
+$\exists x\ C(x) \wedge F(x) \wedge \neg D(x)$
+** None of your classmates has a cat, a dog, and a ferret.
+$\neg(\exists x\ C(x) \wedge D(x) \wedge F(x))$
+** For each of the three animals, there is a classmate of yours that has one.
+$\exists x \exists y \exists z\ C(x) \wedge D(y) \wedge F(z)$
+
+* TODO Exercise 10
+
+In the world of blocks we have three shapes: Triangle, Square and Rectangle; three colors: White, Black, and Grey; and the possibility of having one block on top of another: $On(x,y)$. Provide a description of the following worlds in FOL:
+
+[[./ex10.jpg]]
+
+* TODO Exercise 11
+
+In the world of blocks defined in exercise 10 provide FOL expressions for the following facts
+
+** Triangles cannot have other blocks on top
+** All composition must have a Triangle at the very best top
+** All Intermediate blocks must be Grey
+** Some intermediate block is Black
+** Only White blocks are permitted
+** There are not Black blocks immediately on top of White blocks
+* TODO Exercise 12
+
+Extend the world of blocks of exercise 10 with two possible shapes for blocks: Large and Normal. Consider that large blocks can have one or two small blocks on top or another big block, and that two small blocks can have one single large block on top.
+
+** How can you formalize these facts in FOL?
+** Use this extended representation to describe the following worlds:
+
+[[./ex12.jpg]]
+
+* Exercise 13
+
+What is the meaning of the following FOL expressions:
+
+** $\forall x \forall y\ Loves(x,y)$
+Everybody loves everybody
+** $\forall x \exists y\ Loves(x,y)$
+Everybody loves somebody
+** $\exists x \forall y\ Loves(x,y)$
+Somebody loves everybody
+** $\exists x \exists y\ Loves(x,y)$
+Somebody loves somebody
+** $\forall x \forall y\ Loves(x,y) \supseteq \forall z\ Loves(x,z)$
+If everybody loves everybody then $x$ loves everybody
+** $\forall x \forall y\ Loves(x,y) \supseteq \exists z\ Loves(x,z)$
+If everybody loves everybody then $x$ loves somebody
+** $\forall x \exists y\ Loves(x,y) \supseteq \forall z\ Loves(x,z)$
+If everybody loves somebody then $x$ loves everybody
+** $\forall x \exists y\ Loves(x,y) \supseteq \exists z\ Loves(x,z)$
+If everybody loves somebody then $x$ loves somebody
+
+* TODO Exercise 14
+
+Provide FOL expressions representing the knowledge involved in each one of the domains described in exercise 2.
+
+* TODO Exercise 15
+
+The Tower of Hanoi is a mathematical game or puzzle. It consists of three rods, and a number of disks of different sizes which can slide onto any rod. The puzzle starts with the disks in a neat stack in ascending order of size on one rod, the smallest at the top, thus making a conical shape.
+
+The objective of the puzzle is to move the entire stack to another rod, obeying the following rules:
+- Only one disk must be moved at a time.
+- Each move consists of taking the upper disk from one of the rods and sliding it onto
+another rod, on top of the other disks that may already be present on that rod.
+- No disk may be placed on top of a smaller disk.
+
+In order to formalize a three-disk Tower of Hanoi in FOL:
+** Identify the individuals in the exercise
+** Identify the types in the exercise: rods, disks, etc.
+** Identify the attribute(s) in the exercise: size, etc.
+** Formalize the initial configuration
+** Formalize the concept “disk d can be moved to rod r” according to the second rule above (constraint)
+** Formalize the movement move(d,r) or “the disk d is moved to rod r” according to the second rule above (know-how knowledge)
+** Formalize the third rule above (constraint)
+
+* Exercise 16
+
+For the sentence $\forall x (\forall y (A(x) \wedge B(x,y) \Rightarrow A(y)))$ state whether it is true or false, relative to the following interpretations. If false, give values for x and y witnessing that.
+
+** The domain of the natural numbers, where A is interpreted as “even?”, and B is interpreted as “equals”
+$\forall x \forall y\ even(x) \wedge equals(x,y) \Rightarrow even(y)$ is true
+** The domain of the natural numbers, where A is interpreted as “even?”, and B is interpreted as “is an integer divisor of”
+$\forall x \forall y\ even(x) \wedge divisor(x,y) \Rightarrow even(y)$ is false
+** The domain of the natural numbers, where A is interpreted as “even?”, and B is interpreted as “is an integer multiple of”
+$\forall x \forall y\ even(x) \wedge multiple(x,y) \Rightarrow even(y)$ is false, $x=6,\ y=3$
+** The domain of the Booleans, {true,false}, where A is interpreted as “false?”, and B is interpreted as “equals”
+$\forall x \forall y\ false(x) \wedge equals(x,y) \Rightarrow false(y)$ is true
+
+* TODO Exercise 17
+
+The puzzle game of Sudoku is played on a 9×9 grid, where each square holds a number between 1 and 9. The positions of the numbers must obey constraints. Each row and each column has each of the 9 numbers. Each of the 9 non-overlapping 3×3 square sub-grids has each of the 9 numbers.
+
+Throughout the game, some of the values have not been discovered, although they are determined. You start with some numbers revealed, enough to guarantee that the rest of the board is uniquely determined by the constraints. Thus, when deducing the value of another location, what has been revealed so far would serve as premises in a proof.
+
+Fortunately, there are the same number of rows, columns, subgrids, and values. So, our domain is {1,2,3,4,5,6,7,8,9}.
+
+To model the game, we will use the following relations: value(r,c,v) indicates that at row r, column c is the value v. v=w is the standard equality relation. subgrid(g,r,c) indicates that subgrid g includes the location at row r, column c.
+
+Provide domain axioms for Sudoku, and briefly explain them. These will model the row, column, and subgrid constraints. In addition, you should include constraints on our above relations, such as that each location holds one value.
+
+* Exercise 18
+
+Check for free and bound variables in the following expressions
+
+** $\forall x\ ( \exists y\ P(x,y) \Rightarrow \exists z\ (Q(y,z) \Rightarrow R(x,y) \textasciicircum P(x,y)))$
+No free variables
+** $(\forall x\ (\exists y\ P(x,y) \Rightarrow \exists z\ (Q(y,z)))) \Rightarrow R(x,y) \textasciicircum P(x,y)$
+$x$ and $y$ are free in the last part of the expression
+** $(\forall x\ (\exists y\ P(x,y) \Rightarrow \exists z\ (Q(y,z)) \Rightarrow R(x,y) \textasciicircum P(x,y)))$
+No free variables
+** $(\forall x\ (\exists y\ P(x,y))) \Rightarrow (\exists z\ (Q(y,z) \Rightarrow R(x,y) \textasciicircum P(x,y)))$
+$x$ and $y$ are free in the second and last part of the expression
+
+* Exercise 19
+
+Represent in FOL
+
+** Maria is mother of a son and a daughter
+$\exists x \exists y\  x=son(maria) \wedge y=daughter(maria)$
+** Maria is mother of only one son and only one daughter
+$\forall x \forall y \forall z\ x=son(maria) \wedge \ y=daughter(maria) \wedge \neg (z=x) \wedge \neg (z=y) \supset \neg mother(maria, z)$
+** Maria is mother of a son or a daughter
+$\forall x\ son(x,maria) \supset \neg( \exists y\ daughter(y, maria))$
+$\forall x\ daughter(x,maria) \supset \neg( \exists y\ son(y, maria))$
+** All women are beautiful and some men are beautiful
+$\forall x\ woman(x) \supset beautiful(x)$
+$\exists x\ men(x) \supset beautiful(x)$

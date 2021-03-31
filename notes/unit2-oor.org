@@ -1,0 +1,56 @@
+#+TITLE: Object-Oriented Representation
+
+* Frame model (Minsky)
+
+A *frame* is a knowledge structure used to represent objects and object types. Frames can be
+- Individual (or instance) frames :: Represent single objects
+- Generic (or class) frames :: Represent categories of objects
+
+Frame properties are *slots* that can be valued with *fillers*. A slot can express
+- Generalization :: Can be of two types
+  - ~:INSTANCE-OF~ sets the class of an individual frame (e.g. $Tarragona \in City$, ~Tarragona :INSTANCE-OF City~)
+  - ~:IS-A~ sets the super-class of a generic frame (e.g. $City \subseteq SocialOrganization$, ~City :IS-A SocialOrganization~), the generic frame is a *specialization*
+- Aggregation :: ~:PART-OF~ sets the parts of a frame (e.g. ~Building :PART-OF City~)
+- Association :: Defines relations with meaning in both directions
+
+Multiple values can be stored with
+- Multivalued slot :: e.g. ~Train <:wagons [MIN-CARDINALITY m][MAX-CARDINALITY m'] Wagon>~
+- Inverse slot :: e.g. ~Wagon <:PART-OF Train>~, with each wagon pointing to one train
+- Chaining values :: e.g. ~Train <:wagons Wagon>~, ~Wagon <:next-wagon Wagon>~
+
+A slot may contain properties, known as *facets*, with information about the slot. For example we can set a facet that attaches procedure to be run
+- ~IF-ADDED~ :: When the value of the slot is set
+- ~IF-NEEDED~ :: When the value of the slot is asked or used
+Other facets may be ~DEFAULT~, ~DOMAIN~, ~MAX/MIN-CARDINALITY~, etc.
+
+* Reasoning frames
+
+Reasoning with frame involves the following stages
+
+** Inheritance
+
+Slots are *inherited* when information is passed from generic frames to their specializations, and finally to their instances. Inherited slots can have different fillers. Frames systems use
+- Defeasible inheritance :: Inherit only when no filler can be found
+- Multiple inheritance (in some systems) :: Inherit from multiple generics
+
+** Assignment loop
+
+When a value is assigned to an instance, the value is set as a filler of the slot and either
+- There is an ~IF-ADDED~ facet, and its procedure is triggered
+- Or the first ~IF-ADDED~ procedure in the hierarchy of frames is triggered, otherwise do nothing
+When a ~IF-ADDED~ procedure is triggered, the loop is repeated if other slots are filled or new frames instantiated.
+
+** Requiring loop
+
+When a value is required from an instance, if the slot has a filler its value is returned. otherwise, either
+- There is a ~IF-NEEDED~ procedure
+- Or the first ~IF-NEEDED~ procedure in the hierarchy of frames is triggered
+When a ~IF-NEEDED~ procedure is found its value is returned, otherwise ~unknown~ is returned.
+When a ~IF-NEEDED~ procedure is triggered, the loop is repeated if other slots are filled or new frames instantiated.
+
+** Reasoning loop
+
+When an instance is created
+- Some slots may be explicitly provided my the user, the others are inherited
+- For slot with a filler and a ~IF-PROCEDURE~ procedure, the procedure is run. The loop is repeated if other slots are filled or new frames instantiated.+
+* TODO Lisp-like notation for daemons

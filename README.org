@@ -8,7 +8,7 @@ Collection of notes and code about the Knowledge Representation and Engineering 
 *** Unit 2 - Knowledge Representation
 **** IN-PROGRESS [[file:exercises/unit2-fol.org][First Order Logic]] ([[file:notes/unit2-fol.org][notes]], [[file:exercises/unit2-fol.org][exercises]])
 **** IN-PROGRESS [[file:exercises/unit2-rules-ps.org][Rules and Production Systems]] ([[file:notes/unit2-rules-ps.org][notes]], [[file:exercises/unit2-rules-ps.org][exercises]])
-**** IN-PROGRESS [[file:exercises/unit2-oor.org][Object Oriented Representation]]
+**** IN-PROGRESS [[file:exercises/unit2-oor.org][Object Oriented Representation]] ([[file:notes/unit2-oor.org][notes]])
 **** TODO Network Representation
 **** TODO Ontologies
 ** Part 2
