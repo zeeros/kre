@@ -1062,13 +1062,13 @@ To indicate _p is a property with range R_: p hasRange R; (ex. marriedTo hasRang
 
 Recall that the range R of a propert can be a complex experssion reflecting:
 
-- A class with a name (ex: Woman representing all the instances of the class Woman)
-- An intersection (ej: Person Adult representing all the adult persons).
-- A union (ex: Woman Girl representing women and girls).
-- A complement (ex. -Woman representing all instances not of the class Woman).
-- A minimal limitation of the number of instances in a class (ex: S3married to represents all the instances that are married to 3 or less persons).
-- A maximal limitation of the number of instances in a class (ex: >2married to represents all the instances that are married to 2 or more people).
-- A universal quantifier (ex: Vmarried To.Man indicates all the instances that are only married to men, one or more times). An existential quantifier (ex: 3 married To.Person indicates the entire instances that are married to one person, at least).
+- A class with a name (ex: $Woman$ representing all the instances of the class Woman)
+- An intersection (ej: $Person \cap Adult$ representing all the adult persons).
+- A union (ex: $Woman \cup Girl$ representing women and girls).
+- A complement (ex. $\neg Woman$ representing all instances not of the class Woman).
+- A minimal limitation of the number of instances in a class (ex: $\leq 3marriedTo$ represents all the instances that are married to 3 or less persons).
+- A maximal limitation of the number of instances in a class (ex: $\geq 2marriedTo$ to represents all the instances that are married to 2 or more people).
+- A universal quantifier (ex: $\forall marriedTo.Man$ indicates all the instances that are only married to men, one or more times). An existential quantifier (ex: $\exists marriedTo.Person$ indicates the entire instances that are married to one person, at least).
 
 Given the former language to represent OWL ontologies, represent the following knowledge units:
 1. "... Owners are classified into companies, individuals, families, and groups ...".
