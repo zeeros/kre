@@ -1,0 +1,1077 @@
+#+TITLE: Exercises
+#+AUTHOR:
+
+* Todo
+** Look at solved exercises 2a, 3h
+** Solve exercises 1, 2h, 3g
+** Look at solved exercises 4a-h, 7abd, 10d, 11, 15, 10a-iop, 28a-c, 36, 39
+** Solve exercises 5, 8, 13, 23, 27, 44, 50, 52
+* Introduction
+** Exercise 1
+
+ #+BEGIN_QUOTE
+ What is the difference between data, information and knowledge?
+ #+END_QUOTE
+
+ These terms are used to describe closely related concepts. This is also the reason why they are often, and sometimes improperly, interchanged.
+
+ *Data* itself is a values collection of qualitative or quantitative variables that are measured, collected, reported and analyzed. It may encode some information or knowledge. Data can be raw or unprocessed, adjectives implying that data requires further processing before being used. In its rawest form, data can be seen as a stone dug from a mine: a certain, intentional effort has been made to take it from where it was with the hope to gain something from it.
+
+ *Information* is strictly related to the concept of uncertainty: to break uncertainty we need information. To store or transmit it, we use data. Information is extracted from (raw) data as a result of a processing, which may contextualize, categorize, calculate, correct and/or condensate the input data. Compared to raw data, information may be seen as a gemstone that has undergone several processes to increase its value.
+
+ *Knowledge* takes information to a higher level of abstraction: the objective here is understanding. If information may describe a context, knowledge aims to extend its uncertainty-breaking power to other contexts. Compared to information, knowledge may be seen as a jewel: its true value is appreciated when used in the right situations.
+** Exercise 2 and 3
+
+ Identify data, information and know-what/know-how knowledge
+
+ About the following exercises
+ - Exercises 2 and 3 are grouped together for convenience
+ - The paragraphs are already splitted into separate sentences for the same reason
+ - We adopt these conventions: _this is an information_, ~this is a value~ and /this is its meaning/
+   + Knowledge :: extracted from the sentence above
+   + Know-what :: if the extracted knowledge concerns factual assertions
+   + Know-how :: if the extracted knowledge concerns procedures
+
+*** 2a and 3a
+
+  1) This course of _~Knowledge Representation and Engineering~ /course name/_ is composed of _~three~ /number of/ chapters_:  _~Introduction  and  Concepts~ /chapter name/_, _~Knowledge  Representation~ /chapter name/_, and _~Knowledge Engineering~ /chapter name/_.
+     + Knowledge :: Knowledge Representation and Engineering is a course
+     + Knowledge :: Knowledge Representation and Engineering is composed by three chapters
+     + Knowledge :: Introduction and Concepts is a chapter of Knowledge Representation and Engineering
+     + Knowledge :: Knowledge Representation Knowledge Representation and Engineering
+     + Knowledge :: Knowledge Engineering chapter Knowledge Representation and Engineering
+     + Know-what :: it's a fact
+  2) It’s a _~six-credit~ /number of/ course_ with _~two~ week /number of/ hours_ for _~theory~ /type of class/_ and _~two~ /number of/ week hours_ for _~problems and practice~ /type of class/_.
+     + Knowledge :: Knowledge Representation and Engineering is a six-credit course
+     + Knowledge :: Knowledge Representation and Engineering has two week hours for theory
+     + Knowledge :: Knowledge Representation and Engineering has two week hours for problems and practice
+     + Know-what :: it's a fact
+  3) Like all the other subjects in the _~master~ /host of the course/_, _~half~ /amount/ of the practical hours_ will be off class.
+     + Knowledge :: Knowledge Representation and Engineering is a subject of the master
+     + Knowledge :: All the subjects in the master have half of the practical hours off class
+     + Know-how :: it's a fact
+  4) As the rest of subjects, KRE will be _~continuously evaluated~ /type of evaluation/_.
+     + Knowledge :: All the subjects in the master are continuously evaluated
+     + Know-what :: it's a fact
+  5) Continuous evaluation in KRE will consist of _~two~ /amount of/ theoretical-practical tests_, and _~two~ /amount of/ practical work deliveries_.
+     + Knowledge :: the continuous evaluation of Knowledge Representation and Engineering consists of two theoretical-practical tests, and two practical work deliveries
+     + Know-what :: it's a fact
+  6) The final mark will be calculated as _~30%~ /amount/ of the results of each one of the theoretical tests_ and _~20%~ /amount/ of each practical work /means of evaluation/_.
+     + Knowledge :: the final mark of Knowledge Representation and Engineering is 30% of the results of each one of the theoretical tests and 20% amount of each practical work
+     + Know-how :: it's a procedure describing how the final mark is calculated
+  7) For second evaluation, there will be a _~single exam~ /means of evaluation/_.
+     + Knowledge :: the second evaluation of Knowledge Representation and Engineering is a single exam
+     + Know-what :: it's a fact
+
+*** 2b and 3b
+
+  1) _~Computer hardware~ /part/_ equals the collection of _~physical elements~ /type of/_ that comprise a computer system.
+     + Knowledge :: computer hardware is the collection of physical elements that comprise a computer system
+     + Know-what :: it's a fact
+  2) Computer hardware refers to the _~physical parts or components~ /type of/_ of a computer such as _~monitor~ /part name/_, _~keyboard~ /part name/_, _~hard drive disk~ /component name/_, _~mouse~ /part name/_, _~printers~ /part name/_, _~graphic cards~ /component/_, _~sound cards~ /component name/_, _memory /component name/_, _motherboard /component name/_ and _chips /component name/_, etc. all of which are _~physical objects~ /type of object/_ that you can actually touch.
+     + Knowledge :: computer hardware is a collection of physical elements that are parts or components of a computer system
+     + Knowledge :: monitor, hard drive disk, mouse, printers, graphic cards, sound cards, memory, motherboard, chips are part of computer hardware
+     + Knowledge :: monitor, hard drive disk, mouse, printers, graphic cards, sound cards, memory, motherboard, chips are physical objects
+     + Know-what :: it's a fact
+  3) In contrast, _~software~ /part/_ is untouchable.
+     + Knowledge :: software is untouchable
+     + Know-what :: it's a fact
+  4) Software exists as _~ideas~ /part of/_, _~application~ /part of/_, _~concepts~ /part of/_, and _~symbols~ /part of/_, but it has _~no substance~ /property of software/_.
+     + Knowledge :: software is made of ideas, application, concepts and symbols
+     + Knowledge :: software has no substance
+     + Know-what :: it's a fact
+  5) A combination of _~hardware~ /part/_ and _~software~ /part/_ forms a usable computing system.
+     + Knowledge :: a usable computing system is made by hardware and software
+     + Know-what :: it's a fact
+
+*** 2c and 3c
+
+  1) Primary care is the _~health care~ /type of care/_ given by a _~health care provider~ /role/_.
+     + Knowledge :: primary care is health care
+     + Knowlegde :: health care provider provides primary care
+     + Know-what :: it's a fact
+  2) Typically this provider acts as the _~principal point of consultation~ /level of consultation/_ for _~patients~ /role/_ within a health care system and coordinates other _~specialists~ /role/_ that the patient may need.
+     + Knowledge :: health care provider is the principal consultant for patients
+     + Knowledge :: health care provider coordinates other specialists
+     + Know-what :: it's a fact
+  3) Such a professional can be a _~primary care physician~ /role/_, such as a _~general practitioner~ /role/_ or _~family physician~ /role/_, or depending on the locality, health system organization, and patient's discretion, they may see a _~pharmacist~ /role/_, a _~physician assistant~ /role/_, a _~nurse practitioner~ /role/_, a _~nurse~ /role/_ (such as in the _~United Kingdom~ /location_)/, a _~clinical officer~ /role/_ (such as in _~parts of Africa~ /location/_), or an _~Ayurvedic or other traditional medicine professional~ /role/_ (such as in _~parts of Asia~ /location/_).
+     + Knowledge :: primary care physician can be a health care provider
+     + Knowledge :: general practitioner is a primary care physician
+     + Knowledge :: family physician is a primary care physician
+     + Knowledge :: pharmacist can be a health care provider
+     + Knowledge :: physician assistant can be a health care provider
+     + Knowledge :: nurse practitioner can be a health care provider
+     + Knowledge :: nurse can be a health care provider in United Kingdom
+     + Knowledge :: clinical officer can be a health care provider in parts of Africa
+     + Knowledge :: traditional medicine professional can be a health care provider in parts of Asia
+     + Know-how :: it's a procedure describing how a primary care physician is chosen
+  4) A _~patient-centered primary care~ /type of/_ stores all the information about one patient in the different _~episodes of care (eoc)~ /storing format/_.
+     + Knowledge :: patient-centered primary care stores all the information about one patient in the different episodes of care (eoc)
+     + Know-what :: it's a fact
+  5) A _patient /role/_ has a _~name~, ~sex~ (M or W), ~race~, and a ~date of birth~ /attributes of a patient/_.
+     + Knowledge :: name, sex, race and date of birth are attributes of a patient
+     + Know-what :: it's a fact
+  6) An eoc contains the _~date when episode was created~, and a ~sequence of encounters~ /attribute of an eoc/_ between the health care professional and the patient.
+     + Knowledge :: date of creation and sequence of encounters with patient are attributes of a eoc
+     + Know-what :: it's a fact
+  7) Each encounter has a _~date~ a ~reference to the health care provider~ and a ~set of treatments~ /attributes of an encounter/_.
+     + Knowledge :: date, reference to health care provider, set of treatments are attributes of an encounter
+     + Know-what :: it's a fact
+  8) A treatment is composed of a _~set of findings~ /part of treatment/_ which are _~textual~ /type of/ descriptions_ of the patient signs and symptoms (for example, _~fever~, ~high blood pressure~, ~breast pain~, /symptoms/_ ...).
+     + Knowledge :: treatment has a set of findings
+     + Knowledge :: set of findings collects textual descriptions of signs and symptoms
+     + Knowledge :: fever, high blood pressure, breast pain are symptoms
+     + Know-what :: its' a fact
+  9) A treatment can have attached a _~disease or set of diseases~ /attribute of a treatment/_ that the patient is treated of, and a set of _~medical actions~ /attribute of a treatment/_ that can be of the sort: _~pharmacological~, ~test order~, ~visit~ (to provider such as a specialist), or ~recommendation~ /type of medical actions/_.
+     + Knowledge :: treatment may have a set of diseases that the patient is treated of
+     + Knowledge :: treatment may have a set of medical actions
+     + Knowledge :: medical action can be pharmacological, test order, visit (to a specialist), or recommendation.
+     + Know-what :: it's a fact
+
+*** 2d and 3d
+
+  1) A chair is a _~raised surface~ /type of surface/_ used to sit on, commonly for use by _~one~ /number of/ person_.
+     + Knowledge :: chair is a raised surface used to sit on
+     + Knowledge :: chair is commonly used by one person at a time
+     + Know-what :: it's a fact
+  2) Chairs are most often supported by _~four~ /number of/ legs_ and have a back; however, a chair can have _~three~ /number of/ legs_ or could have a _~different /type of/ shape~_.
+     + Knowledge :: chair is often supported by four legs and have a back
+     + Knowledge :: chair can vary in shape and number of legs
+     + Know-what :: it's a fact
+  3) A chair without a back or arm rests is a _~stool~ /type of chair/_, or when raised up, a _~bar stool~ /type of chair/_.
+     + Knowledge :: stool is a chair without a back
+     + Knowledge :: bar stool is a raised up stool
+     + Know-what :: it's a fact
+  4) A chair with arms is an _~armchair~ /type of chair/_ and with folding action and inclining footrest, a _~recliner~ /type of chair/_.
+     + Knowledge :: amrchair is a chair with arms
+     + Knowledge :: recliner is an armchair with folding action and inclining footrest
+     + Know-what :: it's a fact
+  5) A permanently fixed chair in a train or theater is a _~seat~ /type of chair/_ or, in an airplane, _airline seat~ /type of chair/_; when riding, it is a _~saddle~ /type of chair/_ and _~bicycle saddle~ /type of chair/_, and for an automobile, a _~car seat~ /type of chair/_ or _~infant car seat~ /type of chair/_.
+     + Knowledge :: seat is a permanently fixed chair
+     + Knowledge :: airline seat is a seat in an airplane
+     + Knowledge :: saddle is a seat used to ride
+     + Knowledge :: bicycle saddle is a saddle for a bike
+     + Knowledge :: car seat is a seat in a car
+     + Knowledge :: infant car sear is a seat in a car
+     + Knowledge-what :: it's a fact, describing specific nomenclature for different scenarios
+     + Knowledge-how :: it also can be seen as procedure describing the naming logic for some of the scenarios
+  6) With wheels it is a _~wheelchair~ /type of chair/_ and when hung from above, a _~swing~ /type of chair/_.
+     + Knowledge :: wheelchair is a chair with wheels
+     + Knowledge :: swing is a hung chair
+     + Know-what :: it's a fact
+
+*** 2e and 3e
+
+ 1) The Nobel Prizes are _~annual~ /frequency/_ _~international~ /scope/_ awards bestowed by _~Scandinavian committees~ /awarder/_ in recognition of _~cultural and scientific advances~ /type of achievement/_.
+    + Knowledge :: nobel prizes are awards
+    + Knowledge :: nobel prizes are annual
+    + Knowledge :: nobel prizes are international
+    + Knowledge :: nobel prizes are awarded by Scandinavian commitees
+    + Knowledge :: nobel prizes are awarded for cultural and scientific advances
+    + Know-what :: it's a fact
+ 2) The will of the _~Swedish~ /nationality/_ _~chemist~ /qualification/_ _~Alfred Nobel~ /name/_, the _~inventor of dynamite~ /achievement/_, established the prizes in _~1895~ /year/_.
+    + Knowledge :: Alfred Nobel is swedish
+    + Knowledge :: Alfred Nobel is a chemist
+    + Knowledge :: Alfred Nobel is the inventor of dynamite
+    + Knowledge :: Alfred Nobel established the nobel prizes in 1895
+    + Know-what :: it's a fact
+ 3) The _~2~ /number of/ prizes_ in _~Physics~, ~Chemistry~, ~Physiology or Medicine~, ~Literature~, and ~Peace~ /type of field/_ were first awarded in _~1901~_.
+    + Knowledge :: Physics, Chemistry, Physiology or Medicine, Literature, and Peace are nobel prizes
+    + Knowledge :: Physics had 2 nobel prizes in 1901
+    + Know-fact :: it's a fact
+ 4) The Peace Prize is awarded in _~Oslo, Norway~ /location/_, while the other prizes are awarded in _~Stockholm, Sweden~ /location/_.
+    + Knowledge :: Peace prize is awarded in Oslo, Norway
+    + Knowledge :: Physics, Chemistry, Physiology or Medicine, Literature are awarded in Stockholm, Sweden
+    + Know-what :: it's a fact
+ 5) Each Nobel Prize is regarded as the _~most prestigious~ /level of recognition of/ award_ in its field.
+    + Knowledge :: nobel prizes are the most prestigious award in their field
+    + Know-what :: it's a fact
+ 6) In 1968, _~Sveriges Riksbank~ /name/_ instituted an award that is often associated with the Nobel prizes, the _~Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel~ /name of the prize/_.
+    + Knowledge :: Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel is an award associated with the Nobel prizes
+    + Knowledge :: Sveriges Riksbank instituted the Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel
+    + Know-what :: it's a fact
+ 7) The first such prize was awarded in ~1969~ /date of awarding/.
+    + Knowledge :: Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel was awarded for the first time in 1969
+    + Know-what :: it's a fact
+ 8) Although it is _~not an official Nobel Prize~ /relationship with Nobel prize/_,its _~announcements and presentations~ /events shared with Nobel prizes/_ are made along with the other prizes.
+    + Knowledge :: Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel is not an official nobel prize
+    + Knowledge :: Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel shares announcements and presentations with nobel prizes
+    + Know-what :: it's a fact
+ 9) _~The Royal Swedish Academy of Sciences~ /awarder name/_ awards _the ~Nobel Prize in Physics~, the ~Nobel Prize in Chemistry~, and the ~Nobel Memorial Prize in Economic Sciences~ /names of prizes/_
+    + Knowledge :: The Royal Swedish Academy of Sciences awards Nobel Prize in Physics, the Nobel Prize in Chemistry, and the Nobel Memorial Prize in Economic Sciences
+    + Know-what :: it's a fact
+ 10) _~The Nobel Assembly at Karolinska Institutet~ /awarder name/_ awards the _~Nobel Prize in Physiology or Medicine~ /name of prize/_.
+     + Knowledge :: The Nobel Assembly at Karolinska Institutet awards the Nobel Prize in Physiology or Medicine.
+     + Know-what :: it's a fact
+ 11) _~The Swedish Academy~ /awarder name/_ grants the _~Nobel Prize in Literature~ /name of prize/_
+     + Knowledge :: The Swedish Academy grants the Nobel Prize in Literature
+ 12) The _~Nobel Peace Prize~ /name of prize/_ is not awarded by a Swedish organization but by the _~Norwegian Nobel Committee~ /awarder/_.
+     + Knowledge :: The Nobel Peace Prize is awarded by the Norwegian Nobel Committee
+     + Know-what :: it's a fact
+ 13) Each recipient, or laureate, receives a _~gold medal~, a ~diploma~, and a ~sum of money~ /prizes of the award/_ which depends on the _~Nobel Foundation's income~ /factor for the sum of money awarded/ that year_.
+     + Knowledge :: the awarded of the nobel prize receives a gold medal, a diploma and a sum of money
+     + Knowledge :: the awarded sum of money depends on the Nobel Foundation's income that year
+     + Know-what :: it's a fact
+ 14) In _~2011~ /year/_, each prize was worth _~€1.15 million~ /prize value/_.
+     + Knowledge :: the value of each nobel prize was €1.15 million in 2011
+     + Know-what :: it's a fact
+
+ The whole text starting from sentence 9 and ending in sentence 12 may be also seen as a *Know-how* knowledge describing a procedure to decide who should be the awarder for a specific prize.
+
+*** 2f and 3f
+  1) A _~stock market~ /type of market/_ is a _~public market~ /type of market/_ for the trading of company stock (shares) and derivatives at an agreed price.
+     + Knowledge :: stock market is a public market
+     + Knowledge :: company stock (shares) and derivatives are traded in a stock market
+     + Know-what :: it's a fact
+  2) A _~share~ /type of unit/_ is a unit of account for various financial instruments including _~stocks~ /type of financial instrument/_, and investments.
+     + Knowledge :: a share is a unit of account used for financial instruments and investments
+     + Knowledge :: a stock is a financial instrument
+     + Know-what :: it's a fact
+  3) On the other hand, a _~derivative~ /type of financial instrument/_ is a financial instrument that has a value, based on the expected future price movements of the asset to which it is linked.
+     + Knowledge :: a derivative is a financial instrument
+     + Knowledge :: the value of a derivative is based on the expected future price movements of the asset to which it is linked
+     + Know-what :: it's a fact
+
+ The whole text starting from sentence 2 and ending in sentence 3 may be also seen as a *Know-how* knowledge describing a procedure to distinguish what is a stock and what is a derivative.
+
+*** 2g and 3g
+
+  1) Engines can be classified into _~internal~ /type of combustion/_ and _~external~ /type of combustion/ ~combustion~ /type of engine/ engines_.
+     + Knowledge :: combustion can be internal or external
+     + Knowledge :: combustion engines can be classified on their type of combustion
+     + Know-what :: it's a fact
+  2) _~Internal combustion engines~ ( ~ICE~ ) /type of engine/_ are engines in which the combustion of a _~fuel~ (substance)_ occurs with an _~oxidizer~ (substance)_ in a _~combustion chamber~ /where combustion happens/_.
+     + Knowledge :: in ICE the combustion of fuel (substance) occurs with an oxidizer (substance) in a combustion chamber.
+     + Know-what :: it's a fact
+  3) On the contrary, in _~external combustion engines~ ( ~ECE~ ) /type of engine/_, such as _~steam engines~_ or _~Stirling engines~ /types of engines/_, the energy is delivered to a _~working fluid~ (substance)_ different of a combustion product.
+     + Knowledge :: in ECE the energy is delivered to a working fluid (substance) different of a combustion product
+     + Knowledge :: steam engines are ECE
+     + Knowledge :: Stirling engines are ECE
+     + Know-what :: it's a fact
+  4) Working fluids can be _~air~, ~hot water~, or ~pressurized water~ /types of working fluids/_.
+     + Knowledge :: air, hot water and pressurized water can be working fluids
+
+ The whole text starting from sentence 1 and ending in sentence 4 may be also seen as a *Know-how* knowledge describing a procedure distinguish if an engine is ICE or ECE.
+
+*** 2h and 3h
+ 1) _~Chronic disease~ /name of/ treatment_ divides each disease in stages.
+    + Knowledge :: chronic diseas treatment divides each disease in stages
+    + Know-what :: it's a fact
+ 2) Patients that have _~one~ /number of/ ~chronic disease~ /type of disease/_ are classified in _~one~ /number of/ of these stages_.
+    + Knowledge :: a patient having a chronic diseases is classified in a disease's stage
+    + Know-what :: it's a fact
+ 3) _~General~ /type of/ practitioners_ base their decisions in the _~current stage of the patient~ and the ~time this patient has been in that stage~ /decision-making factors/_.
+    + Knowledge :: a practitioner needs current stage and its duration to make a decision on a patient
+    + Know-what :: it's a fact
+ 4) In general, a patient that is in a _~mild-moderate dangerous~ /type of/ stage ( ~MDS~ ) /type of/_ is asked to modify his-her lifestyle ( _~diet, salt intake reduction, moderate exercise~ ) /types of/_, if the patient has been in a MDS for a significant period, he or she is prescribed with _~one~ /number of/ drug_ to _~minimal~ /amount of/ dosage_, while the patient is not improving the dosage is increased with _~fix increments /type of increment/_.
+    + Knowledge :: if patient is in MDS stage then ask to change lifestyle
+    + Knowledge :: if patient is in MDS stage for a long time then prescribe minimal dose of a drug
+    + Knowledge :: if patient is in MDS stage for a long time and he doesn't improve then increase dosage by fix increments
+    + Know-how :: it's a procedure describing a sequence of steps dealing with multiple scenarios
+ 5) If a _~maximal~ /amount of/ dosage_ is reached, then a second drug to _~minimal~ /amount of/ dosage_ is prescribed
+    + Knowledge :: if dosage is maximal then prescribe second drug at minimal dosage
+    + Know-how :: part of the previous procedure
+ 6) Patients can reach treatments with _~4~ /number of/ drugs_
+    + Knowledge :: if dosage is maximal then prescribe second drug at minimal dosage
+    + Know-how :: can be seen as a part of the previous procedure
+    + Know-what :: or as a general fact
+ 7) Patients that arrive in _~highly dangerous~ /type of/ stage ( ~HDS~ ) /type of/_ are directly prescribed with _~one~ /number of/ drug_ and recommended lifestyle changes.
+    + Knowledge :: patients in HDS are prescribed a drug and recommended lifestyle changes
+    + Know-what :: it's a fact
+
+* First-order logic
+** Exercise 4
+
+ Provide expressions to represent the following facts in FOL
+
+*** Men are not women
+ $\forall x\ men(x) \supset \neg women(x)$
+*** Surgeons are doctors
+ $\forall x\ surgeon(x) \supset doctor(x)$
+*** Adults can only be Men and Women
+ $\forall x\ adult(x) \supset man(x) \vee woman(x)$
+*** If a person marries another person, this one is also married to the first one
+ $\forall x \forall y\ married(x,y) \supset married(y,x)$
+*** Parents have children
+ $\forall x \exists y\ parent(x) \supset haschild(x,y)$
+*** Adults are defined as Men and Women who are older than 18
+ $\forall x\ adult(x) \supset (man(x) \vee woman(x)) \wedge \neg minor(x)$
+*** Marriage is only allowed between two Adults
+ $\forall x \forall y\ married(x,y) \supset adult(x) \wedge adult(y)$
+*** A person cannot be married to two or more different persons
+ $\forall x \forall y \forall z\ married(x,y) \wedge married(y,z) \supset (z=x)$
+*** Two persons can only get divorced if they are previously married
+ $\forall x \forall y\ candivorce(x,y) \supset married(x,y)$
+*** People can only be given birth by a Man and a Woman
+ $\forall z \exists x \exists y\ haschild(x,z) \wedge haschild(y,z) \supset man(x) \wedge woman(y)$
+
+** Exercise 5
+
+ Formalize the following sentences as FOL expressions, after identifying function symbols and predicate symbols.
+
+ Given a domain, we can construct a FOL knowledge base following these steps
+ - Named individuals :: $mike$, $mary$
+ - No-named individuals :: $boy_1$, $tshirt_1$, $tshirt_2$
+ - Types :: $Boy$, $Girl$, $TShirt$, $Person$, $Symbol$
+ - Properties :: $Color$, $Symbol$, $Age$
+ - Relationships :: $Younger(x,y)$, $Wears(x,y)$, $Youngest(x)$
+ - Functions :: $countWearing(tshirt, color, symbol)$, $age(x)$
+
+*** Mike is younger than the boy in the green T-shirt
+ $Boy(boy_1)$, $TShirt(tshirt_1)$, $Wears(boy_1, tshirt_1)$, $Color(tshirt_1, green)$, $Younger(mike, boy_1)$
+*** The five-year boy wore a T-shirt with a square symbol
+ $Age(boy_1,5)$, $Symbol(tshirt_1, square)$
+*** Mike’s T-shirt is yellow
+ $TShirt(tshirt_{mike})$, $Wears(mike,tshirt_{mike})$, $Color(tshirt_{mike},yellow)$
+*** Mary’s T-shirt does not bear a square symbol
+ $Girl(mary)$, $TShirt(tshirt_{mary})$, $Wears(mary,tshirt_{mary})$, $\neg Symbol(tshirt_{mary}, square)$
+*** Square symbols cannot appear in white T-shirts.
+ $\forall x\ TShirt(x) \wedge Color(x, white) \supset \neg Symbol(x,square)$
+*** The youngest person cannot wear a T-shirt
+ $\forall x \forall t\ youngest(x) \wedge TShirt(t) \supset \neg Wears(x,t) \wedge youngest(x) = person(x) \wedge (\forall z\ person(x) \supset younger(x,z))$
+*** There are three T-shirt symbols: squares, pictures, and circles
+ $\forall t \forall s\ TShirt(t) \wedge Symbol(t,s) \supset Symbol(t, square) \vee Symbol(t, picture) \vee Symbol(t, circle)$
+*** There is not a person wearing a T-shirt with a circle if there’s another person older than the first one wearing a square
+ $\forall x \forall t_1\ (\exists y \exists t\ Wears(x,t) \wedge Symbol(t,square) \wedge age(y) > age(x)) \supset \neg(Wears(x,t_1) \wedge Symbol(t_1, circle))$
+*** Everybody wearing a T-shirt is older than any other not wearing a T-shirt
+ $\forall x \forall y \forall t_x \forall t_y\ Wears(x,t) \wedge TShirt(t_x) \wedge Wears(y,t_y) \wedge TShirt(t_y) \supset age(x) > age(y)$
+*** The number of people wearing a T-shirt yellow, are bigger than the ones not wearing a T-shirt with a square
+ $countWearing(true,yellow,any) > countWearing(any, any,\{picture, circle, none\})$
+
+** Exercise 6
+
+ Given the following description “Tony, Mike, and John belong to the Alpine Club. Every member of the Alpine Club who is not a skier is a mountain climber. Mountain climbers do not like rain, and anyone who does no like snow is not a skier. Mike dislikes whatever Tony likes, and likes whatever Tony dislikes.”
+
+*** Formalize this knowledge as FOL expressions
+
+ 1. Tony, Mike, and John belong to the Alpine Club
+   $in(tony,aclub)$, $in(mike,aclub)$, $in(john,aclub)$
+ 2. Every member of the Alpine Club who is not a skier is a mountain climber
+   $\forall x\ in(x,aclub) \wedge \neg skier(x) \supset climber(x)$
+ 3. Mountain climbers do not like rain, and anyone who does no like snow is not a skier
+   $\forall x\ climber(x) \supset \neg like(x,rain)$
+   $\forall x\ \neg like(x,snow) \supset \neg skier(x)$
+ 4. Mike dislikes whatever Tony likes, and likes whatever Tony dislikes
+   $\forall a\ like(tony,a) \supset \neg like(mike, a)$
+   $\forall a\ \neg like(tony,a) \supset like(mike, a)$
+
+*** Find out whether Tony is a mountain climber or not. Is it possible?
+
+ We don't have enough knowledge to state if Tony is a mountain climber or not.
+
+*** What do you know about John?
+
+ - $in(john,aclub)=true$
+ - $\neg skier(john) \supset climber(john)$
+ - $climber(john) \supset \neg like(john,rain)$
+ - $\neg like(john,snow) \supset \neg skier(john)$
+
+*** Prove that there is a member of the Alpine Club who is a mountain climber but not a skier
+
+ 1. Tony dislikes anything that Mike likes (and the other way around)
+ 2. Either Tony or Mike dislikes snow
+ 3. Either Tony or Mike is not a skier
+ 4. Either Tony or Mike is a mountain climber
+ 5. Either Tony or Mike is not a mountain climber (due to point 1)
+
+*** Suppose that Mary, a new member of the Alpine Club, likes what Mike and John likes. What can you say about Mary
+
+ The fact that Mary is a new member implies all the following
+ - $in(mary,aclub)=true$
+ - $\neg skier(mary) \supset climber(mary)$
+ - $climber(mary) \supset \neg like(mary,rain)$
+ - $\neg like(mary,snow) \supset \neg skier(mary)$
+ Remeber that $\forall a\ like(tony,a) \supset \neg like(mike, a)$ and $\forall a\ \neg like(tony,a) \supset like(mike, a)$
+ In natural language, the phrase =Likes what Mike and John likes= can be interpreted as
+ - Conjunction :: $\forall a\ like(mike,a) \wedge like(john,a) \supset like(mary,a)$
+   - Equivalence :: $\forall a\ like(mary,a) \supset like(mike,a) \wedge like(john,a)$
+   - Partial :: $\exists a\ like(mary,a) \supset \neg(like(mike,a) \wedge like(john,a)) \supset \neg like(mike,a) \vee \neg like(john,a) \supset like(tony,a)$
+ - Inclusive disjunction :: $\forall a\ like(mike,a) \vee like(john,a) \supset like(mary,a)$
+   - Equivalence :: $\forall a\ like(mary,a) \supset like(mike,a) \vee like(john,a)$
+   - Partial :: $\exists a\ like(mary,a) \supset \neg(like(mike,a) \vee like(john,a)) \supset \neg like(mike,a) \wedge \neg like(john,a) \supset like(tony,a)$
+
+** Exercise 7
+
+ Given the relationship $Parent(x,y)$ representing the fact “$x$ is parent of $y$”, and $Male(x)$ representing “$x$ is male”, define in FOL the following family relationships
+
+*** Son,  Daughter,  Brother,  Sister,  Sibling,  Ancestor,  Father,  Mother,  Grandfather, Grandmother, Uncle, Aunt, Cousin, and Nephew.
+
+ - Son :: $Parent(x,y) \wedge Male(y) \supset Son(y,x)$
+ - Daughter :: $Parent(x,y) \wedge \neg Male(y) \supset Daughter(y,x)$
+ - Brother :: $Parent(x,y) \wedge Son(z,x) \supset Brother(z,y)$
+ - Sister :: $Parent(x,y) \wedge Daughter(z,x) \supset Sister(z,y)$
+ - Sibling :: $Brother(x,y) \vee Sister(x,y) \supset Sibling(x,y)$
+ - Ancestor :: $Parent(x,y) \vee (Parent(x,z) \wedge Ancestor(z,y))) \supset Ancestor(x,y)$
+ - Father :: $(Son(y,x) \vee Daughter(y,x)) \wedge Son(x,z) \supset Father(x,y)$
+ - Mother :: $(Son(y,x) \vee Daughter(y,x)) \wedge Daughter(x,z) \supset Mother(x,y)$
+ - Grandfather :: $Father(x,z) \wedge (Father(z,y) \vee Mother(z,y)) \supset Grandfather(x,y)$
+ - Grandmother :: $Mother(x,z) \wedge (Father(z,y) \vee Mother(z,y)) \supset Grandmother(x,y)$
+ - Uncle :: $Brother(x,z) \wedge (Father(z,y) \vee Mother(z,y)) \supset Uncle(x,y)$
+ - Aunt :: $Sister(x,z) \wedge (Father(z,y) \vee Mother(z,y)) \supset Aunt(x,y)$
+ - Cousin :: $(Son(x,t) \vee Daughter(x,t)) \wedge Sibling(t,z) \wedge (Father(z,y) \vee Mother(z,y)) \supset Cousin(x,y)$
+ - Nephew :: $Sibling(y,t)\wedge (Father(t,x) \vee (Mother(t,x)) \supset Nephew(x,y)$
+
+*** John has not children. Jon has not siblings.
+ $\neg(\exists x\ Father(john,x))$, $\neg(\exists x\ Sibling(john,x))$
+*** John’s parents are Mary (female) and Paul (male).
+ $Mother(mary, john)$, $Father(paul, john)$
+*** John’s sister has some children.
+ $\exists x\ \exists y Sister(x, john) \wedge Mother(x,y)$
+*** The mother of Mary is the aunt of Michael.
+ $\exists x\ Mother(mary, x) \wedge Aunt(x, michael)$
+
+** Exercise 8
+
+ Given the simplified set theory in which all the variables are considered sets, and using the predicates $Sub(x,y)=\text{"x is a subset of y"}$, $E(e,x)=\text{"e is an element of the set x"}$, and the functions $u(x,y)=\text{"the union of x and y"}$, $i(x,y)=\text{"the intersection of x and y"}$; provide FOL expressions to represent the following knowledge:
+
+*** No set is an element of itself
+ $\forall e \forall x\ E(e,x) \supset e \neq x$
+*** A set $x$ is a subset of a set $y$ iff every element of $x$ is an element of $y$
+ $\forall x \forall y \forall e\ E(E(e,x), y) \supset Sub(x,y)$
+*** Something is an element of the union of two sets x and y iff it is an element of x or an element of y
+ $\forall x \forall y \forall e\ E(e,x) \vee E(e,y) \supset E(e, u(x,y))$
+*** Something is an element of the intersection of two sets x and y iff it is an element of x and an element of y
+ $\forall x \forall y \forall e\ E(e,x) \wedge E(e,y) \supset E(e, i(x,y))$
+
+** Exercise 9
+
+ Let $C(x)$ be the statement “x has a cat”, let $D(x)$ be the statement “x has a dog”, and let $F(x)$ be the statement “x has a ferret”. Express each of these statements in first-order logic using these relations. Let the domain be your classmates.
+
+*** A classmate has a cat, a dog, and a ferret.
+ $\exists x\ C(x) \wedge D(x) \wedge F(x)$
+*** All your classmates have a cat, a dog, or a ferret.
+ $\forall x\ C(x) \vee D(x) \vee F(x)$
+*** At least one of your classmates has a cat and a ferret, but not a dog.
+ $\exists x\ C(x) \wedge F(x) \wedge \neg D(x)$
+*** None of your classmates has a cat, a dog, and a ferret.
+ $\neg(\exists x\ C(x) \wedge D(x) \wedge F(x))$
+*** For each of the three animals, there is a classmate of yours that has one.
+ $\exists x \exists y \exists z\ C(x) \wedge D(y) \wedge F(z)$
+
+** TODO Exercise 10
+
+ In the world of blocks we have three shapes: Triangle, Square and Rectangle; three colors: White, Black, and Grey; and the possibility of having one block on top of another: $On(x,y)$. Provide a description of the following worlds in FOL:
+
+ [[./ex10.jpg]]
+
+** TODO Exercise 11
+
+ In the world of blocks defined in exercise 10 provide FOL expressions for the following facts
+
+*** Triangles cannot have other blocks on top
+*** All composition must have a Triangle at the very best top
+*** All Intermediate blocks must be Grey
+*** Some intermediate block is Black
+*** Only White blocks are permitted
+*** There are not Black blocks immediately on top of White blocks
+** TODO Exercise 12
+
+ Extend the world of blocks of exercise 10 with two possible shapes for blocks: Large and Normal. Consider that large blocks can have one or two small blocks on top or another big block, and that two small blocks can have one single large block on top.
+
+*** How can you formalize these facts in FOL?
+*** Use this extended representation to describe the following worlds:
+
+ [[./ex12.jpg]]
+
+** Exercise 13
+
+ What is the meaning of the following FOL expressions:
+
+*** $\forall x \forall y\ Loves(x,y)$
+ Everybody loves everybody
+*** $\forall x \exists y\ Loves(x,y)$
+ Everybody loves somebody
+*** $\exists x \forall y\ Loves(x,y)$
+ Somebody loves everybody
+*** $\exists x \exists y\ Loves(x,y)$
+ Somebody loves somebody
+*** $\forall x \forall y\ Loves(x,y) \supseteq \forall z\ Loves(x,z)$
+ If everybody loves everybody then $x$ loves everybody
+*** $\forall x \forall y\ Loves(x,y) \supseteq \exists z\ Loves(x,z)$
+ If everybody loves everybody then $x$ loves somebody
+*** $\forall x \exists y\ Loves(x,y) \supseteq \forall z\ Loves(x,z)$
+ If everybody loves somebody then $x$ loves everybody
+*** $\forall x \exists y\ Loves(x,y) \supseteq \exists z\ Loves(x,z)$
+ If everybody loves somebody then $x$ loves somebody
+
+** TODO Exercise 14
+
+ Provide FOL expressions representing the knowledge involved in each one of the domains described in exercise 2.
+
+** TODO Exercise 15
+
+ The Tower of Hanoi is a mathematical game or puzzle. It consists of three rods, and a number of disks of different sizes which can slide onto any rod. The puzzle starts with the disks in a neat stack in ascending order of size on one rod, the smallest at the top, thus making a conical shape.
+
+ The objective of the puzzle is to move the entire stack to another rod, obeying the following rules:
+ - Only one disk must be moved at a time.
+ - Each move consists of taking the upper disk from one of the rods and sliding it onto
+ another rod, on top of the other disks that may already be present on that rod.
+ - No disk may be placed on top of a smaller disk.
+
+ In order to formalize a three-disk Tower of Hanoi in FOL:
+*** Identify the individuals in the exercise
+*** Identify the types in the exercise: rods, disks, etc.
+*** Identify the attribute(s) in the exercise: size, etc.
+*** Formalize the initial configuration
+*** Formalize the concept “disk d can be moved to rod r” according to the second rule above (constraint)
+*** Formalize the movement move(d,r) or “the disk d is moved to rod r” according to the second rule above (know-how knowledge)
+*** Formalize the third rule above (constraint)
+
+** Exercise 16
+
+ For the sentence $\forall x (\forall y (A(x) \wedge B(x,y) \Rightarrow A(y)))$ state whether it is true or false, relative to the following interpretations. If false, give values for x and y witnessing that.
+
+*** The domain of the natural numbers, where A is interpreted as “even?”, and B is interpreted as “equals”
+ $\forall x \forall y\ even(x) \wedge equals(x,y) \Rightarrow even(y)$ is true
+*** The domain of the natural numbers, where A is interpreted as “even?”, and B is interpreted as “is an integer divisor of”
+ $\forall x \forall y\ even(x) \wedge divisor(x,y) \Rightarrow even(y)$ is false
+*** The domain of the natural numbers, where A is interpreted as “even?”, and B is interpreted as “is an integer multiple of”
+ $\forall x \forall y\ even(x) \wedge multiple(x,y) \Rightarrow even(y)$ is false, $x=6,\ y=3$
+*** The domain of the Booleans, {true,false}, where A is interpreted as “false?”, and B is interpreted as “equals”
+ $\forall x \forall y\ false(x) \wedge equals(x,y) \Rightarrow false(y)$ is true
+
+** TODO Exercise 17
+
+ The puzzle game of Sudoku is played on a 9×9 grid, where each square holds a number between 1 and 9. The positions of the numbers must obey constraints. Each row and each column has each of the 9 numbers. Each of the 9 non-overlapping 3×3 square sub-grids has each of the 9 numbers.
+
+ Throughout the game, some of the values have not been discovered, although they are determined. You start with some numbers revealed, enough to guarantee that the rest of the board is uniquely determined by the constraints. Thus, when deducing the value of another location, what has been revealed so far would serve as premises in a proof.
+
+ Fortunately, there are the same number of rows, columns, subgrids, and values. So, our domain is {1,2,3,4,5,6,7,8,9}.
+
+ To model the game, we will use the following relations: value(r,c,v) indicates that at row r, column c is the value v. v=w is the standard equality relation. subgrid(g,r,c) indicates that subgrid g includes the location at row r, column c.
+
+ Provide domain axioms for Sudoku, and briefly explain them. These will model the row, column, and subgrid constraints. In addition, you should include constraints on our above relations, such as that each location holds one value.
+
+** Exercise 18
+
+ Check for free and bound variables in the following expressions
+
+*** $\forall x\ ( \exists y\ P(x,y) \Rightarrow \exists z\ (Q(y,z) \Rightarrow R(x,y) \textasciicircum P(x,y)))$
+ No free variables
+*** $(\forall x\ (\exists y\ P(x,y) \Rightarrow \exists z\ (Q(y,z)))) \Rightarrow R(x,y) \textasciicircum P(x,y)$
+ $x$ and $y$ are free in the last part of the expression
+*** $(\forall x\ (\exists y\ P(x,y) \Rightarrow \exists z\ (Q(y,z)) \Rightarrow R(x,y) \textasciicircum P(x,y)))$
+ No free variables
+*** $(\forall x\ (\exists y\ P(x,y))) \Rightarrow (\exists z\ (Q(y,z) \Rightarrow R(x,y) \textasciicircum P(x,y)))$
+ $x$ and $y$ are free in the second and last part of the expression
+
+** Exercise 19
+
+ Represent in FOL
+
+*** Maria is mother of a son and a daughter
+ $\exists x \exists y\  x=son(maria) \wedge y=daughter(maria)$
+*** Maria is mother of only one son and only one daughter
+ $\forall x \forall y \forall z\ x=son(maria) \wedge \ y=daughter(maria) \wedge \neg (z=x) \wedge \neg (z=y) \supset \neg mother(maria, z)$
+*** Maria is mother of a son or a daughter
+ $\forall x\ son(x,maria) \supset \neg( \exists y\ daughter(y, maria))$
+ $\forall x\ daughter(x,maria) \supset \neg( \exists y\ son(y, maria))$
+*** All women are beautiful and some men are beautiful
+ $\forall x\ woman(x) \supset beautiful(x)$
+ $\exists x\ men(x) \supset beautiful(x)$
+* Rules and production systems
+
+** Exercise 20
+
+ Propose a rule for the knowledge represented in the following sentences
+
+*** Grandmothers tell nice stories
+ $Tells\_NiceStories(x) \Leftarrow Grandmother(x)$
+*** I hate all people that owns cats
+ $I\_hate(x,y) \Leftarrow owns(x,y) \wedge Person(x) \wedge Cat(y)$
+*** Summer days are hotter than winter days
+ $Hotter(x,y) \Leftarrow SummerDay(x) \wedge WinterDay(y)$
+*** People that have both life and health insurances are full covered
+ $FullyCovered(x) \Leftarrow person(x) \wedge Has\_LifeInsurance(x) \wedge Has\_HealthInsurance$
+*** All the subjects in the master have at least two different exams
+ $Has\_Exam(x) \wedge Has\_Exam(y) \wedge x \neq y \Leftarrow MasterSubject(s)$, assuming that the consequent $P$ of a rule $Q \Leftarrow P$ can have several effects.
+*** The friends of the friends are friends
+ $Friend(x,z) \Leftarrow Friend(x,y) \wedge Friend(y,z)$, assuming $Friend$ is commutative
+*** The friends of the enemies are enemies
+ $Enemy(x,z) \Leftarrow Enemy(y,x) \wedge Friend(y,z)$
+*** There are six eye colors: amber, blue, brown, grey, green, and hazel
+ $EyeColor(amber) \vee Eyecolor(blue) \vee Eyecolor(brown) \vee Eyecolor(grey) \vee Eyecolor(green) \vee Eyecolor(hazel)$
+*** People with green eye color are more attractive than the rest
+ $MoreAttractive(x,y) \Leftarrow Person(x) \wedge Person(y) \wedge EyeColor(x,green) \wedge \neg EyeColor(y,green)$
+*** Drivers take more than three months to get their driving license
+ $Months\_Required(x,y) > 3 \Leftarrow Person(x) \wedge DrivingLicense(y) \wedge Driver(x,y)$
+*** When red color is combined with yellow color, we obtain orange color
+ $Color(z, orange) \Leftarrow Color(x, red) \wedge Color(y, yellow) \wedge MixColor(z, x, y)$
+*** Students have to pass, at least, three subjects in order to continue studying
+ $PassedSubjects(x) > 3 \Leftarrow Student(x) \wedge Can\_Continue\_Study(x)$
+*** Exercise m
+
+ There are five groups of live beings: animals, plants, fungi, seaweeds, and bacteria.
+ $Animal(x) \vee Plant(x) \vee Fungi(x) \vee Seaweed(x) \vee Bacteria(x) \Leftarrow LiveBeing(x)$
+ Animals can move and eat other live beings.
+ $Can\_move(x) \Leftarrow Animal(x)$
+ $Can\_eat(x,y) \Leftarrow Animal(x) \wedge LiveBeing(y)$
+ People are Animals.
+ $Animal(x) \Leftarrow Person(x)$
+ Plants cannot move and they build their own food.
+ $\neg Can\_move(x) \Leftarrow Plant(x)$
+ $BuildsItsFood(x) \Leftarrow Plant(x)$
+ Trees, bushes, and herbs are plants.
+ $Plant(x) \Leftarrow Tree(x) \vee Bush(x) \vee Herb(x)$
+ Fungi cannot move but they cannot make their own food.
+ $\neg Can\_move(x) \Leftarrow Fungi(x)$
+ $\neg BuildsItsFood(x) \Leftarrow Fungi(x)$
+ Mushrooms and molds are fungi.
+ $Fungi(x) \Leftarrow Mushroom(x) \vee Mold(x)$
+ Seaweeds are simpler than plants.
+ $Simpler(x,y) \Leftarrow Seaweed(x) \wedge Plant(y)$
+ Bacteria are tiny, they only can be observed with a microscopy and they’re also called micro-organisms.
+ $Tiny(x) \Leftarrow Bacteria(x)$
+ $Microscopic(x) \Leftarrow Bacteria(x)$
+ $MicroOrganism(x) \Leftarrow Bacteria(x)$
+
+*** If something looks like a dog, moves like a dog, and barks like a dog, it is a dog.
+ $Dog(x) \Leftarrow LooksLikeDog(x) \wedge MovesLikeDog(x) \wedge BarksLikeDog(x)$
+*** I hate John, if he registers to a subject I don’t.
+ $Hate(I,John) \wedge(\neg Registers(I,x) \Leftarrow Subject(x) \vee Registers(John,x))$
+*** Exercise p
+
+ Some people in love get married.
+ $Married(x,y) \Leftarrow Person(x) \wedge Person(y) \wedge conditionOfSome(x,y)$
+ All just married people are in love.
+ $InLove(x,y) \Leftarrow JustMarried(x,y) \wedge Person(x) \wedge Person(y)$
+ Some people stop loving their couple some time after marriage.
+ $\neg InLove(x,y, T_2) \Leftarrow Married(x,y,T_1) \wedge Person(x) \wedge Person(y) \wedge T_2=sometimeAfter(T_1)$
+ All married people that are not in love, get divorced (express divorce as the absence of marriage)
+ $divorced(x,y) \Leftarrow \neg InLove(x,y) \wedge Married(x,y) \wedge Person(x) \wedge Person(y)$
+
+** Exercise 21
+
+ Given the following knowledge-base on parent relationships representing that John and Mary are parents of Peter, etc.
+
+ [[./ex21.jpg]]
+
+ Calculate the number of questions in order to know whether $Ancestor(John,Adele)$ is true or not for each one of the following three sets of rules:
+
+*** A
+
+ $Ancestor(x,y) \Leftarrow Parent(x,y)\cdot$
+ $Ancestor(x,y) \Leftarrow Parent(x,z) \wedge Ancestor(z,y)\cdot$
+
+ - $Ancestor(John,Adele)$?
+    - $Parent(John,Adele)?$ No
+    - $Parent(John,z) \wedge Ancestor(z,Adele)$? Only option $z=Peter$
+       - $Parent(Jonh, Peter)?$ Yes
+       - $Parent(John,Peter) \wedge Ancestor(Peter,Adele)$?
+	  - $Parent(Peter,Adele)$? No
+	  - $Parent(Peter,z) \wedge Ancestor(z,Adele)$? Only option $z=Mike$
+	     - $Parent(Peter,Mike)$? Yes
+	     - $Parent(Peter,Mike) \wedge Ancestor(Mike,Adele)$?
+		- $Parent(Mike,Adele)$? _Yes_, 10 queries required
+
+*** B
+
+ $Ancestor(x,y) \Leftarrow Parent(x,y)\cdot$
+ $Ancestor(x,y) \Leftarrow Parent(z,y) \wedge Ancestor(x,z)\cdot$
+
+ - $Ancestor(John,Adele)$?
+   - $Parent(John,Adele)$? No
+   - $Parent(z,Adele) \wedge Ancestor(John,z)$?
+     - $z=Mike$
+       - $Parent(Mike,Adele)$? Yes
+       - $Parent(Mike,Adele) \wedge Ancestor(John,Mike)$?
+	 - $Parent(John,Mike)$? No
+	 - $Parent(z,Mike) \wedge Ancestor(John,z)$?
+	   - $z=Peter$
+	     - $Parent(Peter,Mike)$? Yes
+	     - $Parent(Peter,Mike) \wedge Ancestor(John,Peter)$?
+	       - $Parent(John,Peter)$? _Yes_, 10 quieres required
+	   - $z=Eve$...
+     - $z=Sophie$...
+
+ If the order of the suppositions is from left to right (from $Mike$ to $Peter$) we have the best case scenario and the number of queries is the same as before, but with other orderings the number of quieries increases.
+
+*** C
+
+ $Ancestor(x,y) \Leftarrow Parent(x,y)\cdot$
+ $Ancestor(x,y) \Leftarrow Ancestor(x,z) \wedge Ancestor(z,y)\cdot$
+
+ - $Ancestor(John,Adele)$?
+   - $Parent(John,Adele)$? No
+   - $Ancestor(John,z) \wedge Ancestor(z,Adele)$?
+     - $z=Peter$
+     - $Ancestor(John,Peter)$?
+       - $Parent(John,Peter)$? Yes
+     - $Ancestor(John,Peter) \wedge Ancestor(Peter,Adele)$?
+       - $Parent(Peter,Adele)$? No
+       - $Ancestor(Peter,z) \wedge Ancestor(z,Adele)$?
+	 - $z=Mike$
+	 - $Ancestor(Peter,Mike)$?
+	   - $Parent(Peter,Mike)$? Yes
+	 - $Ancestor(Peter, Mike) \wedge Ancestor(Mike,Adele)$?
+	   - $Parent(Mike,Adele)$? _Yes_, 12 quieres required
+     - $z=\cdots$
+
+ In the best case scenario we need 12 quieres, but with different orderings the number increases.
+
+** Exercise 22
+
+ [[./ex22.jpg]]
+
+ Calculate the same as in exercise 21 for the following parental KB:
+
+*** A
+
+ $Ancestor(x,y) \Leftarrow Parent(x,y)\cdot$
+ $Ancestor(x,y) \Leftarrow Parent(x,z) \wedge Ancestor(z,y)\cdot$
+
+*** B
+
+ $Ancestor(x,y) \Leftarrow Parent(x,y)\cdot$
+ $Ancestor(x,y) \Leftarrow Parent(z,y) \wedge Ancestor(x,z)\cdot$
+
+*** C
+
+ $Ancestor(x,y) \Leftarrow Parent(x,y)\cdot$
+ $Ancestor(x,y) \Leftarrow Ancestor(x,z) \wedge Ancestor(z,y)\cdot$
+
+** TODO Exercise 23
+
+ Given the following set of rules
+
+ $Lectures(adele,knowledgeRepresentation)\cdot$
+ $Lectures(barry,knowledgeRepresentation)\cdot$
+ $Lectures(charles,knowledgeEngineering)\cdot$
+ $Enrolled(donnald,knowledgeRepresentation)\cdot$
+ $Knows(x,y) \Leftarrow Enrolled(x,s_1) \wedge Enrolled(y,s_2) \wedge (s_1=s_2) \cdot$
+ $Knows(x,y) \Leftarrow Enrolled(x,z) \wedge Lectures(y,z) \cdot$
+
+*** Perform forward-chaining when $Enrolled(eve,knowledgeRepresentation)$ is asserted
+  $Enrolled(eve,knowledgeRepresentation)$
+*** Perform forward-chaining when $Enrolled(frank,knowledgeEngineering)$ is asserted
+*** Perform backward-chaining when $Knows(donnald,adele)$ is asked
+*** Perform forward-chaining when $Knows(donnald,barry)$ is asserted
+*** Perform backward-chaining when $Enrolled(frank,knowledgeEngineering)$ is asked
+*** Perform backward-chaining when asserted $\neg Knows(donnald,charles)$
+
+** Exercise 24
+
+ Given the following working memory apply each one of the respective production rules
+
+ Working Memory
+
+ #+BEGIN_SRC
+(book name:Don-Quixote author:Miguel-Cervantes year:1605 type:chivalry)
+(book name:Hamlet author:William-Shakesperare)
+(book name:The-three-Musketeers author:Alexandre-Dumas year:1844)
+(book name:The-Adventures-of-Huckleberry-Finn year:1884 author:Mark-Twain)
+(writer name:Miguel-Cervantes bithyear:1547 deathyear:1616)
+(writer name:William-Shakespeare birthdate:1564 deathyear:1616)
+(cites book:The-three-Musketeers to:Don-Quixote)
+(cites book:The-Adventures-of-Huckleberry-Finn to:Don-Quixote)
+ #+END_SRC
+
+*** ~IF (writer name:x birthyear:y) (writer name:z birthyear:{> y}) THEN ADD (older who:x to:z) b)~
+*** ~IF (writer name:x deathyear:y) (book author:z year:{> y}) THEN ADD (older who:x to:z) c)~
+*** ~IF -(writer name:x) (book author:x) THEN REMOVE 2 d)~
+*** ~IF (cites book:x to:y) –(book name:x) THEN REMOVE 1 e)~
+*** ~IF (cites book:x to:y) (book name:x) (book name:y type:z) THEN MODIFY 2 (type z)~
+
+** Exercise 25
+
+ Give the working memory elements in exercise 24 provide production rules to implement each one of the following knowledge (extend the working memory with new elements if required)
+
+*** books written between 1600 and 1800 are of style baroque
+*** books whose author name is not known are anonymous
+*** writers with more than 10 books written are prolific
+*** writers with birthyear after deathyear must be deleted
+*** books that are cited by more than 5 other books are master-pieces
+*** authors who wrote a master-piece are classics
+
+** Exercise 26
+
+ For the following production system, trace the results, assuming that the conflict resolution strategy is: an instance of most important applicable rule is selected. If there are more than one such instances, the instance is selected randomly. The order of rule importance is: R3 more important than R1, R1 is more important than R2.
+
+ #+BEGIN_SRC
+F1 animal(tiger)
+F2 animal(cat)
+F3 large(tiger)
+F4 eatsMeat(tiger)
+F5 eatsMeat(cat)
+ #+END_SRC
+
+ #+BEGIN_SRC
+R1 dangerous(x) <= animal(x) ^ large(x) ^ eatsMeat(x)$
+R2 breathesOxygen(x) <= animal(x)
+R3 runAwayNow <= dangerous(x)
+ #+END_SRC
+
+** TODO Exercise 27
+
+ In the world of blocks we have the WME formats (block name:id color:c shape:s) asserting that there’s a block with unique name id, (on up:blockid down:blockid) representing that up block is immediately on top of block down.
+
+*** Represent the knowledge “There are not consecutive blocks of the same color”.
+*** Make  a  constructor  saying  that  a  block  composition  can  be  combined  to  make  a  new  block.
+*** If all the blocks within a composite block have the same color and shape, the composite block is said to be homogeneous, otherwise it is heterogeneous.
+*** A  structure  of  blocks  is  said  to  be  legal  if  the  number  of  stacked  blocks  are  below  one  hundred.
+*** Height is the property of a block structure that stores the number of staked blocks of that structure.
+*** Constructing a structure consists on identifying two free blocks, use a crane to pick the free  block  with  a  lower  height  and  staking  it  on  top  of  the  other  block.  Implement  the  production rules to implement this procedure.
+
+** TODO Exercise 28
+
+ In the world of blocks there's a group of blocks on a table, and we want to make a heap with all these blocks and with bigger blocks below smaller blocks. We count with a robot arm. Provide production systems for the following implementations. Implement all the solutions in CLIPS.
+
+*** We are only allowed to have the type of WME (block id:int size:int position:{table, robot-hand, heap}
+*** We are only allowed to have the type of WME (block id:int size:int position: {table, robot-hand, #position in the heap}.
+*** We are allowed to have the following WME types: (block id:int size:int, (robot-hand block: int, (on block1: int, block2: int. Note: you should convert the blocks that the robot takes into used-blocks to avoid the robot to take them more than once.
+
+** Exercise 29
+
+ Domino is the game made of rectangular tiles with a line dividing its face into two square ends, each one containing numbers in the range 0-6. There are not repeated tiles. A simplified version of the game for two players consists on an initial selection of seven free tiles for each player. Starting with payer one, he releases one of his tiles (first movement) starting a line of game. Then alternatively, each player can release one of his tiles with one end that fits one of the extremes of the line of game. If a player cannot release one of his tiles, he takes a free tile. The turn passes. A player is said to lose the game when it is his turn to release a tile, he has tiles but he can release none of them, and there are not free tiles available to take.
+
+*** Provide a working memory element format to represent free tiles
+*** Provide a working memory element format to indicate the tiles of one player
+*** Provide a working memory element format to represent the line of game
+*** Assuming a random conflict strategy, construct a production rule for a player to select one tile at random among the ones that are free
+*** Construct a production rule for a player to select seven free tiles (beginning of game)
+*** Construct a production rule to represent the first movement of the first player
+*** Construct a production rule to represent the next tile release of any player in the line of game
+*** Construct a production rule to represent that a player has lost (he can release none of his tiles and there are no free tiles to take)
+
+** Exercise 30
+
+ The Towers of Hanoi problem (see exercise 15) has an elegant recursive solution, but it also has a less well known iterative solution as follows. First, we arrange the pegs in a circle, so that clockwise we have rods A, B, C, and then A again. Disks are given the respective names 1, 2, and 3. Following this, assuming we never move the same disk twice, there will always only be one disk that can be legally moved, and we transfer it to the first rod it can occupy, moving it in a clockwise direction, if it is even, and counter-clockwise, if it is odd. Write a collection of production rules that implement this procedure. Initially, the working memory will have elements (on rod: A disk:i) for each disk and an element (solve). When your rules stop firing, you should have (on rod:C disk:i) for each disk and (done) in the working memory.
+
+** Exercise 31
+
+ A circular railway is composed of four train stations S1, S2, S3, and S4. A train T circulates from S1 to S2, from S2 to S3, from S3 to S4, and from S4 to S1, starting the cycle again. The train has a capacity for 30 passengers sited and 20 passengers standing. Passengers arrive to and leave from stations. Some passengers want to be seated, some others don’t care. Passengers have a destination station where they want to arrive to. All the passengers arrive to a station, get into the next train with a vacancy of the sort wished (seated or don’t care) and waits till the train arrives to the passenger’s destination station.
+
+*** Propose the structure of the working memory elements to implement this system
+*** Propose a rule (or set of rules) describing the patients arriving and leaving a station
+*** Propose a rule (or set of rules) describing the train moving between stations (consider that a train does not leave a station till all the passengers with destination this station have stepped off)
+*** Propose a rule (or set of rules) describing the passengers of a station to step in the trainwhen the train arrives to the station, and the passengers to step off the train when they arrive to their destination station.
+
+** Exercise 32
+
+ In some academies, students are able to enroll in subjects that they want to attend and whose pre-requirement they have all been passed. Pre-requirement of a subject are a set of other subjects that need to be passed before registering to the first one. Represent this behavior with a production system.
+
+ Other academies also consider co-requirements, these meaning that one subject can be enrolled if all its co-requirement subjects are also enrolled. Represent these restrictions with a production system.
+* Object-Oriented representation
+** Exercise 33
+
+ Provide a system of Frames to represent all the following assertions
+
+*** A library is a place where there are books, magazines, CDs, and DVDs
+*** All books are written by one or several authors that are men or women
+*** There are some books that are anonymous
+*** Library books, magazines, CDs, and DVDs can be borrowed by library members, which are men or women
+*** The books with arrival date the current year cannot be borrowed
+
+** Exercise 34
+
+ Provide a system of Frames to represent all the following assertions
+
+*** Planes land and take off in airports
+*** All planes belong to a Flight Company
+*** Flight Companies may organize into Alliances
+*** Star Alliance is an alliance that contains the Flight Companies Air Canada, Spanair, Air China, Thai, and others
+*** Planes flight from one airport to another following a timetable
+*** There are two sorts of flight tickets: tourist, and business
+
+** Exercise 35
+
+ Represent with OO knowledge representation (frames and COOL) the following knowledge base
+
+*** Vehicles are means of transportation with wheels with many possible colors and there are companies building different models of vehicles
+*** There are vehicles that are classic-cars. These cars are made by a company
+*** All classic-cars must have a company (i.e., company slot of CLASSIC-CAR is not optional)
+*** Classic-cars have a model. If the company making the car doesn’t have this model in its list of models, it is inserted
+*** Classic-cars have a factory price (the cost of producing the car) and a retail price (the cost to final client). Retail price is always 30% more than the factory-price, and the factory-price can change the production costs
+*** Classic-cars have a horsepower value that must be always in the range [50, 200]
+*** Classic-cars have one single color that can be red, white, black, yellow, dark, or other. The information is stored codified, and recovered decodified
+*** Persons can buy and sell classic-cars with the corresponding exchange of money
+
+** Exercise 36
+
+ For the following domains:
+
+ - Classroom scheduler :: Build a program that helps schedule rooms for classes of various sizes at a university, using the sort of frame technology (frames, slots, and facets). Slots of frames might be used to record when and where a class is to be held, the capacity of a room, etc., and IF-ADDED and other facets might be used to encode constraints as well as to fill in implied values when the KB is updated. In this exercise, we want to consider updating the KB in several ways: (1) asserting that a class of a given size is to be held in a given room at a given time; the system would either go ahead and add this to its schedule, or alert the user that it was not possible to do so; (2) asserting that a class of a given size is to be held at a given time, with the system providing a suitable room (if one is available) when queried; (3) asserting that a class of a given size is desired, with the system providing a time and place when queried.
+ - Olympic assistant :: We want to help the International Olympic Committee in the smooth running of the next Olympic Games. In particular, we want to select an event and write a program to deal with that event including facilities for handling the preliminary rounds/heats and finals. Slots of frames might be used to record athletes in a heat/final, the location and time of that heat/final, etc. and IF-ADDED/IF-NEEDED and other procedures might be used to encode constraints as well as fill in implied values when the knowledge base is updated. We particularly wish to consider several ways of updating the knowledge base: (1) asserting that a heat will take place with certain athletes. The system should add this and determine what time and the location of the venue the athletes need to be at for their heat, etc; (2) asserting that a particular semi-final/final should take place, the system should determine the participating athletes; and, (3) asserting that the medal ceremony should take place at a particular time and location, the system should add this and provide the medalists plus appropriate national anthem when queried. To simplify matters, we assume that an athlete takes part in only the event we have chosen.
+
+*** Design a set of frames and slots to represent the schedule and any ancillary information needed by the assistant
+*** For  all  slots  of  all  frames,  write  in  pseudo-code  the  IF-ADDED  or  IF-NEEDED  procedures  that  would  appear  there.  Annotate  these  procedures  with  comments  explaining why they are there (e.g., what constraints they are enforcing)
+*** Briefly explain how your system would work (what procedures would fire and what they would do) on concrete examples of your choosing illustrating each of the three situations (1, 2, and 3) mentioned in the application
+
+** Exercise 37
+
+ Provide a frame system for exercise a)
+
+** Exercise 38
+
+ Provide a frame system for exercise a)
+
+** Exercise 39
+
+ Provide a Script to represent the process of borrowing a book in a Library that could cover the following steps: enter into the library, look for a book in the shelves, in the computer, or directly with the librarian, make the reservation, go home with the book (if it was found), and return the book after some time.
+
+** Exercise 40
+
+ Provide a Script to represent the process of flying (direct flights) between two airports: find all the companies that connect these airports, then ask for the time tables, select one sort of ticket, and purchase the ticket.
+
+** Exercise 41
+
+ In a company there are three departments: Production, Sells, and Marketing. All the departments have one head which is a person with university studies, and other employees that are the workers. All workers of the Production department have a work turn of morning, afternoon, or over-night, and the turn of one person cannot be changed if the number of workers in the leaving turn goes below 10. The company produces two sorts of products: intermediate and final. Intermediate products remain in the Production department as components to produce other more complex products. Final products are those that are ready to be commercialized. All sorts of products have a production rate in units per hour. Once the final products are produced they are added to the catalog of available products. Clients made requests of the sort (n, p) where n is the number of units requested of product p. The workers of the Sell department solve the requests with products in the catalog of available products. Workers in the Marketing department analyze the catalog of available products to detect whether there many products of each sort (each product has an indicator of overstocked) and start a commercial campaign to sell these products to the company clients. The amount of work between workers of the same department are tried to keep balanced: all production workers are assigned one turn, the accumulated number of requests attended for the sellers is +/-1 the same, and number of campaigns triggered by each marketing worker is +/-1 the same.
+
+*** Provide a frame system to represent this domain
+*** Provide a script system to describe the production-marketing-selling procedure
+
+** Exercise 42
+
+ Represent with Frames the following knowledge: “An agenda is a list of meeting activities in the order in which they are to be taken up. Meeting activities can be professional and personal, and all of them have a priority. They have a date, duration in hours, and place. Optionally they may also have a person to which the meeting is been held with. When a meeting activity is introduced in the agenda it may create a conflict with a previous meeting and if the new meeting is more priority, the previous one is shifted to a list of to-be-assigned activities of the agenda.
+
+ We consider that all the meeting activities are held, except those in the to-be-assigned list. The agenda also has an activity ratio which indicates the proportion of hours that the owner of the agenda has been met with respect to all the activities registered in the agenda (including the ones in the to-be-assigned list).”
+
+** Exercise 43
+
+ Represent with Frames the following knowledge: “Backyards in houses are leisure surfaces with an extension measured in m2 containing elements such as vegetal, sport elements and constructions. Vegetal elements can be of the sort trees, bushes, and grass. Each one having a Latin and an ordinary name, a need of water measured in litters per day, a cost (which is unitary for trees and brushes, but which is per m2 for grass). Moreover, they occupy a surface in m2. Sport elements are swimming pools, and tennis courts. Both have extensions in m2, but swimming pools require refilling of water in terms of litters per day. Both elements have a construction cost. Finally, backyard constructions can be huts and greenhouses. Both of them occupy a surface in m2, and have a construction cost. Greenhouses require a supply of water in litters per day. The surface of the grass in a backyard is usually computed as the difference between the whole backyard and the rest of elements in the backyard. The need of water (and the cost) of the backyard is computed as the addition of the needs of water (and costs) of all the elements contained.”
+
+* Network representation
+** Exercise 44
+
+ Provide a definitional semantic network representing the knowledge in the following paragraph: “Mammals (class Mammalia) are a class of vertebrate animals characterized by the presence of sweat glands, including sweat glands modified for milk production, hair, three middle ear bones used in hearing, and a neocortex region in the brain. All mammals (except for the five species of monotremes) give birth to live young instead of laying eggs. Most mammals also possess specialized teeth, and the largest group of mammals, the placentals, uses a placenta during gestation”
+
+** Exercise 45
+
+ .Provide a definitional semantic network representing the knowledge in the following paragraph: “A rocket or rocket vehicle is a missile, aircraft or other vehicle which obtains thrust by the reaction of the rocket to the ejection of fast moving fluid from a rocket engine. Chemical rockets work by the action of hot gas produced by the combustion of the propellant  against  the  inside  of  combustion  chambers  and  expansion  nozzles.  This  generates forces that accelerate the gas to extremely high speed and exert a large thrust on the rocket”.
+
+** Exercise 46
+
+ Provide an assertional semantic network to represent the following knowledge: “People are mammals. Rockets can be crewed or not. All the crewed rockets are crowed by people. All the rockets lift-off, but not all of them land. Outspace rockets are crewed by astronauts. If an outspace rocket lands, the astronaut becomes a hero. Neil Armstrong and Yuri Gagarin were astronauts of Gemini 8 and Vostok 1 rockets, respectively”.
+
+** Exercise 47
+
+ Make a Petri Net to pipeline the following process of making bread: “Get the ingredients: yeast (2 Tbsp.), hot-ish water (2 cups), bread flour (5 cups total, 2 for the sponge and 3 for later.), sugar (2 Tbsp.), salt (2 tsp.), and oil (2 Tbsp.). Make the sponge: start by mixing 2 cups of hot-ish water and the flour, then add 2 Tbsp. sugar, 2 Tbsp. oil, 2 Tbsp. yeast, and 2 tsp. salt. Add some flour and knead it: add ''about'' 3 more cups of flour. Let it rise in a warm 14 place for about 45 minutes to an hour, it should be about doubled in size by the time it's finished. Put it in the loaf pans: punch the dough down and divide it into 3 parts. Spray the pans and put the dough in. Let it rise again in the pans. Bake it: preheat your oven to 350 degrees and put the loaves in. Bake them for about 25 minutes. Your quick read thermometer should read between 180 and 190 degrees. Pull the loaf”.
+
+** Exercise 48
+
+ Construct a definitional semantic network to represent the world of airlines: “Airlines have planes and hire pilots and hostesses that are assigned to planes; planes are assigned to flights; flights are between two cities (from and to), they have two dates and hours assigned (departure and arrival); flights define travels, though travels can have several flights connected; passengers are assigned to travels; cities have an intended influence population that can be high, medium or low; flights between two high populated cities require big planes; flights between two low populated cities require small planes; the rest of flights require medium planes.”
+
+** Exercise 49
+
+ Construct a definitional semantic network to represent the world of chairs: “A chair is a piece of furniture with a raised surface used to sit on, commonly for use by one person. Chairs are most often supported by four legs and have a back; however, a chair can have three legs or could have a different shape. A chair without a back or arm rests is a stool, or when raised up, a bar stool. A chair with arms is an armchair and with folding action and reclining footrest, a recliner. A permanently fixed chair in a train or theater is a seat or, in an airplane, airline seat; when riding, it is a saddle and bicycle saddle, and for an automobile, a car seat or infant car seat. With wheels it is a wheelchair and when hung from above, a swing.” (Extracted from Wikipedia)
+* Ontologies
+** Exercise 50
+
+What is an ontology?
+
+** Exercise 51
+
+Represent the knowledge in all the section of the exercise 2 as ontologies.
+
+** Exercise 52
+
+Represent the PIZZA ontology with the following assertions.
+
+*** All pizzas have a base and some toppings
+*** There are two sorts of pizzas: red pizzas and white pizzas
+*** Red pizzas must have tomato as topping
+*** White pizzas cannot have tomato
+*** Toppings can be spicy or soft
+*** Chilly is a spicy topping
+*** A pizza with a thin base is a crispy pizza
+*** Pizzas with more than two spicy toppings are hot pizzas
+*** Vegetarian pizzas cannot contain meat toppings
+*** Pizzas can only have one base (functional property)
+
+** Exercise 53
+
+Represent the BANK ontology that contains the following knowledge:
+
+*** A bank has customers
+*** Customers can be persons (retail customers) or companies (business customers)
+*** A retail customer cannot be a business customer; a business customer can never be a retail customer
+*** Nicolas Claus is a retail customer; Santa Inc. is a business customer
+*** A customer can have a bank account; a bank account belongs to a specific bank
+*** A customer has to have at least one bank account
+*** Only trusted customers can get a credit
+*** A retail customer is a trusted customer if he has a trusted account; a business customer is always a trusted customer
+
+** Exercise 54
+
+ Use the Protégé tool to represent the knowledge contained in the exercise 52.
+** Exercise 55
+
+In the world of pizza toppings, we have the following hierarchy of classes:
+
+- PizzaTopping
+  - Vegetable
+    - Tomato
+    - Mushroom
+  - Fruit
+    - Pineapple
+  - Meat
+    - Beef
+    - Pepperoni
+  - Cheese
+    - Mozzarella
+    - Parmesan
+
+Each  word  in  the  figure  is  a  class  and  the  arrows  represent  subclasses  (e.g.  Tomato  is  a  subclass of Vegetable). Note that some of the class names in this ontology are purposefully misleading for the purposes of this exercise. Without making assumptions about information not present in the figure, answer the following questions about OWL:
+According to this ontology,
+
+*** Can something be meat but not a pizza topping?
+*** Can something be both meat and a vegetable?
+*** Is beef a pizza topping?
+*** In OWL, can we prevent something from being both a fruit and a vegetable? If so, how? If not, why not?
+*** How  are  the  class  names  in  this  ontology  misleading?  How  would  you  rename  the  classes to make them less misleading?
+
+** Exercise 56
+
+Following with the pizza topping world, Consider the following segment of OWL code:
+
+#+BEGIN_SRC
+class(VegetarianPizza,
+Pizza,  complementOf(restriction(hasTopping someValuesFrom Meat)))
+
+class(TomatoPizza
+Pizza
+restriction(hasTopping someValuesFrom Tomato))
+#+END_SRC
+
+Using  information  from  both  the  pizza  topping  hierarchy  and  the  OWL  code  segment,  answer the following questions:
+
+*** Can a TomatoPizza contain meat?
+*** Can a pizza be both a VegetarianPizza and a TomatoPizza?
+*** Are all TomatoPizzas VegetarianPizzas?
+** Exercise 57
+
+Define a new pizza called "BeefPizza" using a similar syntax style as used on the OWL code segment above. A BeefPizza has some Tomato toppings, some Beef toppings, but no other toppings.
+
+** Exercise 58
+
+Engineer   a   comprehensive   ontology   describing   domain   of   university   education   in   accordance  to  the  statement  provided  below.  Select  the  methodology  described  through  lecturing material. Express the ontology in OWL.
+
+#+BEGIN_QUOTE
+A  set  of  faculties  and  institutes  comprise  a  university.  A  university  is  responsible  for  organizing  teaching  process  formalized  through  curricula.  Faculties  and  institutes  are  contributing   to   a   curriculum   through   lectures   and   tutorials,   conducted   by   university   personnel  (professors  and  assistants).  Students  must  subscribe  themselves  to  a  specific  curriculum  and  must  pass  lecture  exams  and  successfully  conclude  tutorial  exercises.  A student may take an exam up to three times for a specific lecture. Upon successful exam a grade is recorded in the student transcript.”
+#+END_QUOTE
+** Exercise 59
+
+To represent OWL ontologies we can use the TURTLE notation which is explained with the following examples:
+
+To indicate _A is a class_: A is Class; (ex. Person is Class)
+To indicate _A is a subclass of B_: A is B; (ex. Man is Person;)
+To indicate _p is a property_: p is Property; (ex. marriedTo is Property;)
+To indicate _I is an instance of class A_: I instanceOf A; (ex. John instanceOf Man;)
+To indicate _p is a property of classes A,B,..._: p hasDomain A,B,...; (ex. marriedTo hasDomain Man, Woman;)
+To indicate _p is a property with range R_: p hasRange R; (ex. marriedTo hasRange Person;)
+
+Recall that the range R of a propert can be a complex experssion reflecting:
+
+- A class with a name (ex: Woman representing all the instances of the class Woman)
+- An intersection (ej: Person Adult representing all the adult persons).
+- A union (ex: Woman Girl representing women and girls).
+- A complement (ex. -Woman representing all instances not of the class Woman).
+- A minimal limitation of the number of instances in a class (ex: S3married to represents all the instances that are married to 3 or less persons).
+- A maximal limitation of the number of instances in a class (ex: >2married to represents all the instances that are married to 2 or more people).
+- A universal quantifier (ex: Vmarried To.Man indicates all the instances that are only married to men, one or more times). An existential quantifier (ex: 3 married To.Person indicates the entire instances that are married to one person, at least).
+
+Given the former language to represent OWL ontologies, represent the following knowledge units:
+1. "... Owners are classified into companies, individuals, families, and groups ...".
+2. "... Individual are adult persons living alone ...".
+3. "... Families can be young families (they have, at least, an adult, but also one or more young people or children), adult families (when all the members are adults, but not elder) and elder families (whne all the members are elder) ...".
+4. "... Alejandro has Passport No 46001122 and he's owner of a flat of 100 m2 ...".

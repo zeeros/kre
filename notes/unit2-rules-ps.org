@@ -8,7 +8,7 @@ In rule-based knowledge bases we have a database of facts and a collection of ru
   - Consequent $Q$ :: Single fact satisfied if the rule is applied (e.g. $Mother(y,x)$)
 
 Depending on the antecedent $P$, the rule may be
-- Conjunctive rule :: $P$ is a conjunction of facts, so all the facts must be satisifed to apply the rule (e.g. $Can\_vote(x) \Leftarrow Person(x) \wedge Adult(x)$
+- Conjunctive rule :: $P$ is a conjunction of facts, so all the facts must be satisifed to apply the rule (e.g. $Can\_vote(x) \Leftarrow Person(x) \wedge Adult(x)$)
 - Disjunctive form :: $P$ contains at least a disjunction
   - Disjunctive :: $b \Leftarrow a_1 \vee, a_2 \vee \cdots a_k$
   - k-term DNF :: $b \Leftarrow (a_{11} \wedge \cdots \wedge a_{1k_1}) \vee \cdots \vee (a_{i1} \wedge \cdots \wedge a_{ik_i}), j \leq k$ (with $j$ terms in disjunction)
