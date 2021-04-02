@@ -42,7 +42,7 @@ When a ~IF-ADDED~ procedure is triggered, the loop is repeated if other slots ar
 
 ** Requiring loop
 
-When a value is required from an instance, if the slot has a filler its value is returned. otherwise, either
+When a value is required from an instance, if the slot has a filler its value is returned. Otherwise, either
 - There is a ~IF-NEEDED~ procedure
 - Or the first ~IF-NEEDED~ procedure in the hierarchy of frames is triggered
 When a ~IF-NEEDED~ procedure is found its value is returned, otherwise ~unknown~ is returned.
@@ -52,5 +52,60 @@ When a ~IF-NEEDED~ procedure is triggered, the loop is repeated if other slots a
 
 When an instance is created
 - Some slots may be explicitly provided my the user, the others are inherited
-- For slot with a filler and a ~IF-PROCEDURE~ procedure, the procedure is run. The loop is repeated if other slots are filled or new frames instantiated.+
-* TODO Lisp-like notation for daemons
+- For slot with a filler and a ~IF-PROCEDURE~ procedure, the procedure is run. The loop is repeated if other slots are filled or new frames instantiated.
+
+* Lisp lambda-expressions
+
+In LISP, the generic syntax for lambda-expressions is ~(lambda (v) body)~, with
+- lambda ::  Symbol used to define lambda-expressions
+- v :: A lambda-list specifying names for the parameters of the function. When the function denoted by the lambda-expression is applied to arguments, the arguments are matched with the parameters specified by the lambda-list.
+- body :: Can refer to the arguments by using the parameter names. The body consists of any number of forms (possibly zero). These forms are evaluated in sequence, and the results of the last form only are returned as the results of the application (the value nil is returned if there are zero forms in the body).
+
+The complete syntax of a lambda-expression is
+#+BEGIN_SRC
+(lambda ({var}*
+         [&optional {var | (var [initform [svar]])}*]
+         [&rest var]
+         [&key {var | ({var | (keyword var)} [initform [svar]])}*
+                [&allow-other-keys]]
+         [&aux {var | (var [initform])}*)]
+   [[{declaration}* | documentation-string]]
+   {form}*)
+#+END_SRC
+
+Some examples
+- ~(lambda (arg) (/ arg 50))~ is a function that returns the value resulting from dividing whatever is passed to it as ~arg~ by ~50~
+- ~(multiply-by-seven 3)~ is a function that returns 21, where
+  - ~multiply-by-seven~ is a function
+  - ~3~ is the argument
+- ~((lambda (number) (* 7 number)) 3)~ is a function that returns 21, where
+  - ~(lambda (number) (* 7 number))~ is an anonymous function
+  - ~3~ is the argument
+
+* Lisp-like notation for daemons
+
+We can define facets such as
+- IF-ADDED :: Set ~v~ in the slot and run ~lambda~
+- IF-NEEDED :: Run ~lambda~ and return ~v~
+These facets can also be used to create or remove frames.
+
+In ~body~ we may find
+- Preorder notation :: ~(+ 5 4)~, ~(< 10 15)~
+- Assignment :: ~(set slot value)~
+- Conditional statement :: ~(if cond then [else])~
+- Loops :: ~(while cond body)~
+- Environment definition :: ~(let ((var value)(var value)...) body-accessing-vars)~
+- Grouping sentences :: ~(sent1 ... sentN)~
+
+We can access values such as
+- SELF:slot-name :: The value of ~slot-name~ in the current frame (referred as ~SELF~)
+- frame-name:slot-name :: The value of ~slot-name~  in ~frame-name~
+
+* Scripts (Schank & Abelson)
+
+The idea of the *script* model (Schank & Abelson, 1977) is to represent procedural (know-how) knowledge with a frame system: a script is a structure describing a sequence of events (over time) in a context, extending the concept of frame with complex temporal/sequencial events. The following slots are used
+- Props :: Properties (frames or labels) being part of the script
+- Roles :: Agents (frames or labels) involved in the script definition
+- OpeningConditions :: Pre-conditions that make the script valid
+- Scene :: Actions in the script
+- Results :: Post-conditions that are valid after the script runs-+
