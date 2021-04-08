@@ -1,0 +1,37 @@
+#+TITLE: Ontologies
+
+* Introduction
+
+An *ontology* can be defined as
+- An explicit specification of conceptualization
+- A body of knowledge describing a domain
+And always includes
+- A vocabulary of terms
+- A specification of their meaning
+
+It defines how concepts are inter-related to
+- Compose a collective structure on the domain
+- Constrain interpretations of its terms
+
+An ontology may take many forms, but always has a *vocabulary of terms* and a specification of their *meaning*.
+
+Ontologies enable the sharing and reuse of knowledge by
+- Capturing it
+- Creating a shared understanding, for humans and computers
+- Making knowledge computable
+- Making meaning explicit, by definition and context
+
+* Elements
+
+- Concepts or classes :: Properties/slots or facets
+- Relationships :: To link concepts
+  - Taxonomies :: Use of ~is a kind of~ relationships
+  - Further structures :: Composed by ~is a part of~, ~belongs to~, etc
+- Axioms :: To constrain concepts with disjointness, covering, equivalence, etc
+- Individuals :: Instances
+
+* Ontology classes (OWL)
+
+- Named classes :: Class names
+- No-named clases :: Complex class expressions
+  - Keywords :: some, value, only, min, max, exactly, and, or, not

@@ -37,20 +37,164 @@ Consider the generic rule ~IF P THEN Q~, we can apply different forms of rule-ba
 
 * Production Systems
 
-- Production system (PS) :: Forward chaining system that uses PRs and a WM
-- Production rule (PR) :: Two-part structure for antecedent $P$ (that is a conjunctive rule) and consequent $Q$. Conditions in $P$ are evaluated with the current WM in a three-step cycle
-  - Recognize active rules :: Populate the set of rules that can be applied
-  - Resolve conflicts :: Select one rule from the previous set
-  - Trigger rule :: Change the WM according to the actions of the selected rule
-- Working memory (WM) :: Set of working memory elements (order is irrelevant)
-- Working memory element (WME) :: An n-tuple of the form $(type\quad att_1:val_1 \cdots att_n:val_n)$ with $type,att_i,val_i$ as atoms
-- Production rule antecedent :: A set of either positive or negative conditions of the form  $(type\quad att_1:spec_1 \cdots att_n:spec_n)$ with $type, att_i$ atoms and $spec_i$ as
+A *production system* (PS) is a forward chaining system that uses *production rules* (PR) to represent general knowledge. A *working memory* (WM) is used to store assertions.
+
+A production rule is a two-part structure comprising
+- Antecedent conditions :: Set of conditions to be applied on the current state of the WM
+- Consequent actions :: Set of actions that eventually modify the WM
+A rule is usually written as ~IF conditions THEN actions~.
+
+Production systems repeats a basic three-step cycle
+- Recognition :: Populate the set of applicable rules (the rules whose antecedent conditions are satisfied with current WM)
+- Conflict solving :: Choose from the applicable rules the ones that should be executed
+- Trigger rule :: Change the WM according to the actions of the selected rules
+The production system halts when no more rules can fire with the current WM
+
+** Working memory
+
+A *working memory* (WM) is set of *working memory elements* (WMEs).
+A WME is a tuple of the form $(type\quad att_1:val_1 \cdots att_n:val_n)$: $type,att_i,val_i$ are all atoms. Note that
+- WMEs don't explicitly identify the subject of assertions, but a unique attribute (e.g. $id$) can be used
+- Attributes order is irrelevant
+
+** Antecedent side of production rules
+
+*Conditions* in the antecedent of a PR
+- Are understood conjunctively, so they all must be true for the rule to be applied
+- Can be positive ($cond$) or negative ($-cond$)
+- Have the form $(type\quad att_1:spec_1 \cdots att_n:spec_n)$. Each specification $spec_i$ may be
   - An atom
   - A variable
-  - An evaluable expression in square brackets, $[]$
-  - A test in curly brackets, $\{\}$
-  - A conjunction/disjunction/negation of a $spec$
-- Production rule consequents :: An ordered sequence of actions affecting the WM, where actions can be
-  - ADD $pattern$ :: Add a new WME $pattern$
-  - REMOVE $i$ :: Remove the WME matching the i-th condition in the antecedent of the rule
-  - MODIFY $i$ ($att\ spec$) :: Replace the current value of $att$ with $spec$ in the WME matching the i-th condition in the antecedent of the rule
+  - An evaluable expression, within $[\ ]$
+  - A test, within $\{\ \}$
+  - A conjunction ($\wedge$, disjunction $\vee$ or a negation $\neg$ of a specification
+
+For example
+- $(person\ age:[n+4]\ occupation:x)$
+  - Is satisfied if there is a WME of type $person$ with attribute $age$ equal to $n+4$ ($n$ is specified elsewhere)
+  - If $x$ is not bound, the result binds the $occupation$ value to $x$
+  - If $x$ is bound, the $occupation$ value must be the same of $x$ value
+- $-(person\ age:\{<23 \wedge >6\})$ is satisfied if there is no WME of type $person$ and attribute $age$ between 6 and 23
+
+*Applicable rules* are rules such that, for all the variables in them, there are values that satisfy all the antecedent conditions in the current WM.
+- A positive condition is satisfied if there is a matching WME, a negative condition if there is none.
+- A WME matches a condition $(type\quad att_1:spec_1 \cdots att_n:spec_n)$ if
+  - They have the same $type$
+  - Each $att_i:spec_i$ has a corresponding $att_i:value_i$ and $spec_i=value_i$
+
+** Consequent side of production rules
+
+*Actions* are interpreted in a sequencial way and can be either
+- ADD $pattern$ :: Add a new WME $pattern$ to the WM
+- REMOVE $i$ :: Remove the WME matching the i-th condition in the antecedent of the rule
+- MODIFY $i$ ($att\ spec$) :: Replace the current value of $att$ with $spec$ in the WME matching the i-th condition in the antecedent of the rule
+
+If there is a WME of type $student$ with any name (bind the name to $x$) then add a WME of type $person$ with the same name
+#+BEGIN_EXAMPLE
+IF (student name:x) THEN ADD (person name:x)
+#+END_EXAMPLE
+
+If there is a WME with predicate $student$ then change its predicate value to $person$
+#+BEGIN_EXAMPLE
+IF (assertion predicate:student) THEN MODIFY 1 (predicate person)
+#+END_EXAMPLE
+
+Assuming that some rule has added a WME of type $birthday$ at the right time, update the person's age
+#+BEGIN_EXAMPLE
+IF (person age:x name:n) (birthday who:n)
+THEN MODIFY 1 (age [x+1])
+     REMOVE 2
+#+END_EXAMPLE
+
+Control information can be dealt with using ~REMOVE~
+#+BEGIN_EXAMPLE
+IF (starting)
+THEN REMOVE 1
+     ADD (control phase:1)
+...
+IF (control phase:x) + other conditions
+THEN MODIFY 1 (phase [x+1])
+#+END_EXAMPLE
+
+** Example: world of bricks
+
+Consider the following case
+- Three bricks of different size sit on a heap
+- Three possible positions where bricks can be placed
+- There is a robot hand that can be used to move bricks to these positions
+The goal is to place the blocks in decreasing order of size in each position
+
+Assume the working memory starts holds the following elements
+#+BEGIN_EXAMPLE
+(counter value:1)
+(brick name:A size:10 position:heap)
+(brick name:B size:30 position:heap)
+(brick name:C size:20 position:heap)
+#+END_EXAMPLE
+
+We have to position block $B$ in position $1$, block $C$ in position $2$ and block $A$ in position $1$. To do so we can define two production rules. Note that the two rules are mutually exclusive, so no conflict resolution mechanism is needed.
+
+1. Place the largest available brick in the hand
+    #+BEGIN_EXAMPLE
+    # if there is a brick in the heap
+    IF (brick position:heap name:n size:s)
+     # if there is no bigger brick in the heap
+     -(brick position:heap size: {>s})
+     # if the robot hand is free
+     -(brick position:robot-hand)
+    # put the brick in the hand
+    THEN MODIFY 1 (position:robot-hand)
+    #+END_EXAMPLE
+2. Place the brick in the hand into the next position (sequentially selecting the positions)
+    #+BEGIN_EXAMPLE
+    # if there is a block in the hand
+    IF (brick position:robot-hand)
+    # bind i to the counter value
+    (counter value:i)
+    # set the current position to i and increase the counter
+    THEN MODIFY 1 (position i) MODIFY 2 (value[i+1])
+    #+END_EXAMPLE
+
+The rules are fired as follows
+1. Rule 1, $B$ satisfies the antecedent conditions and the relative WME is modified as
+    #+BEGIN_EXAMPLE
+    (brick name:B size:30 position:hand)
+    #+END_EXAMPLE
+2. Rule 2, $B$ satisfies the antecedent conditions: modify both WME of $B$ and the counter
+    #+BEGIN_EXAMPLE
+    (brick name:B size:30 position:1)
+    (counter value:2)
+    #+END_EXAMPLE
+3. Rule 1, $C$ satisfies the antecedent conditions and the relative WME is modified as
+    #+BEGIN_EXAMPLE
+    (brick name:C size:20 position:hand)
+    #+END_EXAMPLE
+4. Rule 2, $C$ satisfies the antecedent conditions: modify both WME of $C$ and the counter
+    #+BEGIN_EXAMPLE
+    (brick name:C size:20 position:2)
+    (counter value:3)
+    #+END_EXAMPLE
+5. Rule 1, $A$ satisfies the antecedent conditions and the relative WME is modified as
+    #+BEGIN_EXAMPLE
+    (brick name:A size:10 position:hand)
+    #+END_EXAMPLE
+6. Rule 2, $A$ satisfies the antecedent conditions: modify both WME of $A$ and the counter
+    #+BEGIN_EXAMPLE
+    (brick name:A size:10 position:3)
+    (counter value:4)
+    #+END_EXAMPLE
+7. System halts, no bricks in the heap. The final WM configuration
+    #+BEGIN_EXAMPLE
+    (counter value:4)
+    (brick name:A size:10 position:3)
+    (brick name:B size:30 position:1)
+    (brick name:C size:20 position:2)
+    #+END_EXAMPLE
+** Conflict resolution
+
+When several rules may be triggered at the same time a strategy is needed. The system may choose
+- Random :: Randomly a rule
+- Order :: The first rule in order of presentation
+- Specifity :: The most selective rule
+- Recency :: The most recent rule, meaning either the last fired rule or the rule matching the last WME edited
+- Refractoriness :: To avoid the rule just applied with the same values

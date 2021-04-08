@@ -4,3 +4,4 @@ ltximg
 *.tex
 *.key
 #*
+/books

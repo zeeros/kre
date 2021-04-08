@@ -5,7 +5,7 @@
 ** Look at solved exercises 2a, 3h
 ** Solve exercises 1, 2h, 3g
 ** Look at solved exercises 4a-h, 7abd, 10d, 11, 15, 10a-iop, 28a-c, 36, 39
-** Solve exercises 5, 8, 13, 23, 27, 44, 50, 52
+** TODO Solve exercises +5, 8, 13,+ 23, 27, 44, +50, 52+
 * Introduction
 ** Exercise 1
 
@@ -396,29 +396,29 @@
 
 *** Son,  Daughter,  Brother,  Sister,  Sibling,  Ancestor,  Father,  Mother,  Grandfather, Grandmother, Uncle, Aunt, Cousin, and Nephew.
 
- - Son :: $Parent(x,y) \wedge Male(y) \supset Son(y,x)$
- - Daughter :: $Parent(x,y) \wedge \neg Male(y) \supset Daughter(y,x)$
- - Brother :: $Parent(x,y) \wedge Son(z,x) \supset Brother(z,y)$
- - Sister :: $Parent(x,y) \wedge Daughter(z,x) \supset Sister(z,y)$
- - Sibling :: $Brother(x,y) \vee Sister(x,y) \supset Sibling(x,y)$
- - Ancestor :: $Parent(x,y) \vee (Parent(x,z) \wedge Ancestor(z,y))) \supset Ancestor(x,y)$
- - Father :: $(Son(y,x) \vee Daughter(y,x)) \wedge Son(x,z) \supset Father(x,y)$
- - Mother :: $(Son(y,x) \vee Daughter(y,x)) \wedge Daughter(x,z) \supset Mother(x,y)$
- - Grandfather :: $Father(x,z) \wedge (Father(z,y) \vee Mother(z,y)) \supset Grandfather(x,y)$
- - Grandmother :: $Mother(x,z) \wedge (Father(z,y) \vee Mother(z,y)) \supset Grandmother(x,y)$
- - Uncle :: $Brother(x,z) \wedge (Father(z,y) \vee Mother(z,y)) \supset Uncle(x,y)$
- - Aunt :: $Sister(x,z) \wedge (Father(z,y) \vee Mother(z,y)) \supset Aunt(x,y)$
- - Cousin :: $(Son(x,t) \vee Daughter(x,t)) \wedge Sibling(t,z) \wedge (Father(z,y) \vee Mother(z,y)) \supset Cousin(x,y)$
- - Nephew :: $Sibling(y,t)\wedge (Father(t,x) \vee (Mother(t,x)) \supset Nephew(x,y)$
+ - Son :: $Parent(x,y) \wedge Male(y) \equiv Son(y,x)$
+ - Daughter :: $Parent(y,x) \wedge \neg Male(x) \equiv Daughter(x,y)$
+ - Brother :: $\exists z\ Parent(z,x) \wedge Parent(z,y) \wedge Male(x) \equiv Brother(x,y)$
+ - Sister :: $\exists z\ Parent(z,x) \wedge Parent(z,y) \wedge \neg Male(x) \equiv Sister(x,y)$
+ - Sibling :: $Brother(x,y) \vee Sister(x,y) \equiv Sibling(x,y)$
+ - Ancestor :: $\exists z\ Parent(x,y) \vee (Parent(x,z) \wedge Ancestor(z,y))) \equiv Ancestor(x,y)$
+ - Father :: $Parent(x,y) \wedge Male(x) \equiv Father(x,y)$
+ - Mother :: $Parent(x,y) \wedge \neg Male(x) \equiv Mother(x,y)$
+ - Grandfather :: $\exists z\ Father(x,z) \wedge Parent(z,y) \equiv Grandfather(x,y)$
+ - Grandmother :: $\exists z\ Mother(x,z) \wedge Parent(z,y) \equiv Grandmother(x,y)$
+ - Uncle :: $\exists z \exists t\ Parent(t,y) \wedge Parent(z,t) \wedge Parent(t,y) \wedge Male(x) \equiv Uncle(x,y)$
+ - Aunt :: $\exists z \exists t\ Parent(t,y) \wedge Parent(z,t) \wedge Parent(t,y) \wedge \neg Male(x) \equiv Aunt(x,y)$
+ - Cousin :: $(Son(x,t) \vee Daughter(x,t)) \wedge Sibling(t,z) \wedge (Father(z,y) \vee Mother(z,y)) \equiv Cousin(x,y)$
+ - Nephew :: $Sibling(y,t)\wedge (Father(t,x) \vee (Mother(t,x)) \equiv Nephew(x,y)$
 
 *** John has not children. Jon has not siblings.
- $\neg(\exists x\ Father(john,x))$, $\neg(\exists x\ Sibling(john,x))$
+ $\forall x\ \neg Parent(john,x)$, $\forall x\ \neg Sibling(john,x)$
 *** John’s parents are Mary (female) and Paul (male).
- $Mother(mary, john)$, $Father(paul, john)$
+ $Mother(mary, john) \wedge Father(paul, john)$
 *** John’s sister has some children.
- $\exists x\ \exists y Sister(x, john) \wedge Mother(x,y)$
+    $\exists x\ \exists y Sister(x, john) \wedge Mother(x,y)$
 *** The mother of Mary is the aunt of Michael.
- $\exists x\ Mother(mary, x) \wedge Aunt(x, michael)$
+ $\exists x\ Mother(x, mary) \wedge Aunt(x, michael)$
 
 ** Exercise 8
 
@@ -427,12 +427,11 @@
 *** No set is an element of itself
  $\forall e \forall x\ E(e,x) \supset e \neq x$
 *** A set $x$ is a subset of a set $y$ iff every element of $x$ is an element of $y$
- $\forall x \forall y \forall e\ E(E(e,x), y) \supset Sub(x,y)$
-*** Something is an element of the union of two sets x and y iff it is an element of x or an element of y
- $\forall x \forall y \forall e\ E(e,x) \vee E(e,y) \supset E(e, u(x,y))$
+    $(\forall z\ E(z,x) \supset E(z,y)) \equiv Sub(x,y)$
+*** Something is an element of the union of two sets $x$ and $y$ iff it is an element of $x$ or an element of $y$
+ $inunion(z,x,y) \equiv E(z,x) \vee E(z,y)$
 *** Something is an element of the intersection of two sets x and y iff it is an element of x and an element of y
- $\forall x \forall y \forall e\ E(e,x) \wedge E(e,y) \supset E(e, i(x,y))$
-
+ $inintersection(z,x,y) \equiv E(z,x) \wedge E(z,y)$
 ** Exercise 9
 
  Let $C(x)$ be the statement “x has a cat”, let $D(x)$ be the statement “x has a dog”, and let $F(x)$ be the statement “x has a ferret”. Express each of these statements in first-order logic using these relations. Let the domain be your classmates.
@@ -444,26 +443,41 @@
 *** At least one of your classmates has a cat and a ferret, but not a dog.
  $\exists x\ C(x) \wedge F(x) \wedge \neg D(x)$
 *** None of your classmates has a cat, a dog, and a ferret.
- $\neg(\exists x\ C(x) \wedge D(x) \wedge F(x))$
+ $\forall x\ \neg C(x) \wedge \neg D(x) \wedge \neg F(x)$
 *** For each of the three animals, there is a classmate of yours that has one.
  $\exists x \exists y \exists z\ C(x) \wedge D(y) \wedge F(z)$
 
-** TODO Exercise 10
+** Exercise 10
 
  In the world of blocks we have three shapes: Triangle, Square and Rectangle; three colors: White, Black, and Grey; and the possibility of having one block on top of another: $On(x,y)$. Provide a description of the following worlds in FOL:
 
  [[./ex10.jpg]]
 
-** TODO Exercise 11
+*** a
+$Triangle(x) \wedge Square(y) \wedge Rectangle(z) \wedge White(x) \wedge Grey(y) \wedge White(z) \wedge On(x,y) \wedge On(y,z)\cdot$
+*** b
+$Square(x_1) \wedge Square(x_2) \wedge Square(x_3) \wedge Square(x_4) \wedge Grey(x_1) \wedge White(x_2) \wedge Black(x_3) \wedge Grey(x_4) \wedge On(x_1,x_2) \wedge On(x_2, x_3) \wedge On(x_3, x_4)\cdot$
+*** c
+$Triangle(x_1) \wedge Square(x_2) \wedge Rectangle(x_3) \wedge Rectangle(x_4) \wedge Square(x_5) \wedge Grey(x_1) \wedge Grey(x_2) \wedge Black(x_3) \wedge White(x_4) \wedge Grey(x_5) \wedge On(x_1,x_2) \wedge On(x_2, x_3) \wedge On(x_3, x_4) \wedge On(x_4, x_5)\cdot$
+*** d
+$Square(x) \wedge Rectangle(y) \wedge Triangle(z) \wedge Grey(x) \wedge Black(y) \wedge White(z) \wedge On(x,y) \wedge On(y,z)\cdot$
+
+** Exercise 11
 
  In the world of blocks defined in exercise 10 provide FOL expressions for the following facts
 
 *** Triangles cannot have other blocks on top
+$\forall x \forall y\ Triangle(x) \supset \neg On(x,y)$
 *** All composition must have a Triangle at the very best top
+$\forall x\ Triangle(x) \vee (\exists y\ On(x,y))$
 *** All Intermediate blocks must be Grey
+$\forall x \forall y \forall z\ On(x,y) \wedge On(y,z) \supset Grey(y)$
 *** Some intermediate block is Black
+$\forall x \forall y \forall z\ On(x,y) \wedge On(y,z) \supset Black(y) \vee (\exists w\ On(w,y))$
 *** Only White blocks are permitted
+$\forall x\ White(x)$
 *** There are not Black blocks immediately on top of White blocks
+$\forall x \forall y\ On(x,y) \wedge White(y) \supset \neg Black(x)$
 ** TODO Exercise 12
 
  Extend the world of blocks of exercise 10 with two possible shapes for blocks: Large and Normal. Consider that large blocks can have one or two small blocks on top or another big block, and that two small blocks can have one single large block on top.
@@ -478,45 +492,59 @@
  What is the meaning of the following FOL expressions:
 
 *** $\forall x \forall y\ Loves(x,y)$
- Everybody loves everybody
+Everybody loves everybody
 *** $\forall x \exists y\ Loves(x,y)$
- Everybody loves somebody
+Everybody loves somebody
 *** $\exists x \forall y\ Loves(x,y)$
- Somebody loves everybody
+Somebody loves everybody
 *** $\exists x \exists y\ Loves(x,y)$
- Somebody loves somebody
+Somebody loves somebody
 *** $\forall x \forall y\ Loves(x,y) \supseteq \forall z\ Loves(x,z)$
- If everybody loves everybody then $x$ loves everybody
+For every pair $x, y$, if $x$ loves $y$ then $x$ loves everybody, so anybody that loves a person loves everybody
 *** $\forall x \forall y\ Loves(x,y) \supseteq \exists z\ Loves(x,z)$
- If everybody loves everybody then $x$ loves somebody
+For every pair $x,y$, if $x$ loves $y$ then $x$ loves also somebody else, so anybody that loves a person loves also at least another person
 *** $\forall x \exists y\ Loves(x,y) \supseteq \forall z\ Loves(x,z)$
- If everybody loves somebody then $x$ loves everybody
+Everybody loves everybody
 *** $\forall x \exists y\ Loves(x,y) \supseteq \exists z\ Loves(x,z)$
- If everybody loves somebody then $x$ loves somebody
+Everybody loves at least two persons
 
 ** TODO Exercise 14
 
  Provide FOL expressions representing the knowledge involved in each one of the domains described in exercise 2.
 
-** TODO Exercise 15
+** Exercise 15
 
  The Tower of Hanoi is a mathematical game or puzzle. It consists of three rods, and a number of disks of different sizes which can slide onto any rod. The puzzle starts with the disks in a neat stack in ascending order of size on one rod, the smallest at the top, thus making a conical shape.
 
  The objective of the puzzle is to move the entire stack to another rod, obeying the following rules:
  - Only one disk must be moved at a time.
- - Each move consists of taking the upper disk from one of the rods and sliding it onto
- another rod, on top of the other disks that may already be present on that rod.
+ - Each move consists of taking the upper disk from one of the rods and sliding it onto another rod, on top of the other disks that may already be present on that rod.
  - No disk may be placed on top of a smaller disk.
 
  In order to formalize a three-disk Tower of Hanoi in FOL:
 *** Identify the individuals in the exercise
+$d_1, d_2, d_3, r_1, r_2, r_3$
 *** Identify the types in the exercise: rods, disks, etc.
+$Disk, Rod$
 *** Identify the attribute(s) in the exercise: size, etc.
+- Attributes :: $On(x,y)$
+- Relationships :: $Bigger(x,y)$
 *** Formalize the initial configuration
+$\exists d_1 \exists d_2 \exists_d_3 \exists r_1 \exists r_2 \exists r_3$
+$Disk(d_1) \wedge Disk(d_2) \wedge Disk(d_3) \wedge$
+$On(d_1,r_1) \wedge On(d_2,r_1)\wedge On(d_3,r_1) \wedge$
+$Rod(r_1) \wedge Rod(r_2) \wedge Rod(r_3) \wedge$
+$Bigger(d_3,d_2) \wedge Bigger(d_2,d_1) \cdot$
 *** Formalize the concept “disk d can be moved to rod r” according to the second rule above (constraint)
+$movable(d,r) \equiv$ ($d$ can be moved to $r$ iff)
+$\exists x \forall y$ (there is a rod $x$ for all disks $y$)
+$On(d,x) \wedge$ ($d$ is on rod $x$)
+$(On(y,x) \supset Bigger(y,d)) \wedge$ (if also disk $y$ is on the rod $x$ then $y$ must be bigger than $d$)
+$(On(y,r) \supset Bigger(y,d))$ (if disk $y$ is on rod $r$ then $y$ must be bigger than $d$)
 *** Formalize the movement move(d,r) or “the disk d is moved to rod r” according to the second rule above (know-how knowledge)
+$Move(d,r,t) \equiv Movable(d,r) \supset (\forall x\ Rod(x) \wedge x \neq r) \supset (\neg On(d,x,t+1) \wedge On(d,r,t+1))$
 *** Formalize the third rule above (constraint)
-
+$\forall x \forall y\ On(x,y) \supset \neg Bigger(x,y)$
 ** Exercise 16
 
  For the sentence $\forall x (\forall y (A(x) \wedge B(x,y) \Rightarrow A(y)))$ state whether it is true or false, relative to the following interpretations. If false, give values for x and y witnessing that.
@@ -560,17 +588,15 @@
  Represent in FOL
 
 *** Maria is mother of a son and a daughter
- $\exists x \exists y\  x=son(maria) \wedge y=daughter(maria)$
+ $\exists x \exists y\  son(x,maria) \wedge daughter(y, maria)$
 *** Maria is mother of only one son and only one daughter
- $\forall x \forall y \forall z\ x=son(maria) \wedge \ y=daughter(maria) \wedge \neg (z=x) \wedge \neg (z=y) \supset \neg mother(maria, z)$
+and forall s'.forall d'. (son(s',maria) => s'=s) and (daughter(d',maria) => d'=d)
+ $\exists x_1 \exists y_1\  son(x_1,maria) \wedge daughter(y_1, maria) \wedge \forall x_2 \forall y_2\ (son(x_2,maria) \supset x_2=x_1) \wedge (daughter(y_2,maria) \supset y_2=y_1)$
 *** Maria is mother of a son or a daughter
- $\forall x\ son(x,maria) \supset \neg( \exists y\ daughter(y, maria))$
- $\forall x\ daughter(x,maria) \supset \neg( \exists y\ son(y, maria))$
+$\exists z\ son(z,maria) \vee daughter(z,maria)$
 *** All women are beautiful and some men are beautiful
- $\forall x\ woman(x) \supset beautiful(x)$
- $\exists x\ men(x) \supset beautiful(x)$
-* Rules and production systems
-
+ $(\forall x\ woman(x) \supset beautiful(x)) \wedge (\exists x\ men(x) \supset beautiful(x))$
+* Rules
 ** Exercise 20
 
  Propose a rule for the knowledge represented in the following sentences
@@ -734,16 +760,25 @@
 
  Given the following set of rules
 
- $Lectures(adele,knowledgeRepresentation)\cdot$
- $Lectures(barry,knowledgeRepresentation)\cdot$
- $Lectures(charles,knowledgeEngineering)\cdot$
- $Enrolled(donnald,knowledgeRepresentation)\cdot$
- $Knows(x,y) \Leftarrow Enrolled(x,s_1) \wedge Enrolled(y,s_2) \wedge (s_1=s_2) \cdot$
- $Knows(x,y) \Leftarrow Enrolled(x,z) \wedge Lectures(y,z) \cdot$
+1. $Lectures(adele,knowledgeRepresentation)\cdot$
+2. $Lectures(barry,knowledgeRepresentation)\cdot$
+3. $Lectures(charles,knowledgeEngineering)\cdot$
+4. $Enrolled(donnald,knowledgeRepresentation)\cdot$
+5. $Knows(x,y) \Leftarrow Enrolled(x,s_1) \wedge Enrolled(y,s_2) \wedge (s_1=s_2) \cdot$
+6. $Knows(x,y) \Leftarrow Enrolled(x,z) \wedge Lectures(y,z) \cdot$
 
 *** Perform forward-chaining when $Enrolled(eve,knowledgeRepresentation)$ is asserted
-  $Enrolled(eve,knowledgeRepresentation)$
+
+The assertion $Enrolled(eve,knowledgeRepresentation)$ makes
+- With rule 4, fire rule 5 :: $Knows(eve,donnald)$
+- With rule 1, fire rule 6 :: $Knows(eve,adele)$
+- With rule 2, fire rule 6 :: $Knows(eve,barry)$
+
 *** Perform forward-chaining when $Enrolled(frank,knowledgeEngineering)$ is asserted
+
+The assertion $Enrolled(frank,knowledgeEngineering)$ makes
+- With rule 3, fire rule 5 :: $Knows(frank,charles)$
+
 *** Perform backward-chaining when $Knows(donnald,adele)$ is asked
 *** Perform forward-chaining when $Knows(donnald,barry)$ is asserted
 *** Perform backward-chaining when $Enrolled(frank,knowledgeEngineering)$ is asked
@@ -812,13 +847,110 @@ R3 runAwayNow <= dangerous(x)
 *** Height is the property of a block structure that stores the number of staked blocks of that structure.
 *** Constructing a structure consists on identifying two free blocks, use a crane to pick the free  block  with  a  lower  height  and  staking  it  on  top  of  the  other  block.  Implement  the  production rules to implement this procedure.
 
-** TODO Exercise 28
+** Exercise 28
 
  In the world of blocks there's a group of blocks on a table, and we want to make a heap with all these blocks and with bigger blocks below smaller blocks. We count with a robot arm. Provide production systems for the following implementations. Implement all the solutions in CLIPS.
 
-*** We are only allowed to have the type of WME (block id:int size:int position:{table, robot-hand, heap}
-*** We are only allowed to have the type of WME (block id:int size:int position: {table, robot-hand, #position in the heap}.
-*** We are allowed to have the following WME types: (block id:int size:int, (robot-hand block: int, (on block1: int, block2: int. Note: you should convert the blocks that the robot takes into used-blocks to avoid the robot to take them more than once.
+*** a
+
+We are only allowed to have the type of WME
+    #+BEGIN_EXAMPLE
+    (block id:int size:int position:{table, robot-hand, heap})
+    #+END_EXAMPLE
+
+    #+BEGIN_EXAMPLE
+    ; if there is a block on the table
+    IF (block id:i size:s position:table)
+       ; if there is no bigger block on the table
+       -(block size:{>s} position:table)
+       ; if the robot hand is free
+       -(block position:robot-hand)
+    ; put the block in the hand
+    THEN MODIFY 1 (position:robot-hand)
+
+    ; if there is a block in the hand
+    IF (block id:i size:s position:robot-hand)
+    THEN MODIFY 1 (position heap)
+    #+END_EXAMPLE
+
+*** b
+
+We are only allowed to have the type of WME
+    #+BEGIN_EXAMPLE
+    (block id:int size:int position: {table, robot-hand, #position in the heap})
+    #+END_EXAMPLE
+
+    #+BEGIN_EXAMPLE
+    ; we set a WME as a counter of the position in the heap
+    (counter n: int)
+
+    ; if there is a block on the table
+    IF (block id:i size:s position:table)
+       ; if there is no bigger block on the table
+       -(block size:{>s} position:table)
+       ; if the robot hand is free
+       -(block position:robot-hand)
+    ; put the block in the hand
+    THEN MODIFY 1 (position:robot-hand)
+
+    ; if there is a block in the hand
+    IF (block id:i size:s position:robot-hand)
+       (counter value:i)
+    THEN MODIFY 1 (position i) MODIFY 2 (value[i+1])
+    #+END_EXAMPLE
+
+*** c
+
+We are allowed to have the following WME types. Note: you should convert the blocks that the robot takes into used-blocks to avoid the robot to take them more than once.
+
+    #+BEGIN_EXAMPLE
+    (block id:int size:int)
+    (robot-hand block: int)
+    (on block1: int, block2: int)
+    #+END_EXAMPLE
+
+   #+BEGIN_EXAMPLE
+    ; We’ll need a WME as an indicator to know if a block is eligible
+
+    ; if there is a block on the table
+    IF (block id:i size:s)
+       ; if there is no block on it
+       -on(block1: i)
+       ; if the robot hand is free
+       -(robot-hand)
+    ; put the block in the hand
+    THEN REMOVE 1
+         ADD (block-used id: name size:s)
+         ADD (robot-hand block: name)
+
+    ; Robot releases the first block
+    IF (robot-hand block: name)
+       -(on)
+    THEN REMOVE 1
+         ADD (on block1: name block2: heap)
+
+    ; Robot releases subsequent blocks
+    IF (robot-hand block: name)
+       (on block1: name1)
+       (block-used id: name1 size: s1)
+       -(block-used size: {> s1})
+    THEN REMOVE 1
+         ADD (on block1: name block2: name1)
+
+    ; In order to recover all the WME (block) from the block-used facts
+    ; we introduce the token (recover-blocks) which is removed when all
+    ; the block-used WMEs have been converted to block facts.
+
+    IF -(block)
+    THEN ADD (recover-blocks)
+
+    IF (recover-blocks)
+       (block-used id: name size: s)
+    THEN REMOVE 2
+         ADD (block id: name size: s)
+    IF (recover-blocks)
+    - (block-used) THEN REMOVE 1
+    #+END_EXAMPLE
 
 ** Exercise 29
 
@@ -842,15 +974,116 @@ R3 runAwayNow <= dangerous(x)
  A circular railway is composed of four train stations S1, S2, S3, and S4. A train T circulates from S1 to S2, from S2 to S3, from S3 to S4, and from S4 to S1, starting the cycle again. The train has a capacity for 30 passengers sited and 20 passengers standing. Passengers arrive to and leave from stations. Some passengers want to be seated, some others don’t care. Passengers have a destination station where they want to arrive to. All the passengers arrive to a station, get into the next train with a vacancy of the sort wished (seated or don’t care) and waits till the train arrives to the passenger’s destination station.
 
 *** Propose the structure of the working memory elements to implement this system
+
+#+BEGIN_EXAMPLE
+(train onboard:number state:{stopped,running} station:number)
+(person id:number location:{station,train} station:number)
+(arrival person:number station:number)
+#+END_EXAMPLE
+
 *** Propose a rule (or set of rules) describing the patients arriving and leaving a station
+
+#+BEGIN_EXAMPLE
+; Person arrive at the station
+IF (arrival person:p station:s)
+THEN REMOVE 1
+     ADD (person id:p location:station station:s)
+
+; Person leaves the station
+IF (person location:station)
+THEN REMOVE 1
+#+END_EXAMPLE
+
 *** Propose a rule (or set of rules) describing the train moving between stations (consider that a train does not leave a station till all the passengers with destination this station have stepped off)
-*** Propose a rule (or set of rules) describing the passengers of a station to step in the trainwhen the train arrives to the station, and the passengers to step off the train when they arrive to their destination station.
+
+#+BEGIN_EXAMPLE
+IF (train state:stopped)
+THEN MODIFY 1 (state running)
+
+IF (train state:running station:s)
+THEN MODIFY 1 (state stopped)
+     MODIFY 1 (state [(s mod 4) + 1]
+#+END_EXAMPLE
+
+*** Propose a rule (or set of rules) describing the passengers of a station to step in the train when the train arrives to the station, and the passengers to step off the train when they arrive to their destination station.
+
+#+BEGIN_EXAMPLE
+; Persons step in the train
+IF (train onboard:{<50}&n state:stopped station:s)
+   (person id:p location:station station:s)
+THEN MODIFY 1 (onboard [n+1])
+     MODIFY 2 (location train)
+
+; Persons step off the train
+IF (train onboard:{>0}&n state:stopped station:s)
+   (person location:train)
+THEN MODIFY 1 (onboard [n-1])
+     MODIFY 2 (location station)
+     MODIFY 2 (station s)
+#+END_EXAMPLE
 
 ** Exercise 32
 
  In some academies, students are able to enroll in subjects that they want to attend and whose pre-requirement they have all been passed. Pre-requirement of a subject are a set of other subjects that need to be passed before registering to the first one. Represent this behavior with a production system.
 
  Other academies also consider co-requirements, these meaning that one subject can be enrolled if all its co-requirement subjects are also enrolled. Represent these restrictions with a production system.
+
+*** Basic production elements
+#+BEGIN_EXAMPLE
+(want-to-attend subject: s)
+(academic-record subject: s passed: {yes, no, enrolled))
+(pre-requirement subject: r of: s)
+#+END_EXAMPLE
+
+*** Subjects without pre-requirements can be enrolled:
+#+BEGIN_EXAMPLE
+IF (want-to-attend subject: s)
+   - (academic-record subject: s passed: yes)
+   - (pre-requirement subject: r of: s)
+THEN REMOVE 1 ADD (academic-record subject: s passed: enrolled)
+#+END_EXAMPLE
+
+*** Subjects with passed pre-requirements can also be enrolled
+
+#+BEGIN_EXAMPLE
+IF (want-to-attend subject: s)
+   (pre-requirement subject: r of: s)
+   (academic-record subject: r passed: yes)
+THEN REMOVE 2
+     ADD (considered subject: r of: s)
+
+IF -(want-to-attend subject: s)
+   (considered subject: r of: s)
+THEN REMOVE 2
+     ADD (pre-requirement subject: r of: s)
+#+END_EXAMPLE
+
+*** Subjects without pre- and co-requirements can be enrolled
+
+#+BEGIN_EXAMPLE
+IF (want-to-attend subject: s)
+   -(academic-record subject: s passed: yes)
+   -(pre-requirement subject: r of: s)
+   -(co-requirement subject: c of: s)
+THEN REMOVE 1
+     ADD (academic-record subject: s passed: enrolled)
+#+END_EXAMPLE
+
+*** Subjects with passed or enrolled co-requirements can also be enrolled
+
+#+BEGIN_EXAMPLE
+IF (want-to-attend subject: s)
+   (co-requirement subject: c of: s)
+   (academic-record subject: c passed: (yes | enrolled})
+THEN REMOVE 2
+     ADD (considered2 subject: c of: s)
+
+IF -(want-to-attend subject: s)
+   (considered2 subject: c of: s)
+THEN REMOVE 2
+     ADD (co-requirement subject: cof: s)
+#+END_EXAMPLE
+
 * Object-Oriented representation
 ** Exercise 33
 
@@ -888,14 +1121,88 @@ R3 runAwayNow <= dangerous(x)
 
 ** Exercise 36
 
- For the following domains:
+For the following domains
 
- - Classroom scheduler :: Build a program that helps schedule rooms for classes of various sizes at a university, using the sort of frame technology (frames, slots, and facets). Slots of frames might be used to record when and where a class is to be held, the capacity of a room, etc., and IF-ADDED and other facets might be used to encode constraints as well as to fill in implied values when the KB is updated. In this exercise, we want to consider updating the KB in several ways: (1) asserting that a class of a given size is to be held in a given room at a given time; the system would either go ahead and add this to its schedule, or alert the user that it was not possible to do so; (2) asserting that a class of a given size is to be held at a given time, with the system providing a suitable room (if one is available) when queried; (3) asserting that a class of a given size is desired, with the system providing a time and place when queried.
- - Olympic assistant :: We want to help the International Olympic Committee in the smooth running of the next Olympic Games. In particular, we want to select an event and write a program to deal with that event including facilities for handling the preliminary rounds/heats and finals. Slots of frames might be used to record athletes in a heat/final, the location and time of that heat/final, etc. and IF-ADDED/IF-NEEDED and other procedures might be used to encode constraints as well as fill in implied values when the knowledge base is updated. We particularly wish to consider several ways of updating the knowledge base: (1) asserting that a heat will take place with certain athletes. The system should add this and determine what time and the location of the venue the athletes need to be at for their heat, etc; (2) asserting that a particular semi-final/final should take place, the system should determine the participating athletes; and, (3) asserting that the medal ceremony should take place at a particular time and location, the system should add this and provide the medalists plus appropriate national anthem when queried. To simplify matters, we assume that an athlete takes part in only the event we have chosen.
+1. Design a set of frames and slots to represent the schedule and any ancillary information needed by the assistant
+2. For all slots of all frames, write in pseudo-code the IF-ADDED or IF-NEEDED procedures that would appear there. Annotate these procedures with comments explaining why they are there (e.g., what constraints they are enforcing)
+3. Briefly explain how your system would work (what procedures would fire and what they would do) on concrete examples of your choosing illustrating each of the three situations (1, 2, and 3) mentioned in the application
 
-*** Design a set of frames and slots to represent the schedule and any ancillary information needed by the assistant
-*** For  all  slots  of  all  frames,  write  in  pseudo-code  the  IF-ADDED  or  IF-NEEDED  procedures  that  would  appear  there.  Annotate  these  procedures  with  comments  explaining why they are there (e.g., what constraints they are enforcing)
-*** Briefly explain how your system would work (what procedures would fire and what they would do) on concrete examples of your choosing illustrating each of the three situations (1, 2, and 3) mentioned in the application
+
+*** Classroom scheduler
+
+Build a program that helps schedule rooms for classes of various sizes at a university, using the sort of frame technology (frames, slots, and facets). Slots of frames might be used to record when and where a class is to be held, the capacity of a room, etc., and IF-ADDED and other facets might be used to encode constraints as well as to fill in implied values when the KB is updated. In this exercise, we want to consider updating the KB in several ways:
+
+1. Asserting that a class of a given size is to be held in a given room at a given time; the system would either go ahead and add this to its schedule, or alert the user that it was not possible to do so
+
+   That is, assert that a class $C$ of size $S$ is held in room $R$ at time $T$. We define for the purpose
+   - ~Class-1~ :: A class frame
+   - ~C~ :: An instance frame (of ~Class-1~)
+   - ~f1~ :: A lambda-expression, that is later called by a ~IF-ADDED-~ facet in ~C~, checks if
+     - The assigned class room is of the correct size
+     - The assigned class is free at the given time
+
+   Below, the pseudo-code using Lisp notation
+   #+BEGIN_EXAMPLE
+   f1(v) = (lambda (v)
+       (let ((size SELF:SIZE) (room SELF:ROOM) (occupation room:OCCUPATION) (result v))
+	   (if (>= room:SIZE size)
+	       (while (occupation)
+		   (if (= occupation:TIME v)
+		       (set result "unknown"))
+		   set occupation occupation:NEXT))
+	       (set result "unknown"))
+       result))
+
+   (create Class-1 (
+       (:SIZE unsigned-int)
+       (:ROOM classroom)
+       (:TIME (:IF-ADDED f1(v)))
+
+   (create C (
+       (:INSTANCE-OF Class-1)
+       (:SIZE S)
+       (:ROOM R)
+       (:TIME T)))
+   #+END_EXAMPLE
+
+2. Asserting that a class of a given size is to be held at a given time, with the system providing a suitable room (if one is available) when queried
+
+   That is, assert that a class $C$ of size $S$ is held at time $T$. The system should provide a room $R$.
+   - ~Class-2~ :: A class frame
+   - ~C~ :: An instance frame (of ~Class-2~)
+   - ~f2~ :: A lambda-expression, that is later called by a ~IF-NEEDED-~ facet in ~C~, that
+     - Searches for a free class room
+     - When a class is found, book it (or return it if already assigned)
+
+   Below, the pseudo-code using Lisp notation
+   #+BEGIN_EXAMPLE
+   f2(v) = (lambda (v)
+       (let ((size SELF:SIZE) (time SELF:TIME))
+           (for (room SCHOOL:CLASSROOMS)
+	       (if (>= room:SIZE size)
+	       (let ((free true) (occupation room:OCCUPATION))
+		       (while (occupation)
+			   (if (= occupation:TIME time) (set free false))
+			   (set occupation occupation:NEXT))
+			   (if (free) (let class room)))))
+           class))
+
+   (create Class-2 (
+       (:SIZE unsigned-int)
+       (:ROOM (:IF-NEEDED f2(v))
+       (:TIME time)
+
+   (create C (
+       (:INSTANCE-OF Class-2)
+       (:SIZE S)
+       (:TIME T)))
+   #+END_EXAMPLE
+
+3. Asserting that a class of a given size is desired, with the system providing a time and place when queried.
+
+*** Olympic assistant
+
+We want to help the International Olympic Committee in the smooth running of the next Olympic Games. In particular, we want to select an event and write a program to deal with that event including facilities for handling the preliminary rounds/heats and finals. Slots of frames might be used to record athletes in a heat/final, the location and time of that heat/final, etc. and IF-ADDED/IF-NEEDED and other procedures might be used to encode constraints as well as fill in implied values when the knowledge base is updated. We particularly wish to consider several ways of updating the knowledge base: (1) asserting that a heat will take place with certain athletes. The system should add this and determine what time and the location of the venue the athletes need to be at for their heat, etc; (2) asserting that a particular semi-final/final should take place, the system should determine the participating athletes; and, (3) asserting that the medal ceremony should take place at a particular time and location, the system should add this and provide the medalists plus appropriate national anthem when queried. To simplify matters, we assume that an athlete takes part in only the event we have chosen.
 
 ** Exercise 37
 
@@ -907,7 +1214,36 @@ R3 runAwayNow <= dangerous(x)
 
 ** Exercise 39
 
- Provide a Script to represent the process of borrowing a book in a Library that could cover the following steps: enter into the library, look for a book in the shelves, in the computer, or directly with the librarian, make the reservation, go home with the book (if it was found), and return the book after some time.
+Provide a Script to represent the process of borrowing a book in a Library that could cover the following steps: enter into the library, look for a book in the shelves, in the computer, or directly with the librarian, make the reservation, go home with the book (if it was found), and return the book after some time.
+
+#+BEGIN_EXAMPLE
+(BOOK-BORROWING
+    <:IS-A library-act>
+    <:PROPS {:library :book :shelf :computer :reservation}
+    <:ROLES {:librarian :user}
+    <:OPENING-CONDITIONS {(SELF:user:wants-a-book SELF:book)}>
+    <:RESULTS {(add SELF:user:readings SELF:book)
+        (add SELF:library:reservations SELF:reservation)}>
+    <:SCENE {
+        Entering{
+	    (set SELF:user:place SELF:library)
+	    (set SELF:scene Look-for-book)}
+	Loof-for-book {
+	    (or (set SELF:user:searches SELF:shelf SELF:book)
+	        (set SELF:user:asks SELF:computer SELF:book)
+		(set SELF:user:asks SELF_librarian SELF:book))}
+	    (if (SELF:user:found SELF:book)
+	        (set SELF:scene Make-reservation)
+		(set SELF:scene Leave-library))}
+	Make-reservation {
+	    (set SELF:reservation (reservation SELF:user (return-date))
+	    (set SELF:book:state SELF:reservation)
+	    (set SELF:scene Leave-library))}
+	Return-book {
+	    (set SELF:user:place SELF:library)
+	    (set SELF:book:state (free))}}
+    }>
+#+END_EXAMPLE
 
 ** Exercise 40
 
