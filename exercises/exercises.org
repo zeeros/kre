@@ -1,11 +1,6 @@
 #+TITLE: Exercises
 #+AUTHOR:
 
-* Todo
-** Look at solved exercises 2a, 3h
-** Solve exercises 1, 2h, 3g
-** Look at solved exercises 4a-h, 7abd, 10d, 11, 15, 10a-iop, 28a-c, 36, 39
-** TODO Solve exercises +5, 8, 13,+ 23, 27, 44, +50, 52+
 * Introduction
 ** Exercise 1
 

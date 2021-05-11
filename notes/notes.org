@@ -1,0 +1,1284 @@
+#+TITLE: Notes
+#+AUTHOR:
+
+* Introduction and concepts
+
+We introduce two different areas that deal with "knowledge"
+ - Knowledge Representation :: AI area concerned with how to represent and manipulate knowledge in an automated way
+ - Knowledge Engineering :: Computer engineering area concerned with procedures and methods helping developers to construct knowledge bases in a systematic and formal way
+
+A knowledge-based system deals with an input $I$ and an output $O=f(I,K)$: the knowledge is stored in a knowledgebase and is used by the system to behave in an intelligent way.
+
+** Why KB instead of DB?
+
+Consider a database having the following tables
+
+~PERSONS~ table
+| Id  | Name   |
+|-----+--------|
+| A   | Albert |
+| B   | Beth   |
+| C   | Cindy  |
+| ... | ...    |
+~PARENTSHIPS~ table
+| X   | Y   |
+|-----+-----|
+| A   | B   |
+| B   | C   |
+| B   | D   |
+| ... | ... |
+
+- Who is ~A~ a parent of ~B~? :: ~SELECT X FROM PARENTSHIPS WHERE X="A",Y="B";~
+- Who are the parents of ~B~? :: ~SELECT X FROM PARENTSHIPS WHERE Y="B";~
+- Who are the sons of ~A~? ::  ~SELECT X FROM PARENTSHIPS WHERE Y="B";~
+- Who are the ancestors? :: Consider having a table of ~ANCESTORS~
+  - With $n$ people, ~ANCESTORS~ is in $O(n^2)$
+  - If $1$ generation has (on average) $2.36$ ancestors, then $20$ generations have $28.7$ million ancestors
+
+The potential size of ~ANCESTORS~ increases exponentially with the number of generations: we can instead use some explicit "knowledge" (e.g. intelligence) stored in a knowledge base
+- If ~X~ is a parent of ~Y~ then ~X~ is an ancestor of ~Y~
+- If ~X~ is an ancestor of ~Z~ and ~Z~ is a parent of ~Y~ then ~X~ is an ancestor of ~Y~
+
+Who are the ancestors?
+#+BEGIN_EXAMPLE
+if PARENT(X,Y) then return true;
+else
+   search Z: PARENT(Z,Y)
+   if Z does not exist then return false;
+   else
+      return Ancestor(X,Z.father) or Ancestor(X,Z.mother);
+#+END_EXAMPLE
+
+** Data, Information, and Knowledge
+
+- Data :: Raw and without context, it simply exists in its form (either usable or not)
+- Information :: Data + Meaning, it can change the perception of the receiver about something
+- Meaning :: For Davenport and Prusak, the five C's describe what gives meaning
+  - Contextualization :: Purpose of data
+  - Categorization :: Classified or generalization to concepts
+  - Calculation :: Mathematical or statistical analysis
+  - Correction :: Removal of erros
+  - Condensation :: Removal of unnecessary elements
+- Knowledge :: Information + "something", generalized to increase applicability. What is "something"?
+  - For Davenport and Prusak, the four C's describe it as
+    - Comparison :: Similarity to other contexts
+    - Consequence :: Implication in decision taking
+    - Connection :: Relationship with other information
+    - Conversation :: Feedback of people
+  - For Tobin, "something" is an application
+
+- Wisdom :: Knowledge + Intuition + Experience
+- Expertise :: Wisdom + Selection + Principles + Constrains + Learning
+- Capability :: Expertise + Integration + Distribution + Navigation
+
+** Types and uses of knowledge
+
+- Evidence :: How easily can it be transferred?
+  - Explicit :: If it can be expressed in systematic and formal way with data
+  - Implicit or Tacit :: If it is highly experiental, ephemeral and transitory
+- Purpose :: What is it describing?
+  - Declarative or Know-what :: Factual assertions describing what should be done
+  - Procedural or Know-how :: Processes and strategies describing how tasks should be done
+- Ownership :: Who owns it?
+  - Individual :: Personal skills, expertise, experience
+  - Group :: Individual knowledge + How do they interact
+  - Organizational :: Groups as an whole
+- Format :: How is it represented?
+  - Informal :: Textually (with natural language) and/or visually expressed (eg. txt)
+  - Semi-structured :: Informal representation enriched with some attributes (eg. xml)
+  - Structured :: Has an attribute-based structure (ex. db2)
+  - Formal :: Has a knowledge structure, such as frames, production rules, ontologies, etc.
+
+In a enterprise, we can find the following types of knowledge
+
+| Enterprise case           | Explicit | Implicit | Know-what | Know-how |
+|---------------------------+----------+----------+-----------+----------|
+| Business strategies       | Y        | N        | N         | Y        |
+| Prodcuts and services     | Y        | N        | Y         | N        |
+| Business processes        | N        | Y        | N         | Y        |
+| Organisational structures | Y        | N        | Y         | N        |
+| Policies and procedures   | Y        | Y        | Y         | Y        |
+| Culture and values        | Y        | Y        | Y         | N        |
+| Information systems       | Y        | Y        | Y         | N        |
+
+** Knowledge representation and engineering
+
+While data is represented by single or multiple (structured) values, information is represented by tables, databases, data warehouses. So how can we represent knowledge?
+
+Representing knowledge comes with some new challenges
+- Knowledge itself :: Syntax, semantics, reasoning & inference
+- Inference :: Reasoning and infering using knowledge
+  - Forward chaining :: Draw conclusions from facts
+  - Backward chaining :: Assert facts from conclusions
+- Knowledge-base :: Given a knowledge base $KB$ and an assertion $f$
+  - Completeness :: $KB \models f \rightarrow KB \vdash f$, so if $f$ is true under $KB$ then we can derive $f$
+  - Soundness :: $KB \vdash f \rightarrow KB \models f$, so if we can derive $f$ under $KB$ then $f$ is true
+
+Note that one knowledge representation may be
+- Useful in some contexts, useless in others
+- Syntactically correct, but semantically wrong
+  - ~for all x, flies(x)~ :: but may not be true for some animals (eg. dog)
+  - ~for all x, flies(x) is a subset of ~feathered(x)~ :: but may no be true for some animals (eg. bat)
+
+Engineering issues concern knowledge
+- Life Cycle :: Processes, uses, loops
+- Auditing :: Delimiting knowledge
+- Deployment :: Installing knowledge
+- Acquisition (or Elicitation) :: Cooperating with experts
+
+* Knowledge representation
+** First-order logic
+*** FOL language
+
+ The language of first-order logic (FOL) is a declarative language that can be used for knowledge representation.
+
+**** Syntax
+
+FOL symbols can be
+- Logical :: Symbols having a fixed meaning or use in the language
+  - Punctuation symbols :: $($,$)$ and  $\cdot$
+  - Logical connectives :: $\wedge$ for conjunction, $\vee$ for disjunction, $\neg$ for negation, $=$ for equality
+  - Quantifier symbols :: $\forall$ for universal quantification, $\exists$ for existential quantification
+  - Variables :: $x,y,z,\dots$, an infinite set of symbols
+- Non-logical :: Symbols whose meaning is application-dependent, their arity is their number of arguments.
+  - Predicate symbols :: To express relations, here denoted by uppercase letters $P, Q, R, \cdots$
+  - Function symbols :: Used to express functions and denoted by lowercase letters $f$, $g$, $h$, $\cdots$
+
+Any legal syntactic expression in FOL is either a term, that referes to something in the world, or a formula, that expresses a proposition. We can indeed inductively define two sets of syntactic expressions
+- Set of terms :: Any variable is a term, any expression $f(t_1,\cdots ,t_n)$ with arity $n$ and terms $t_1,\cdots ,t_n$ is a term
+- Set of formulas :: That can be splitted into
+  - Set of atomic formulas :: Formulas that contain no other formulas
+    - If $t_1,\cdots ,t_n$ are terms and $P$ is a predicate symbol then $P(t_1,\cdots,t_n)$ is an atomic formula
+    - If $t_1, t_2$ are terms then $t_1=t_2$ is a formula
+  - Set of complex formulas :: If $x$ is a variable and $\alpha,\beta$ are formulas then $\neg \alpha, (\alpha \wedge \beta), (\alpha \vee \beta), \forall x.\alpha, \exists x.\alpha$ are formulas
+
+Abbreviations are used to express
+- Implication :: $(\neg \alpha \vee \beta)$ as $(\alpha \supset \beta)$ (or also $\varphi \rightarrow \psi$, $\varphi \Rightarrow \psi$)
+- Equivalence :: $((\alpha \supset \beta) \wedge (\beta \supset \alpha))$ as $(\alpha \equiv \beta)$
+
+We say that a variable occurence is bound in a formula if it lies within the scope of a quantifier, otherwise it's free. Consider the formula $\forall y.P(x) \wedge \exists x [P(y) \vee Q(x)]$, the occurences
+- $\forall y, \exists y$ can either be considered bound or ignored
+- $P(x)$ is a free occurence
+- $P(y), Q(x)$ are bound occurences
+A formula with no free variable is a *sentence*.
+
+**** Semantics
+
+Since nonlogical symbols are used in an application dependent way, there can be no agreement on the meaning of sentences like $Happy(john), DemocraticCountry(USA), favoriteIceCreamFlavorOf(ted), puddleOfwater27()$. However, we can agree on how the meaning of the sentence derives from the interpretation of the nonlogical symbols: the sentence $Happy(john)$ claims that the individual named $john$ has the property named $Happy$.
+
+In general, we set a simplistic view of the world and the meaning of a sentence as a function of the symbols interpretation
+- There are objects in the world
+- An interpretation of a predicate $P$ of arity $n$ decides which tuple of objects have the property or relation
+- An interpretation of a function $f$ of arity $n$ decides a mapping from tuples of objects to objects
+- Any other aspect of the world is irrelevant
+
+The meaning of a FOL expression is captured by its interpretation, that is a pair $\mathfrak{J}=\left\langle D,I \right\rangle$ with
+- $D$ the domain, that can any nonempty set of objects
+- $I$ the mapping from nonlogical symbols to functions and relations over $D$.
+
+Given a predicate $P$ of arity $n$, $I[P]$ is an n-ary relation over $D$: $I[P] \subseteq \underset{n\ \text{times}}{\underbrace{D \times \cdots \times D}}$
+- $I[Dog]$ may represent the set of dogs in an interpretation
+- $I[OlderThan]$ may represent a subset of $D \times D$, where the first element is older than the second
+
+The intepretation of predicates is often expressed in terms of its characteristic function: $I[P] \in [\underset{n\ \text{times}}{\underbrace{D \times \cdots \times D}} \rightarrow \{0,1\}]$, so the tuple $D \times \cdots \times D$ is in the relation over $D$ if and only if the characteristic function ha value $1$.
+
+Given a function symbol $f$ of arity $n$, $I[f]$ is an n-ary function over $D$:  $I[f] \subseteq [\underset{n\ \text{times}}{\underbrace{D \times \cdots \times D}} \rightarrow D]$
+- $I[bestFriend]$ may represent some function $[D \rightarrow D]$ that maps a person to his best friend
+- $I[johnSmith]$ may represent some element of $D$ called John Smith
+
+Given an interpretation $\mathfrak{J}=\left\langle D,I \right\rangle$, we can specify which elements are denoted by any variable-free term of FOL.
+
+Given the term $bestFriend(johnSmith)$ and an interpretation $\mathfrak{J}$
+- $I$ gives the function denoted by $bestFriend$
+- $johnSmith$ is some element of $D$
+- By applying such a function to the element, another element of $D$ is returned
+
+A variable assignment $\mu$ over $D$ is a mapping from a variable $x$ in FOL to an element $\mu[x]$ in $D$.
+
+Given an interpretation $\mathfrak{J}$ and a variable assignment $\mu$, $\left\| t \right\|_{\mathfrak{J},\mu}$ is the denotation of term $t$
+- If $x$ is a variable, then $\left\| x \right\|_{\mathfrak{J},\mu} = \mu[x]$
+- If $t_1,\cdots,t_n$ are terms and $f$ is a function symbol of arity $n$, then $\left\| f(t_1,\cdots,t_n) \right\|_{\mathfrak{J},\mu} = F(d_1,\cdots,d_n)$ where $F=I[f]$ and $d_i = \left\| t_i \right\|_{\mathfrak{J},\mu}$
+
+Given an interpretation $\mathfrak{J}=\left\langle D,I \right\rangle$ and the denotation $\left\| \cdot \right\|_{\mathfrak{J},\mu}$, we can decide if a FOL sentence is true or not.
+
+**** Pragmatics
+
+Given a set of sentences $S$ and a sentence $\alpha$, $S$ logically entails $\alpha$ (or $\alpha$ is a logical consequence of $S$) if every model of $S$ satisfies $\alpha$: $S \models \alpha \Leftrightarrow (\mathfrak{J} \models S \Rightarrow \mathfrak{J} \models \alpha,\ \forall \mathfrak{J})$.
+
+A sentence $\alpha$ is logically valid when it is a logical consequence of the empty set: $\models \alpha \Leftarightarrow (\mathfrak{J} \models \alpha,\ \forall \mathfrak{J})$.
+
+*** Know-what knowledge
+
+In FOL we can only express explicit knowledge, and to do so we use facts (terms) and sentences (formulas with no free variable). Relations are expressed as
+- Properties :: $object=sun \xrightarrow{property=color} value=yellow$
+  - Values as predicates :: $Yellow(sun)$
+  - Properties as predicates :: $Color(sun,yellow)$
+  - Complex predicates :: $Is(sun, color, yellow)$
+- Relationships ::  $object=joseph \xrightarrow{relationship=married} object=mary$
+  - Relationship as predicates :: $married(joseph,mary)$
+  - Complex predicates :: $relation(joseph,mary,marriage)$
+- n-ary relationships :: $(object_1, \cdots, \textbf{object}_i, \cdots, object_n)$
+  - $Object_i(object_1, \cdots, object_n)$
+  - $Property(object_1, object_2, \cdots, object_n)$
+  - $Has/Are(object_1, object_2, \cdots, object_n, property)$
+
+*** Know-how knowledge
+
+- Procedural control models :: Sequence, parallel fork, synchronization, alternatives, etc
+- Non-monotonic logic :: Rules may reduce the Knowledge Base
+
+*** FOL KB cookbook
+
+Given a domain, we can construct a FOL knowledge base following these steps
+1. Set the *named individuals*
+2. Set the *no-named individuals*
+3. For each individual set
+1. The basic *type* as a unary predicate
+2. The relevant *attributes* or *properties*
+3. Its *relationships* with others
+4. Set the (total) *functions*
+5. Set the (specific or generic) *constraints*
+
+*** Examples
+**** Block-world
+
+Suppose we have 3 blocks stacked on a table, $a,b,c$. The color of $a$ is green, the color of $b$ is unknown and the color of $c$ is not green. We want to know if there is a green block on top of a nongreen one.
+
+We can formalize this problem as follows
+- $a,b,c$ are the names of the blocks
+- $G$ and $O$ are the predicate symbols for "green" and "on"
+
+So the configuration below can be described with a collection of facts in the KB: $\{O(a,b),O(b,c),G(a),\neg G(c)\}$.
+
+| a | is green      |
+| b | unknown color |
+| c | is not green  |
+
+Are original question is expressed as: $\exists x \exists y \ G(x) \wedge \neg G(y) \wedge O(x,y)$?
+To answer it, we consider the two possible cases for $b$
+- If $G(b)$, we know from the KB that $\neg G(c)$ and $O(b,c)$, so $G(b) \wedge \neg G(c) \wedge O(b,c)$ and the answer is yes
+- If $\neg G(b)$, we know from the KB that $G(a)$ and $O(a,b)$, so $G(a) \wedge \neg G(b) \wedge O(a,b)$ and the answer is
+** Rules and production systems
+*** Rules
+
+In rule-based knowledge bases we have a database of facts and a collection of rules
+- Fact :: Unit of information covering the basic truths of the domain (e.g. ~Parent(john,peter)~)
+- Rule $Q \Leftarrow P$ :: Universally qualified ($\forall$) conditional expressing new relations in terms of basic facts. (e.g. $Mother(y,x) \Leftarrow ChildOf(x,y) \wedge Woman(y), \forall x,y \in Domain$)
+  - Antecedent $P$ :: Condition for the rule to be applied (e.g. $ChildOf(x,y) \wedge Woman(y)$)
+  - Consequent $Q$ :: Single fact satisfied if the rule is applied (e.g. $Mother(y,x)$)
+
+Depending on the antecedent $P$, the rule may be
+- Conjunctive rule :: $P$ is a conjunction of facts, so all the facts must be satisifed to apply the rule (e.g. $Can\_vote(x) \Leftarrow Person(x) \wedge Adult(x)$)
+- Disjunctive form :: $P$ contains at least a disjunction
+  - Disjunctive :: $b \Leftarrow a_1 \vee, a_2 \vee \cdots a_k$
+  - k-term DNF :: $b \Leftarrow (a_{11} \wedge \cdots \wedge a_{1k_1}) \vee \cdots \vee (a_{i1} \wedge \cdots \wedge a_{ik_i}), j \leq k$ (with $j$ terms in disjunction)
+  - k-DNF :: $b \Leftarrow (a_{11} \wedge \cdots \wedge a_{1k_1}) \vee \cdots \vee (a_{i1} \wedge \cdots \wedge a_{ik_i}), k_j \leq k$ (with $k_j$ terms in disjunction term $j$)
+  - k-CNF :: $b \Leftarrow (a_{11} \vee \cdots \vee a_{1k_1}) \wedge \cdots \wedge (a_{i1} \vee \cdots \vee a_{ik_i}), k_j \leq k$ (with $k_j$ terms in disjunction term $j$)
+
+The reasoning process with rule-based representation may be affected by several problems, below some possible scenarios.
+- Alternative ways of representing the same knowledge :: Consider a set of rules made by the rule $Ancestor(x,y) \Leftarrow Parent(x,y)$ and either rule $1,2,3$. While the knowledge represented is the same, implementing it with different set of rules changes the reasoning time for the same query.
+   1. $Ancestor(x,y) \Leftarrow Parent(x,z) \wedge Ancestor (z,y)$
+   2. $Ancestor(x,y) \Leftarrow Parent(z,y) \wedge Ancestor (x,z)$
+   3. $Ancestor(x,y) \Leftarrow Ancestor(x,z) \wedge Ancestor (z,y)$
+- Repeated searches :: The result of a reasoning can be either explicit, implicit or ~NO~ (with a closed-world assumption), but in any case we must avoid repeated searches.
+- Order of goals :: e.g. Consider $AmericanCousin(x,Sally)$. Evaluate the restrictive clauses first
+  - $AmericanCousin(x,y) \Leftarrow American(x) \vee Cousin(x,y)$ requires a loop for each american (order of millions)
+  - $AmericanCousin(x,y) \Leftarrow Cousin(y) \vee American(x)$ requires a loop for each cousin (order of tens)
+- Order of rules :: e.g. Consider the following rules and the question $UnivStudent(Sally)$. In the order $1,2,3$ the search will be slow in any case, but in order $3,2,1$ it will be fast in some cases. So most restrcitive rules should be evaluated first.
+  1. $UnivStudent(x) \Leftarrow BScStudent(x)$
+  2. $UnivStudent(x) \Leftarrow MScStudent(x)$
+  3. $UnivStudent(x) \Leftarrow PhDStudent(x)$
+
+Consider the generic rule ~IF P THEN Q~, we can apply different forms of rule-based reasoning
+- Forward chaining :: From known facts of antecedent $P$ to conclusions of consequent $Q$ (e.g. John is an adult $\rightarrow$ John can vote)
+  - Data-directed reasoning :: Given a set of facts, we apply rules $P \rightarrow Q$ to augment the set of facts until we find the one we are looking for
+- Backward chaining :: From known facts of consequent $Q$ to conclusions of antecedent $P$ (e.g. John can vote $\rightarrow$ John is an adult)
+  - Goal-directed reasoning :: Given a goal $Q$, we decompose $Q$ into pending subgoals by using the rule $P \rightarrow Q$ until there are no more pending goals
+
+*** Production Systems
+
+A *production system* (PS) is a forward chaining system that uses *production rules* (PR) to represent general knowledge. A *working memory* (WM) is used to store assertions.
+
+A production rule is a two-part structure comprising
+- Antecedent conditions :: Set of conditions to be applied on the current state of the WM
+- Consequent actions :: Set of actions that eventually modify the WM
+A rule is usually written as ~IF conditions THEN actions~.
+
+Production systems repeats a basic three-step cycle
+- Recognition :: Populate the set of applicable rules (the rules whose antecedent conditions are satisfied with current WM)
+- Conflict solving :: Choose from the applicable rules the ones that should be executed
+- Trigger rule :: Change the WM according to the actions of the selected rules
+The production system halts when no more rules can fire with the current WM
+
+**** Working memory
+
+A *working memory* (WM) is set of *working memory elements* (WMEs).
+A WME is a tuple of the form $(type\quad att_1:val_1 \cdots att_n:val_n)$: $type,att_i,val_i$ are all atoms. Note that
+- WMEs don't explicitly identify the subject of assertions, but a unique attribute (e.g. $id$) can be used
+- Attributes order is irrelevant
+
+**** Antecedent side of production rules
+
+*Conditions* in the antecedent of a PR
+- Are understood conjunctively, so they all must be true for the rule to be applied
+- Can be positive ($cond$) or negative ($-cond$)
+- Have the form $(type\quad att_1:spec_1 \cdots att_n:spec_n)$. Each specification $spec_i$ may be
+  - An atom
+  - A variable
+  - An evaluable expression, within $[\ ]$
+  - A test, within $\{\ \}$
+  - A conjunction ($\wedge$, disjunction $\vee$ or a negation $\neg$ of a specification
+
+For example
+- $(person\ age:[n+4]\ occupation:x)$
+  - Is satisfied if there is a WME of type $person$ with attribute $age$ equal to $n+4$ ($n$ is specified elsewhere)
+  - If $x$ is not bound, the result binds the $occupation$ value to $x$
+  - If $x$ is bound, the $occupation$ value must be the same of $x$ value
+- $-(person\ age:\{<23 \wedge >6\})$ is satisfied if there is no WME of type $person$ and attribute $age$ between 6 and 23
+
+*Applicable rules* are rules such that, for all the variables in them, there are values that satisfy all the antecedent conditions in the current WM.
+- A positive condition is satisfied if there is a matching WME, a negative condition if there is none.
+- A WME matches a condition $(type\quad att_1:spec_1 \cdots att_n:spec_n)$ if
+  - They have the same $type$
+  - Each $att_i:spec_i$ has a corresponding $att_i:value_i$ and $spec_i=value_i$
+
+**** Consequent side of production rules
+
+*Actions* are interpreted in a sequencial way and can be either
+- ADD $pattern$ :: Add a new WME $pattern$ to the WM
+- REMOVE $i$ :: Remove the WME matching the i-th condition in the antecedent of the rule
+- MODIFY $i$ ($att\ spec$) :: Replace the current value of $att$ with $spec$ in the WME matching the i-th condition in the antecedent of the rule
+
+If there is a WME of type $student$ with any name (bind the name to $x$) then add a WME of type $person$ with the same name
+#+BEGIN_EXAMPLE
+IF (student name:x) THEN ADD (person name:x)
+#+END_EXAMPLE
+
+If there is a WME with predicate $student$ then change its predicate value to $person$
+#+BEGIN_EXAMPLE
+IF (assertion predicate:student) THEN MODIFY 1 (predicate person)
+#+END_EXAMPLE
+
+Assuming that some rule has added a WME of type $birthday$ at the right time, update the person's age
+#+BEGIN_EXAMPLE
+IF (person age:x name:n) (birthday who:n)
+THEN MODIFY 1 (age [x+1])
+   REMOVE 2
+#+END_EXAMPLE
+
+Control information can be dealt with using ~REMOVE~
+#+BEGIN_EXAMPLE
+IF (starting)
+THEN REMOVE 1
+   ADD (control phase:1)
+...
+IF (control phase:x) + other conditions
+THEN MODIFY 1 (phase [x+1])
+#+END_EXAMPLE
+
+**** Example: world of bricks
+
+Consider the following case
+- Three bricks of different size sit on a heap
+- Three possible positions where bricks can be placed
+- There is a robot hand that can be used to move bricks to these positions
+The goal is to place the blocks in decreasing order of size in each position
+
+Assume the working memory starts holds the following elements
+#+BEGIN_EXAMPLE
+(counter value:1)
+(brick name:A size:10 position:heap)
+(brick name:B size:30 position:heap)
+(brick name:C size:20 position:heap)
+#+END_EXAMPLE
+
+We have to position block $B$ in position $1$, block $C$ in position $2$ and block $A$ in position $1$. To do so we can define two production rules. Note that the two rules are mutually exclusive, so no conflict resolution mechanism is needed.
+
+1. Place the largest available brick in the hand
+    #+BEGIN_EXAMPLE
+  # if there is a brick in the heap
+  IF (brick position:heap name:n size:s)
+   # if there is no bigger brick in the heap
+   -(brick position:heap size: {>s})
+   # if the robot hand is free
+   -(brick position:robot-hand)
+  # put the brick in the hand
+  THEN MODIFY 1 (position:robot-hand)
+    #+END_EXAMPLE
+2. Place the brick in the hand into the next position (sequentially selecting the positions)
+    #+BEGIN_EXAMPLE
+  # if there is a block in the hand
+  IF (brick position:robot-hand)
+  # bind i to the counter value
+  (counter value:i)
+  # set the current position to i and increase the counter
+  THEN MODIFY 1 (position i) MODIFY 2 (value[i+1])
+    #+END_EXAMPLE
+
+The rules are fired as follows
+1. Rule 1, $B$ satisfies the antecedent conditions and the relative WME is modified as
+    #+BEGIN_EXAMPLE
+  (brick name:B size:30 position:hand)
+    #+END_EXAMPLE
+2. Rule 2, $B$ satisfies the antecedent conditions: modify both WME of $B$ and the counter
+    #+BEGIN_EXAMPLE
+  (brick name:B size:30 position:1)
+  (counter value:2)
+    #+END_EXAMPLE
+3. Rule 1, $C$ satisfies the antecedent conditions and the relative WME is modified as
+    #+BEGIN_EXAMPLE
+  (brick name:C size:20 position:hand)
+    #+END_EXAMPLE
+4. Rule 2, $C$ satisfies the antecedent conditions: modify both WME of $C$ and the counter
+    #+BEGIN_EXAMPLE
+  (brick name:C size:20 position:2)
+  (counter value:3)
+    #+END_EXAMPLE
+5. Rule 1, $A$ satisfies the antecedent conditions and the relative WME is modified as
+    #+BEGIN_EXAMPLE
+  (brick name:A size:10 position:hand)
+    #+END_EXAMPLE
+6. Rule 2, $A$ satisfies the antecedent conditions: modify both WME of $A$ and the counter
+    #+BEGIN_EXAMPLE
+  (brick name:A size:10 position:3)
+  (counter value:4)
+    #+END_EXAMPLE
+7. System halts, no bricks in the heap. The final WM configuration
+    #+BEGIN_EXAMPLE
+  (counter value:4)
+  (brick name:A size:10 position:3)
+  (brick name:B size:30 position:1)
+  (brick name:C size:20 position:2)
+    #+END_EXAMPLE
+**** Conflict resolution
+
+When several rules may be triggered at the same time a strategy is needed. The system may choose
+- Random :: Randomly a rule
+- Order :: The first rule in order of presentation
+- Specifity :: The most selective rule
+- Recency :: The most recent rule, meaning either the last fired rule or the rule matching the last WME edited
+- Refractoriness :: To avoid the rule just applied with the same values
+
+** Object oriented representation
+*** Frame model (Minsky)
+
+A *frame* is a knowledge structure used to represent objects and object types. Frames can be
+- Individual (or instance) frames :: Represent single objects
+- Generic (or class) frames :: Represent categories of objects
+
+Frame properties are *slots* that can be valued with *fillers*. A slot can express
+- Generalization :: Can be of two types
+  - ~:INSTANCE-OF~ sets the class of an individual frame (e.g. $Tarragona \in City$, ~Tarragona :INSTANCE-OF City~)
+  - ~:IS-A~ sets the super-class of a generic frame (e.g. $City \subseteq SocialOrganization$, ~City :IS-A SocialOrganization~), the generic frame is a *specialization*
+- Aggregation :: ~:PART-OF~ sets the parts of a frame (e.g. ~Building :PART-OF City~)
+- Association :: Defines relations with meaning in both directions
+<
+Multiple values can be stored with
+- Multivalued slot :: e.g. ~Train <:wagons [MIN-CARDINALITY m][MAX-CARDINALITY m'] Wagon>~
+- Inverse slot :: e.g. ~Wagon <:PART-OF Train>~, with each wagon pointing to one train
+- Chaining values :: e.g. ~Train <:wagons Wagon>~, ~Wagon <:next-wagon Wagon>~
+
+A slot may contain properties, known as *facets*, with information about the slot. For example we can set a facet that attaches procedure to be run
+- ~IF-ADDED~ :: When the value of the slot is set
+- ~IF-NEEDED~ :: When the value of the slot is asked or used
+Other facets may be ~DEFAULT~, ~DOMAIN~, ~MAX/MIN-CARDINALITY~, etc.
+
+*** Reasoning frames
+
+Reasoning with frame involves the following stages
+
+**** Inheritance
+
+Slots are *inherited* when information is passed from generic frames to their specializations, and finally to their instances. Inherited slots can have different fillers. Frames systems use
+- Defeasible inheritance :: Inherit only when no filler can be found
+- Multiple inheritance (in some systems) :: Inherit from multiple generics
+
+**** Assignment loop
+
+When a value is assigned to an instance, the value is set as a filler of the slot and either
+- There is an ~IF-ADDED~ facet, and its procedure is triggered
+- Or the first ~IF-ADDED~ procedure in the hierarchy of frames is triggered, otherwise do nothing
+When a ~IF-ADDED~ procedure is triggered, the loop is repeated if other slots are filled or new frames instantiated.
+
+**** Requiring loop
+
+When a value is required from an instance, if the slot has a filler its value is returned. Otherwise, either
+- There is a ~IF-NEEDED~ procedure
+- Or the first ~IF-NEEDED~ procedure in the hierarchy of frames is triggered
+When a ~IF-NEEDED~ procedure is found its value is returned, otherwise ~unknown~ is returned.
+When a ~IF-NEEDED~ procedure is triggered, the loop is repeated if other slots are filled or new frames instantiated.
+
+**** Reasoning loop
+
+When an instance is created
+- Some slots may be explicitly provided my the user, the others are inherited
+- For slot with a filler and a ~IF-PROCEDURE~ procedure, the procedure is run. The loop is repeated if other slots are filled or new frames instantiated.
+
+*** Lisp lambda-expressions
+
+In LISP, the generic syntax for lambda-expressions is ~(lambda (v) body)~, with
+- lambda ::  Symbol used to define lambda-expressions
+- v :: A lambda-list specifying names for the parameters of the function. When the function denoted by the lambda-expression is applied to arguments, the arguments are matched with the parameters specified by the lambda-list.
+- body :: Can refer to the arguments by using the parameter names. The body consists of any number of forms (possibly zero). These forms are evaluated in sequence, and the results of the last form only are returned as the results of the application (the value nil is returned if there are zero forms in the body).
+
+The complete syntax of a lambda-expression is
+#+BEGIN_SRC
+(lambda ({var}*
+	[&optional {var | (var [initform [svar]])}*]
+	[&rest var]
+	[&key {var | ({var | (keyword var)} [initform [svar]])}*
+	       [&allow-other-keys]]
+	[&aux {var | (var [initform])}*)]
+  [[{declaration}* | documentation-string]]
+  {form}*)
+#+END_SRC
+
+Some examples
+- ~(lambda (arg) (/ arg 50))~ is a function that returns the value resulting from dividing whatever is passed to it as ~arg~ by ~50~
+- ~(multiply-by-seven 3)~ is a function that returns 21, where
+  - ~multiply-by-seven~ is a function
+  - ~3~ is the argument
+- ~((lambda (number) (* 7 number)) 3)~ is a function that returns 21, where
+  - ~(lambda (number) (* 7 number))~ is an anonymous function
+  - ~3~ is the argument
+
+*** Lisp-like notation for daemons
+
+We can define facets such as
+- IF-ADDED :: Set ~v~ in the slot and run ~lambda~
+- IF-NEEDED :: Run ~lambda~ and return ~v~
+These facets can also be used to create or remove frames.
+
+In ~body~ we may find
+- Preorder notation :: ~(+ 5 4)~, ~(< 10 15)~
+- Assignment :: ~(set slot value)~
+- Conditional statement :: ~(if cond then [else])~
+- Loops :: ~(while cond body)~
+- Environment definition :: ~(let ((var value)(var value)...) body-accessing-vars)~
+- Grouping sentences :: ~(sent1 ... sentN)~
+
+We can access values such as
+- SELF:slot-name :: The value of ~slot-name~ in the current frame (referred as ~SELF~)
+- frame-name:slot-name :: The value of ~slot-name~  in ~frame-name~
+
+*** Scripts (Schank & Abelson)
+
+The idea of the *script* model (Schank & Abelson, 1977) is to represent procedural (know-how) knowledge with a frame system: a script is a structure describing a sequence of events (over time) in a context, extending the concept of frame with complex temporal/sequencial events. The following slots are used
+- Props :: Properties (frames or labels) being part of the script
+- Roles :: Agents (frames or labels) involved in the script definition
+- OpeningConditions :: Pre-conditions that make the script valid
+- Scene :: Actions in the script
+- Results :: Post-conditions that are valid after the script runs
+
+** Network representation
+*** Limitations of frames
+
+When using frames, we have few pros
+- The units of knowledge are self contained
+- The knowledge about domain objects (or types) is concentrated all around the objects
+However, an frames have an important limitation: they are not designed to establish and exploit semantic relations.
+
+*** Definitional networks
+
+Definitional networks focus on the *subtype* or *is-a* relation between concepts. Also
+- Inheritance of properties from supertypes to subtypes
+- Since definitions are true by definition, the information is often assumed to be necessarily true
+
+With such networks, consistency problems may emerge. Below some examples
+
+#+BEGIN_SRC artist
+        ┌──────►Quaker──────────┐
+        │                       │
+        │                       ▼
+Pacifist                      Nixon
+        │                       ▲
+        │                       │
+        └─/──►Republican────────┘
+#+END_SRC
+Does Nixon inherit pacifism?
+
+#+BEGIN_SRC artist
+      ┌────►Elephant───────────┐
+      │                        │
+      │                        ▼
+GrayEntity               RoyalElephant───►Clyde
+      │                        ▲
+      │                        │
+      └─/──►WhiteEntity────────┘
+#+END_SRC
+Is Clyde gray or white?
+
+*** Assertional semantic networks
+
+Assertional semantic networks focus on *assertions*. Unlike definitional networks, the information is assumed to be contingently true (unless explicitly marked with a modal operator).
+
+Some assertional networks have been proposed as models of the conceptual structures underlying natural language semantics.
+
+#+BEGIN_SRC artist
+┌────is a Stagirite
+│
+│         ┌─────is a Macedonian
+│         │
+│         │
+├────teaches
+│         │
+│         │
+│         └─────conquers the world
+│
+├────is a discipline of───────────────┐
+│                                     │
+│                                     │
+│                            is a philosopher admired by Church Fathers
+│                                     │
+│                                     │
+└────is an opponent of────────────────┘
+#+END_SRC
+A *relational graph* (Peirce, 1882) for the sentence =A Stagirite teacher of a Macedonian conqueror of the world is a disciple and an opponent of a philosopher admired by Church Fathers=. Relational graphs can only represent $\exists$ and $\wedge$.
+
+Limitations of relational graphs were finally overcome by *existential graphs* (Peirce, 1897), allowing all the logical operators by introducting "ovals" to enclose and negate parts of the graphs.
+
+*** Implicational networks
+
+Implication networks use *implication* as the primary relation for connecting nodes. They may be used to represent patterns of beliefs, causality, or inferences.
+
+*** Executable networks
+
+Executable networks represent *dynamic processes* or *procedural knowledge*
+- Messages are passed through networks arcs
+- Procedures can be attached to network nodes-
+Examples can be dataflow diagrams and Petri nets
+
+*** Other networks
+
+- Learning networks :: Build or extend their representations by acquiring knowledge from examples. The new knowledge may change the old network by adding and deleting nodes and arcs or by modifying numerical values, called weights, associated with the nodes and arcs.
+- Hybrid networks :: Combine two or more of the previous techniques, either in a single network or in separate, but closely interacting networks.
+*** Defining N-ary relations
+
+How can we
+- Explicitly describe instances of relations?
+- Represent N-ary relations?
+- Represent relations involving ordered lists of partecipants?
+
+**** New class for a relation
+
+We can create a new class with ~n~ new properties to represent a n-ary relation. Useful when we need to
+- Add more attributes to describe a relation
+- Show different aspects of the same relation
+- Represent n-ary relations having no distinct partecipant
+
+#+BEGIN_QUOTE
+Christine has breast tumor with high probability.
+#+END_QUOTE
+
+#+BEGIN_SRC artist
+                                                                              ┌────────────────────┐
+                                                ┌──────diagnosis_value────────►Brest_Tumor_Cristine│
+                                                │                             └────────────────────┘
+┌───────────┐                      ┌────────────┴─────────┐
+│ Christine ├─────has_diagnosis───►│_:Diagnosis_Relation_1│
+└───────────┘                      └────────────┬─────────┘
+                                                │                             ┌────┐
+                                                └──────diagnosis_probability─►│HIGH│
+                                                                              └────┘
+#+END_SRC
+
+#+BEGIN_QUOTE
+Steve has temperature, which is high, but falling.
+#+END_QUOTE
+
+#+BEGIN_SRC artist
+                                                                ┌────────┐
+                                          ┌─temperature_value──►│ELEVATED│
+                                          │                     └────────┘
+┌─────┐                      ┌────────────┴──────────────┐
+│Steve├────has_temperature──►│_:Temperature_Observation_1│
+└─────┘                      └────────────┬──────────────┘
+                                          │                     ┌───────┐
+                                          └─temperature_trend──►│FALLING│
+                                                                └───────┘
+#+END_SRC
+
+#+BEGIN_QUOTE
+John buys a "Lenny the Lion" book from books.example.com for $15 as a birthday gift.
+#+END_QUOTE
+
+#+BEGIN_SRC artist
+       ┌────┐                                      ┌───┐
+       │John◄──has_buyer──┐    ┌──────has_amount───►$15│
+       └────┘             │    │                   └───┘
+                       ┌──┴────┴──┐
+                       │Purchase_1├────────────────────┐
+                       └┬────────┬┘                    │
+                        │        │                     │
+            has_seller──┘    has_object          has_purpose
+                │                │                     │
+                │                │                     │
+┌───────────────▼─┐    ┌─────────▼────┐     ┌──────────▼──┐
+│books.example.com│    │Lenny_The_lion│     │Birthday_Gift│
+└─────────────────┘    └──────────────┘     └─────────────┘
+#+END_SRC
+**** List as arguments in relation
+
+The idea is to connect arguments via some relations and to relate the one partecipant to this sequence.
+
+#+BEGIN_QUOTE
+United Airlines flight 3177 visits the following airports: LAX, DFW, and JFK.
+#+END_QUOTE
+
+#+BEGIN_SRC artist
+┌───────┐                 ┌─────────┐                    ┌───┐
+│UA_1377├─flight_sequence─►UA_1377_1├──────destination───►LAX│
+└───────┘                 └────┬────┘                    └───┘
+                               │
+                           next_segment
+                               │
+                          ┌────▼────┐                    ┌───┐
+                          │UA_1377_2├──────destination───►DFW│
+                          └────┬────┘                    └───┘
+                               │
+                           next_segment
+                               │
+                          ┌────▼────┐                    ┌───┐
+                          │UA_1377_3├──────destination───►JFK│
+                          └─────────┘                    └───┘
+#+END_SRC
+
+* Practical knowledge representation
+** CLIPS [fn:1] [fn:2]
+
+Recall that an expert system contains a database which in turn contains a series of facts and rules (productions). Facts come in two varieties: structured facts (templates) and ad-hoc facts.
+
+*** Templates
+
+The templates for structured tasks are specified by the ~deftemplate~ command
+
+#+BEGIN_EXAMPLE
+(deftemplate aTemplate "some documentation"
+        (slot slot1)
+        (slot slot2)
+        (etc.)
+)
+#+END_EXAMPLE
+
+For example, a student templaet may be structured as follows
+
+#+BEGIN_EXAMPLE
+(deftemplate student "A student template"
+    (slot sno)
+    (slot sname)
+    (slot major)
+    (slot advisor)
+)
+#+END_EXAMPLE
+
+*** Asserting facts
+
+There are two ways of introducing facts into the CLIPS database. One way is to include them in a set of initial facts
+
+#+BEGIN_EXAMPLE
+(deffacts initial-facts
+        (student (sno 123) (sname maigret) (major pre-med)
+            (advisor simenon)) ... )
+#+END_EXAMPLE
+
+~deffacts~ are asserted after the CLIPS file containing them has been loaded into CLIPS (see below) and then after the (reset) command.
+
+Another way to assert a fact is to assert it "on the fly", generally as an action in a rule
+
+#+BEGIN_EXAMPLE
+(assert (student (sno 123) (sname maigret)
+    (major pre-med) (advisor simenon)))
+#+END_EXAMPLE
+
+*** Non-structured facts
+
+It is sometimes convenient to have a series of ad-hoc facts in the database, as well as the structured ones. These are simply lists of words between parenthesis, such as
+
+#+BEGIN_EXAMPLE
+(alarm on)
+(alarm off)
+(temperature high)
+(valve a3572 open)
+#+END_EXAMPLE
+
+*** Rules
+
+The basis for a production system, of course, is the collection of condition-action rules.  The syntax for defining a rule is
+
+#+BEGIN_EXAMPLE
+(defrule rule-name "some documentation"
+    (if-condition)
+    (if-condition)
+    (etc.)
+=>
+    (action 1)
+    (action 2)
+    (etc.)
+)
+#+END_EXAMPLE
+
+In the example below, we have that if the unstructured facts ~(animal fierce)(animal big)(animal hungry)~ are in our KB, then all the conditions of the rule are met and ~useful-rule~ is fired, resulting in the insertion of a new assertion ~(run away)~.
+
+#+BEGIN_EXAMPLE
+(defrule useful-rule "a useful rule"
+    (animal fierce)
+    (animal big)
+    (animal hungry)
+=>
+    (assert (run away))
+)
+#+END_EXAMPLE
+
+*** Pattern matching
+
+Suppose that we have a fact such as
+
+#+BEGIN_EXAMPLE
+(deftemplate student "a student template"
+    (slot sname)
+    (slot major)
+    (slot interest))
+
+(deffacts inital-facts "some initial facts"
+    (student (sname dee) (major law))
+)
+#+END_EXAMPLE
+
+The following rule collects all the students majoring in law and adds to our KB the fact that they are interested in law: if there is anything in our database asserting that a student with some name is majoring in law (major law), then we want to add to our database the fact that this student is interested in law.
+The use of ~?name~ is important: putting a question mark before a ~name~ says that if we find in our database a student with a name and with a law major, we put the name of that student into ?name and then use the same name in further pattern matching in the if-part and then-part of the rule. If we use the same variable in different parts of the if-part, the same values must be used.
+
+#+BEGIN_EXAMPLE
+(defrule rule-1 "a first rule"
+    (student (sname ?name)(major law))
+=>
+    (assert (law-interest ?name))
+)
+#+END_EXAMPLE
+
+With the following rule, the ~?sno~ matched in the first rule must be the same in the rest of the rule. Note the printout statement.
+
+#+BEGIN_EXAMPLE
+(defrule suggest-math-rule
+    (interest ?sno math)
+    (ability ?sno math)
+    (student (sno ?sno) (sname ?sname))
+=>
+    (assert (suggest ?sno take-math))
+    (printout t "We suggest that " ?sname "take some more math")
+)
+#+END_EXAMPLE
+*** Editing facts
+
+The ~(interest nil)~ says that this rule should fire only if we don't have a value for interest yet. The ~?f1~ does two things
+- In the first occurrence of ~?f1~, ~?f1 <- (student (sname ?name) (major law))~, we bind the fact number of the fact into the variable ~?f1~.
+- We can then use that stored value to modify the rule by changing the value of the existing (slot interest) with the value (interest law). There must be a slot with this name, otherwise nothing works.
+
+#+BEGIN_EXAMPLE
+(defrule rule-2 "a second rule"
+    ?f1 <- (student (sname ?name) (major law) (interest nil))
+=>
+    (modify ?f1 (interest law))
+)
+#+END_EXAMPLE
+*** Examples
+**** Structured frame with ~deftemplate~, variables and frame editing
+
+#+BEGIN_SRC sh :results output code
+cat ./clips/01.clp
+#+END_SRC
+
+#+RESULTS:
+#+begin_src sh
+;
+; This example illustrates three ideas:
+; 1. The use of a structured frame (deftemplate)
+; 2. The use of variables (?name)
+; 3. A way to modify an existing frame
+;
+
+(deftemplate student "a student template"
+(slot sname)
+(slot major)
+(slot interest))
+;
+; This defines a frame with three slots (sname, major, interest)
+;
+(deffacts initial-facts "some initial facts"
+(student (sname dee) (major law))
+)
+;
+; Remember that initial-facts will be loaded into the
+; CLIPS database when a (reset) command is issued.
+;
+(defrule rule-1 "a first rule"
+(student (sname ?name) (major law))
+=>
+(assert (law-interest ?name))
+)
+;
+; This first rule says that if we find a student frame
+; in the database, we will grab the value in the 'sname' slot
+; and place the value we find there into the variable ?name. All
+; variables in CLIPS begin with an initial question mark.
+; After doing this, we then assert into the database a fact
+; (law-interest ?name)
+; The ?name picked up from the student frame is inserted. Since we
+; know that Dee (Judge Dee, middle Tang dynasty) is majoring in law,
+; the result will be to add a fact that (law-interest dee)
+;
+(defrule rule-2 "a second rule"
+?f1 <- (student (sname ?name) (major law) (interest nil))
+=>
+(modify ?f1 (interest law))
+)
+;
+; In this rule we modify the student frame for students whose major
+; is law. (major law) in a student frame indicates that the student's
+; major is law. (interest nil) means that we do not yet have any
+; interest value for this student. The use of ?f1 says that if we find
+; such a record (Dee again, in this case) we store an identifier to that
+; frame in the variable ?f1. In the "then-part" of the rule, we modify
+; that rule to add that the student (Dee again) is interested in law.
+; This is actually a deletion of the first frame and an insertion of the
+; modified frame)
+#+end_src
+
+**** ~printout~ command
+
+#+BEGIN_SRC sh :results output code
+tail -n 12 ./clips/02.clp
+#+END_SRC
+
+#+RESULTS:
+#+begin_src sh
+(defrule rule-1 "a first rule"
+(student (sname ?name) (major law))
+=>
+(assert (law-interest ?name))
+(printout t ?name " would be interested in Law" crlf)
+)
+;
+; Notice the format of the printout command. The 't' is
+; there to say that the output should go to the terminal
+; (stdout). Variables can be mixed with text (in double-
+; quotes). crlf means produce a carriage return at the
+; end of the text.
+#+end_src
+
+**** ~read~ and ~test~ commands
+
+#+BEGIN_SRC sh :results output code
+tail -n 30 ./clips/03.clp
+#+END_SRC
+
+#+RESULTS:
+#+begin_src sh
+(deftemplate enroll "enrollment records"
+(slot sname)
+(slot cname)
+(slot grade))
+(deffacts initial-facts "some initial facts"
+(student (sname dee) (major law))
+(enroll (sname dee) (cname STS350) (grade nil))
+)
+;
+; Remember that initial-facts will be loaded into the
+; CLIPS database when a (reset) command is issued.
+;
+
+(defrule ask-grade-rule
+(student (sname ?name))
+?f1 <- (enroll (sname ?name) (cname ?cnme) (grade nil))
+=>
+(printout t "Please enter the grade in " ?cnme " for " ?name "-->")
+(bind ?score (read))
+(modify ?f1 (grade ?score))
+)
+;
+(defrule check-grade-rule
+(student (sname ?name))
+(enroll (sname ?name) (cname ?cnme) (grade ?sgrade))
+(test (numberp ?sgrade))
+(test (>= ?sgrade 3.0))
+=>
+(printout t "Student " ?name " did well in " ?cnme crlf)
+)
+#+end_src
+
+**** Template with ~multislot~ and slot with ~type~
+
+Multislot values have to be captured by multi-field variables ~$?<name>~ in rule premises
+
+#+BEGIN_SRC sh :results output code
+cat ./clips/04.clp
+#+END_SRC
+
+#+RESULTS:
+#+begin_src sh
+(deftemplate student "A student frame"
+(slot sno)
+(slot sname)
+(slot major)
+(multislot interests))
+(deftemplate enroll "students enrolled in classes"
+(slot sno)
+(slot cno)
+(slot grade (type NUMBER)))
+(deftemplate class "classes students take"
+(slot cno)
+(slot cname)
+(slot dept))
+(defrule cogsci-rule-1
+(student (sno ?sno) (sname ?sname) (major ?major)
+(interests $? psych $?))
+=>
+(printout t ?sname "would be interested in SCXT 350" crlf)
+)
+;
+(deffacts Initial-facts
+(student (sno s01) (sname Poirot) (major csci)
+(interests music go psych ceramics))
+)
+#+end_src
+
+**** Slightly more complex student example
+
+#+BEGIN_SRC sh :results output code
+cat ./clips/05.clp
+#+END_SRC
+
+#+RESULTS:
+#+begin_src sh
+(deftemplate student "A student record"
+(slot sno)
+(slot sname)
+(slot major)
+(slot wcomm)
+(slot scxt)
+(slot units) ; Number of units passed
+(slot satm)
+(slot satv))
+;
+(deftemplate enroll
+(slot sno)
+(slot cno))
+;
+(deftemplate class
+(slot cno)
+(slot cname)
+(slot dept))
+;
+(defrule suggest-math-rule
+(interest ?sno math)
+(ability ?sno math)
+=>
+(assert (suggest ?sno take-math))
+)
+;
+(defrule find-math-interest
+(student (sno ?snumb))
+(enroll (sno ?snumb) (cno ?cnumb))
+(class (cno ?cnumb) (dept math))
+=>
+(assert (interest ?snumb math))
+)
+;
+(defrule find-math-ability
+(student (sno ?snumb) (satm ?score))
+(test (and (numberp ?score)
+(> ?score 600)))
+=>
+(assert (ability ?snumb math))
+)
+;
+(deffacts initial-facts
+(student (sno 123) (sname "Marple"))
+(enroll (sno 123) (cno 321))
+(class (cno 321) (cname "Naive Quantum Mechanics") (dept math))
+)
+;
+(defrule ask-satm-rule
+?f1 <- (student (sno ?snumb) (sname ?name) (satm nil))
+=>
+(printout t "Please enter the sat math score for " ?name " ")
+(bind ?score (read))
+(modify ?f1 (satm ?score))
+)
+#+end_src
+
+**** Rich people with rules
+
+~defrule~ command examples
+
+#+BEGIN_SRC sh :results output code
+cat ./clips/rich.clp
+#+END_SRC
+
+#+RESULTS:
+#+begin_src sh
+(defrule R1 "rich people are happy"
+  (rich ?x)
+=>
+  (assert (happy ?x)))
+
+(defrule R1 "rich people are happy"
+  (rich ?x)
+  (healthy ?x)
+=>
+  (assert (happy ?x))
+  (printout t "one new happy person " ?x crlf)
+)
+
+(defrule R2 "parents of happy people are happy"
+  (happy ?x)
+  (parent ?y ?x)
+=>
+  (happy ?y))
+  (defrule R3 "define rich people" (earns-money ?x) => (assert (rich ?x))
+)
+#+end_src
+
+**** World of blocks with templates
+
+- ~allow-symbols~ to set slot domain
+- Predicate constraints with ~(slot ?s&:(condition))~
+
+#+BEGIN_SRC sh :results output code
+cat ./clips/wob.clp
+#+END_SRC
+
+#+RESULTS:
+#+begin_src sh
+; World of blocks with templates
+
+(deftemplate block
+  (slot name)
+  (slot size)
+  (slot position (allowed-symbols Table Robot Heap))
+)
+
+(deffacts F1
+  (block (name B1) (size 10) (position Table))
+  (block (name B2) (size 20) (position Table))
+  (block (name B3) (size 30) (position Table))
+)
+
+;
+; Here we have predicate constraint: a condition that must be satisfied before matching a fact
+; (slot ?s&:(condition))
+;
+; We use it to modify the position of a block from Table to Robot if
+; there is no bigger block than that one, and if there is its not in the heap
+;
+(defrule R1 "pick-up block"
+  ?id <- (block (name ?name) (size ?size) (position Table))
+	 (not (block (size ?size2&:(> ?size2 ?size)) (position ?position&:(neq ?position Heap))))
+=>
+  (modify ?id (position Robot))
+)
+
+;
+; Note the row
+; (not (block (size ?size3&:(< ?size3 ?size2)) (position Heap)))
+; this constraints the block to be put on the smallest block in the heap
+;
+
+(defrule R2 "release block"
+  ?id <- (block (name ?name) (size ?size) (position Robot))
+         (block (name ?name2) (size ?size2) (position Heap))
+	 (not (block (size ?size3&:(< ?size3 ?size2)) (position Heap)))
+=>
+  (modify ?id (position Heap))
+  (assert (on ?name ?name2))
+  (printout t "block " ?name " stacked on " ?name2 crlf)
+)
+
+(defrule R2-1 "release first block"
+  ?id <- (block (name ?name) (size ?size) (position Robot))
+         (not (block (position Heap)))
+=>
+  (modify ?id (position Heap))
+  (assert (on ?name Heap))
+)
+#+end_src
+
+**** Railway with templates
+
+- ~defglobal~ for global variables
+- ~salience~ to set rule priority
+
+#+BEGIN_SRC sh :results output code
+cat ./railway.clp.txt
+#+END_SRC
+
+#+RESULTS:
+#+begin_src sh
+; Railway problems with templates
+
+;
+; Stations are represented with numbers 1,2,3,...
+;
+(defglobal ?*num-stations* = 3)
+
+(deftemplate train
+  (slot capacity)
+  (slot station)
+  (slot state (allowed-values stopped moving))
+)
+
+(deftemplate passenger
+  (slot id)
+  (slot station)
+  (slot destination)
+  (slot state (allowed-values waiting on-train))
+)
+
+(deffacts F
+  (train (capacity 2) (station 1) (state stopped))
+  (passenger (id 1) (station 1) (destination 2) (state waiting))
+  (passenger (id 2) (station 2) (destination 1) (state waiting))
+  (passenger (id 3) (station 3) (destination 1) (state waiting))
+)
+
+(defrule get-on-train "a new person enters the train"
+  ?t <- (train (capacity ?c&:(> ?c 0)) (station ?s) (state stopped))
+  ?p <- (passenger (id ?id) (station ?s) (state waiting))
+=>
+  (modify ?t (capacity (- ?c 1)))
+  (modify ?p (state on-train))
+  (printout t "passenger " ?id " gets into the train" crlf)
+)
+
+;
+; Note the salience 10 to set the rule priority
+;
+(defrule get-off-train "a person leaves the train"
+  (declare (salience 10))
+  ?t <- (train (capacity ?c) (station ?s) (state stopped))
+  ?p <- (passenger (id ?id) (destination ?s) (state on-train))
+=>
+  (modify ?t (capacity (+ ?c 1))) (retract ?p)
+  (printout t "passenger " ?id " arrives to destination " ?s crlf)
+)
+
+(defrule move-train "go to next station"
+  ?t <- (train (station ?s) (state stopped)) (passenger)
+=>
+  (modify ?t (state moving)) (printout t "the train leaves station " ?s crlf)
+)
+
+(defrule train-arrival "train arrives to station"
+  ?t <- (train (station ?s) (state moving))
+=>
+  (modify ?t (station (+ 1 (mod ?s ?*num-stations*))) (state stopped))
+  (printout t "train arrives in next station " crlf)
+)
+#+end_src
+
+** TODO COOL
+** TODO Protégé
+* Footnotes
+
+[fn:1] [[http://math.ups.edu/~matthews/STS350_S2006/CLIPS.htm][A gentle introduction to CLIPS for CogSci Students]]
+
+[fn:2]  [[https://kcir.pwr.edu.pl/~witold/ai/CLIPS_tutorial/][Witold Paluszynski - CLIPS tutorial]]
